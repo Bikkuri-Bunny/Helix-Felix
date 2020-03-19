@@ -215,7 +215,7 @@ layeredimage side addison costume:
 layeredimage side addison pajamas:
     group anim:
         attribute happy:
-            Movie(play="images/sprites/Addison/Pajamas/addison_happy_pajamas_color.webm", mask="images/sprites/Addison/Pajamas/addison_happy_pajamas_alpha.webm", loop=False, image="images/sprites/Addison/Pajamas/ addison_happy_pajamas.png",start_image="images/sprites/Addison/Pajamas/addison_happy_pajamas_000.png")
+            Movie(play="images/sprites/Addison/Pajamas/addison_happy_pajamas_color.webm", mask="images/sprites/Addison/Pajamas/addison_happy_pajamas_alpha.webm", loop=False, image="images/sprites/Addison/Pajamas/addison_happy_pajamas.png",start_image="images/sprites/Addison/Pajamas/addison_happy_pajamas_000.png")
         attribute sad:
             Movie(play="images/sprites/Addison/Pajamas/addison_sad_pajamas_color.webm", mask="images/sprites/Addison/Pajamas/addison_sad_pajamas_alpha.webm", loop=False, image="images/sprites/Addison/Pajamas/addison_sad_pajamas.png", start_image="images/sprites/Addison/Pajamas/addison_sad_pajamas_000.png")
         attribute sleepy:

@@ -3,3 +3,6 @@
 *.rpyb
 *.rpymc
 log.txt
+*.save
+game/saves/persistent
+traceback.txt
