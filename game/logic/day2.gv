@@ -1,0 +1,15 @@
+digraph FSM {
+	graph [rankdir=LR size="8,5"]
+	node [shape=doublecircle]
+	day2
+	node [shape=point]
+	qi
+	qi -> day2
+	node [shape=circle]
+	day2 -> stay [label="['draw']"]
+	day2 -> follow [label="['follow_doctor']"]
+	stay -> lunchday1 [label="['next']"]
+	follow -> continueday1 [label="['next']"]
+	continueday1 -> lunchday1 [label="['next']"]
+	lunchday1 -> day3 [label="['next']"]
+}

@@ -1,0 +1,31 @@
+digraph FSM {
+	graph [rankdir=LR size="8,5"]
+	node [shape=doublecircle]
+	day5
+	node [shape=point]
+	qi
+	qi -> day5
+	node [shape=circle]
+	day5 -> minigame_hide_seek [label="['next']"]
+	minigame_hide_seek -> hsdiag1 [label="['first_obj']"]
+	hsdiag1 -> minigame_hide_seek [label="['next']"]
+	minigame_hide_seek -> hsdiag2 [label="['second_obj']"]
+	hsdiag2 -> minigame_hide_seek [label="['next']"]
+	minigame_hide_seek -> hsdiag3 [label="['third_obj']"]
+	hsdiag3 -> minigame_hide_seek [label="['next']"]
+	minigame_hide_seek -> hsdiag4 [label="['fourth_obj']"]
+	hsdiag4 -> minigame_hide_seek [label="['next']"]
+	minigame_hide_seek -> hsdiag5 [label="['fifth_obj']"]
+	hsdiag5 -> minigame_hide_seek [label="['next']"]
+	minigame_hide_seek -> hs_end [label="['end_minigame']"]
+	hs_end -> continue_day5 [label="['next']"]
+	continue_day5 -> pumpkinshoot [label="['continue']"]
+	continue_day5 -> skippumpkinshoot [label="['skip']"]
+	pumpkinshoot -> skippumpkinshoot [label="['next']"]
+	skippumpkinshoot -> day6_nolabel [label="['next']"]
+	day6_nolabel -> day6sex [label="['next']"]
+	day6sex -> skiporalday6 [label="['skip']"]
+	day6sex -> continueoralday6 [label="['continue']"]
+	continueoralday6 -> skiporalday6 [label="['next']"]
+	skiporalday6 -> day7 [label="['next']"]
+}

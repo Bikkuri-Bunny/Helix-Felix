@@ -1,0 +1,32 @@
+digraph FSM {
+	graph [rankdir=LR size="8,5"]
+	node [shape=doublecircle]
+	day7
+	node [shape=point]
+	qi
+	qi -> day7
+	node [shape=circle]
+	day7 -> day7yes [label="['yes']"]
+	day7 -> day7no [label="['no']"]
+	day7no -> overhear [label="['next']"]
+	day7yes -> overhear [label="['next']"]
+	overhear -> skiporalday7 [label="['skip']"]
+	overhear -> continueoralday7 [label="['continue']"]
+	continueoralday7 -> skiporalday7 [label="['next']"]
+	skiporalday7 -> sleepday7 [label="['sex', 'late']"]
+	sleepday7 -> day8_nolabel [label="['next']"]
+	day8_nolabel -> lukasnotgone [label="['luka_points_+_3']"]
+	day8_nolabel -> lukasgone [label="['luka_points_-_3']"]
+	lukasnotgone -> headtoart [label="['next']"]
+	lukasgone -> headtoart [label="['next']"]
+	headtoart -> giftmaking [label="['steven', 'lukas', 'pumpkin']"]
+	giftmaking -> mini_game_draw [label="['next']"]
+	mini_game_draw -> giftmaking [label="['end_minigame']"]
+	giftmaking -> giftsteven [label="['steven']"]
+	giftmaking -> giftlukas [label="['lukas']"]
+	giftmaking -> giftpumpkin [label="['pumpkin']"]
+	giftsteven -> day8end [label="['next']"]
+	giftlukas -> day8end [label="['next']"]
+	giftpumpkin -> day8end [label="['next']"]
+	day8end -> day9 [label="['next']"]
+}

@@ -1,0 +1,19 @@
+digraph FSM {
+	graph [rankdir=LR size="8,5"]
+	node [shape=doublecircle]
+	day9
+	node [shape=point]
+	qi
+	qi -> day9
+	node [shape=circle]
+	day9 -> day10 [label="['pumpkin_points_-_2']"]
+	day9 -> cuddleday9 [label="['cuddle']"]
+	day9 -> talkday9 [label="['talk']"]
+	talkday9 -> nextday9 [label="['lukas_points_+_1', 'steven_points_+_1', 'pumpkin_points_+_1']"]
+	nextday9 -> heavyday9 [label="['next']"]
+	heavyday9 -> saturdaysleep [label="['pumpkin_points_+_1']"]
+	heavyday9 -> movethings [label="['pumpkin_points_-_1']"]
+	saturdaysleep -> day10 [label="['next']"]
+	cuddleday9 -> heavyday9 [label="['next']"]
+	movethings -> day10 [label="['next']"]
+}

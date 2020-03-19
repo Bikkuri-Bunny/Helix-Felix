@@ -1,0 +1,17 @@
+digraph FSM {
+	graph [rankdir=LR size="8,5"]
+	node [shape=doublecircle]
+	day4
+	node [shape=point]
+	qi
+	qi -> day4
+	node [shape=circle]
+	day4 -> menuday4 [label="['next']"]
+	menuday4 -> menuday4 [label="['girl']"]
+	menuday4 -> menuday4 [label="['staff']"]
+	menuday4 -> art [label="['like']"]
+	art -> artyes [label="['yes']"]
+	art -> artno [label="['no']"]
+	artyes -> artno [label="['next']"]
+	artno -> day5 [label="['next']"]
+}

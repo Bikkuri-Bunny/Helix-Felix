@@ -1,0 +1,23 @@
+digraph FSM {
+	graph [rankdir=LR size="8,5"]
+	node [shape=doublecircle]
+	day3
+	node [shape=point]
+	qi
+	qi -> day3
+	node [shape=circle]
+	day3 -> flirt [label="['flirt']"]
+	day3 -> question [label="['question']"]
+	flirt -> continueday3 [label="['next']"]
+	question -> continueday3 [label="['next']"]
+	continueday3 -> followpumpkin [label="['pumpkin']"]
+	continueday3 -> followlukas [label="['lukas']"]
+	followpumpkin -> day4 [label="['next']"]
+	followlukas -> heatfood [label="['food']"]
+	followlukas -> askaboutnumbers [label="['ask']"]
+	askaboutnumbers -> heatfood [label="['next']"]
+	heatfood -> skipride [label="['skip']"]
+	heatfood -> continueride [label="['continue']"]
+	continueride -> skipride [label="['next']"]
+	skipride -> day4 [label="['next']"]
+}

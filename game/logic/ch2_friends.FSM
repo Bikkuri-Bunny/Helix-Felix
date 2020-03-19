@@ -1,0 +1,8 @@
+START day10
+if day10 send steven_points_+_1 goto checkonsteven
+if day10 send space goto day10space
+if checkonsteven send next goto day10space
+if day10space send lukas or pumpkin goto continueday10
+if continueday10 send next goto day11
+
+if day11 send next goto endgame_version

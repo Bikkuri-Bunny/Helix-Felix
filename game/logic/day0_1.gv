@@ -1,0 +1,17 @@
+digraph FSM {
+	graph [rankdir=LR size="8,5"]
+	node [shape=doublecircle]
+	day0
+	node [shape=point]
+	qi
+	qi -> day0
+	node [shape=circle]
+	day0 -> day1 [label="['next']"]
+	day1 -> hands [label="['practice_anatomy']"]
+	day1 -> dream [label="['interpret_dream']"]
+	day1 -> colorringbook [label="['coloring_book']"]
+	hands -> breakfastday1 [label="['next']"]
+	dream -> breakfastday1 [label="['next']"]
+	colorringbook -> breakfastday1 [label="['next']"]
+	breakfastday1 -> day2 [label="['next']"]
+}

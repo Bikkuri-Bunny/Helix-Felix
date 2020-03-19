@@ -1,0 +1,166 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+#
+# _errorhandling.rpym
+# 
+# Copyright 2020 badanni <dannyvasconeze@gmail.com>
+# Copyright 2004-2019 Tom Rothamel <pytom@bishoujo.us>
+#
+# Permission is hereby granted, free of charge, to any person
+# obtaining a copy of this software and associated documentation files
+# (the "Software"), to deal in the Software without restriction,
+# including without limitation the rights to use, copy, modify, merge,
+# publish, distribute, sublicense, and/or sell copies of the Software,
+# and to permit persons to whom the Software is furnished to do so,
+# subject to the following conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+# LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+# OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+# WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+#
+# This file contains the code for in-game Ren'Py error handling. It's a
+# module (as opposed to a .rpy file) because that allows us to ensure
+# that it is fully loaded or run before any other Ren'Py code runs.
+init offset = 42
+
+# The screen that is used for error handling.
+screen _exception:
+    modal True
+    zorder 1090
+
+    default tt = __Tooltip("")
+    default fmt_short = __format_traceback(short)
+    default fmt_full = __format_traceback(full)
+    add "gui/overlay/confirm.png"
+    hbox:
+     vbox:
+      frame:
+        style_group ""
+        xsize config.screen_width-250
+        ysize 300
+        background None
+        side "l r":
+           xfill True
+           label _("We, really sorry, but..")
+           text "{size=-3}[config.version!q]\n[renpy.version_only!q]\n[renpy.platform!q]{/size}" text_align 1.0 yalign 0.5
+      null height 160
+      frame:
+        style_group ""
+        background Frame("gui/overlay/background_menu.png",0,0)
+        xsize 1300
+        ysize 500
+        xpadding 30
+        ypadding 20
+        xalign 0.5
+
+        has side "t c b":
+            spacing gui._scale(10)
+
+        side "c":
+            label _("An exception has occurred.") text_size gui._scale(40)
+
+        viewport:
+            id "viewport"
+            child_size (4000, None)
+            mousewheel True
+            draggable True
+            scrollbars "both"
+            xfill True
+            
+            has vbox
+
+            text fmt_short substitute False
+            text fmt_full substitute False
+        text ""
+      frame:
+       style_group ""
+       background Frame("gui/overlay/background_menu.png",0,0)
+       xsize 1300
+       xalign 0.5
+       # Tooltip.
+       text tt.value
+     frame:
+          background Frame("gui/overlay/background_menu.png",0,0)
+          ypos 200
+          vbox:
+                spacing gui._scale(25)
+
+                null height 20
+                if rollback_action and _errorhandling.rollback:
+                    textbutton _("Rollback"):
+                        xalign 0.5
+                        action rollback_action
+                        hovered tt.action(_("Attempts a roll back to a prior time, allowing you to save or choose a different choice."))
+
+                if ignore_action and _errorhandling.ignore:
+                    textbutton _("Ignore"):
+                        xalign 0.5
+                        action ignore_action
+
+                        if _ignore_action:
+                            hovered tt.action(_("Ignores the exception, allowing you to continue."))
+                        else:
+                            hovered tt.action(_("Ignores the exception, allowing you to continue. This often leads to additional errors."))
+
+                if config.developer and not renpy.mobile:
+                    if _errorhandling.reload:
+                        textbutton _("Reload"):
+                            xalign 0.5
+                            action reload_action
+                            hovered tt.action(_("Reloads the game from disk, saving and restoring game state if possible."))
+
+                    if _errorhandling.console:
+                        textbutton _("Console") :
+                            xalign 0.5
+                            action __EnterConsole()
+                            hovered tt.action(_("Opens a console to allow debugging the problem."))
+
+                use _exception_actions(traceback_fn, tt)
+
+                vbox:
+                    xfill True
+
+                    textbutton _("Quit"):
+                        xalign 0.5
+                        action __ErrorQuit()
+                        hovered tt.action(_("Quits the game."))
+                null height 20
+
+    if config.developer and reload_action:
+        key "R" action reload_action
+
+    key "console" action __EnterConsole()
+
+# This screen can be customized to add additional actions to the exception
+# screen. It currently takes two positional parameters.
+#
+# * traceback_fn - a filename containing the exception text.
+# * tt - a tooltip used for help text.
+#
+# For forward-compatibility, custom implmentations should use *args to ignore
+# added arguments.
+screen _exception_actions(traceback_fn, tt, *args):
+
+    textbutton _("Open"):
+        xalign 0.5
+        action _EditFile(traceback_fn)
+        hovered tt.action(_("Opens the traceback.txt file in a text editor."))
+
+    textbutton _("Copy BBCode"):
+        xalign 0.5
+        action _CopyFile(traceback_fn, u"[code]\n{}[/code]\n")
+        hovered tt.action(_("Copies the traceback.txt file to the clipboard as BBcode for forums like https://lemmasoft.renai.us/."))
+
+    textbutton __("Copy Markdown"):
+        xalign 0.5
+        action _CopyFile(traceback_fn, u"```\n{}```\n")
+        hovered tt.action(_("Copies the traceback.txt file to the clipboard as Markdown for Discord."))
+
+init offset = 0

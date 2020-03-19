@@ -1,0 +1,20 @@
+﻿init:
+    image bg room="images/bg_room.jpg"
+    image figure1="images/figure1.jpg"
+    image figure1="images/figure1.png"
+    image figure2="images/figure2.png"
+    image figure3="images/figure3.png"
+    image figure4="images/figure4.png"
+    define aa = Character("test")
+
+label start:
+    scene black
+    $ a=Hide_seek(renpy.random.choice(["figure1","figure2","figure3","figure4"])) #define winner
+    $ a.InitGame("bg room", 0.0, (735, 300), "figure1", (640, 226), "figure2", (288, 38), "figure3", (115, 260), "figure4")
+    $ a.GameAsBG()
+    with dissolve
+    "Find character test"
+    $ a.StartGame(aa)
+    $ a.GameAsBG()
+    "end game"
+    return

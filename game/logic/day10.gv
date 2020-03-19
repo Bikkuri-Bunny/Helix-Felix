@@ -1,0 +1,14 @@
+digraph FSM {
+	graph [rankdir=LR size="8,5"]
+	node [shape=doublecircle]
+	day10
+	node [shape=point]
+	qi
+	qi -> day10
+	node [shape=circle]
+	day10 -> checkonsteven [label="['steven_points_+_1']"]
+	day10 -> day10space [label="['space']"]
+	checkonsteven -> day10space [label="['next']"]
+	day10space -> continueday10 [label="['lukas', 'pumpkin']"]
+	continueday10 -> day11 [label="['next']"]
+}
