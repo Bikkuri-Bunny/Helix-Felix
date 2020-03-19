@@ -114,7 +114,7 @@ screen say(who, what):
                 text who:
                    id "who"
                    #font "fonts/bucc.ttf"
-                
+
 
         text what:
            id "what"
@@ -235,7 +235,7 @@ screen credits():
                 text "HarukaNami" #ok
 
             null height 200
-            
+
             text "Art" size 100
             null height 50
 
@@ -244,10 +244,10 @@ screen credits():
             null height 200
 
             text "Music and Sound Designer" size 100
-            null height 50 
+            null height 50
 
             text "Fogheart, Joe Schwebke"
-            
+
             null height 200
 
             # text "GUI Template" size 100
@@ -262,7 +262,7 @@ screen credits():
                 text "Tanix"
 
                 text "Badanni"
-            
+
             text "Also" size 100
             null height 50
 
@@ -270,20 +270,20 @@ screen credits():
 
                 xalign 0.5
                 spacing 200
-                
+
                 text "OP Voice Acting: Yuuna Saito"
-                
+
                 text "OP Motion Graphics: Vidveo and other CC0 motion graphics"
 
                 text "Background Art: Unsplash, Pixabay, and other CC0 photography"
 
                 text "Sound Effects: Freesound and other CC0 sound"
-                
+
             null height 50
             hbox:
                 xalign 0.5
                 spacing 200
-                
+
                 text "Programs: Ren'py, Live2D, Ibispaint X, OpenShot, LogoMaker"
             null height 80
             text "Special Thanks To" size 100
@@ -293,7 +293,7 @@ screen credits():
 
                 xalign 0.5
                 spacing 200
-                
+
                 text "Rhin, Eric, Tomoka, Lemmasoft, and everyone else who helped us along"
 
             null height 50
@@ -303,9 +303,9 @@ screen credits():
             #    xalign 0.5
             #    spacing 200
 
-            #    text "minute" 
+            #    text "minute"
 
-            #    text "npckc" 
+            #    text "npckc"
 
             null height 200
 
@@ -316,7 +316,7 @@ screen credits():
             # null height 200
 
             # text "Voiceover" size 100
-            # null height 50 
+            # null height 50
 
             # hbox:
             #     xalign 0.5
@@ -386,8 +386,8 @@ style backercredits_text:
 ## Code for Read Percentage: https://lemmasoft.renai.us/forums/viewtopic.php?t=39859
 ## Official Documentation of function: https://www.renpy.org/doc/html/other.html#renpy.count_dialogue_blocks
 
-## This creates a percentage based on how much of the game the player has seen. 
-init python:    
+## This creates a percentage based on how much of the game the player has seen.
+init python:
     numblocks = renpy.count_dialogue_blocks()
     def percent():
         global readtotal
@@ -411,7 +411,7 @@ init 2 python:
 
 ## Actual results screen itself
 screen results():
-    
+
     zorder 200
 
     vbox:
@@ -419,16 +419,16 @@ screen results():
         yalign .2
         spacing 45
 
-        text "Script Seen: [readtotal]%" 
+        text "Script Seen: [readtotal]%"
 
         ## Calculates how long a player has taken to reach this screen in a single playthrough.
         $ minutes, seconds = divmod(int(playtime), 60)
         $ hours, minutes = divmod(minutes, 60)
 
         text "[hours:02d]:[minutes:02d]:[seconds:02d]"
-        
+
         null height 450
-        
+
         text "Fin"
 
 ## For a screen that updates in real time, use the following:
@@ -510,10 +510,10 @@ style choice_button is default:
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
-    outlines  [(1, "#330000", 0, 0)]   
+    outlines  [(1, "#330000", 0, 0)]
 ## Calendar screen #############################################################
 ##
-## 
+##
 ##
 screen calendar_menu():
     zorder 110
@@ -530,7 +530,7 @@ screen calendar_menu():
               xalign 0.5
               yalign 0.5
               font "fonts/ConcertOne-Regular.ttf"
-          
+
         frame:
             background None
             area (1583,32,113,91)#(1589,40,113,84)
@@ -547,7 +547,7 @@ screen calendar_menu():
               xalign 0.5
               yalign 0.5
               font "fonts/ConcertOne-Regular.ttf"
-          
+
 
 ## Quick Menu screen ###########################################################
 ##
@@ -558,7 +558,7 @@ screen quick_menu():
     ## Ensure this appears on top of other screens.
     zorder 100
 
-    if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')): 
+    if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')):
       use renedit_overlay
     if quick_menu:
       if not menu_mini_game:
@@ -572,7 +572,7 @@ screen quick_menu():
           hotspot (1752,922,72,70) action QuickLoad()
           hotspot (1641,922,74,70) action QuickSave()
           hotspot (1697,825,72,71) action ShowMenu('load')#Function(hide_quick_menu,**{"var":False})
-          
+
       else:
         vbox:
           xalign 0.0
@@ -812,7 +812,7 @@ style navigation_button_text:
 ## to other menus, and to start the game.
 
 screen navigation_main():
-    
+
     vbox:
         style_prefix "navigation_main"
 
@@ -945,7 +945,7 @@ screen navigation_main():
 style navigation_main_button is gui_button
 style navigation_main_button_text:# is gui_button_text
   color "#7f7ab1"
-  hover_color "#b1ddff" 
+  hover_color "#b1ddff"
   selected_color "#ff0"
   #bold True
   size 50
@@ -1009,7 +1009,7 @@ style main_menu_vbox:
 
 style main_menu_text:
     properties gui.text_properties("main_menu", accent=True)
-    
+
 
 style main_menu_title:
     properties gui.text_properties("title")
@@ -1187,6 +1187,8 @@ screen about():
 Director/Story/Art/Script: Briar
 Script Edit and Polish: HarukaNami
 Programming: Tanix, Badanni
+Art Director: Kimopoleis
+General Nonsense: PruJo
 Background Art and Reference Photos: Unsplash, Pixabay, and other CC0 photography
 Music: Fogheart, Joe Schwebke
 Sound Effects: Freesound and other CC0 sound
@@ -1835,7 +1837,7 @@ screen confirm(message, yes_action, no_action):
                  action yes_action
                textbutton _("No"):
                  action no_action
-                 
+
 
     ## Right-click and escape answer "no".
     key "game_menu" action no_action
@@ -1851,7 +1853,7 @@ style confirm_button is gui_medium_button
 style confirm_button_text:# is gui_medium_button_text
   color "#ffffff"#color "#7f7ab1"
   #bold True
-  hover_color "#b1ddff" 
+  hover_color "#b1ddff"
   selected_color "#ff0"
   #font "fonts/ChildWriting-Regular.ttf"
 

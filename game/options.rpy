@@ -23,7 +23,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "Demo 1.0"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
@@ -184,7 +184,7 @@ init python:
     build.archive('files')
     build.archive('custom_renpy')
     build.archive('debugger','debugger_rpa')
-    
+
     build.classify('**~', None)
     build.classify('**.bak', None)
     build.classify('**.xcf', None)
@@ -202,8 +202,8 @@ init python:
     build.classify('*.json',None)
     build.classify('game/draw*.png',None)
     build.classify('game/clean.bat',None)
-    
-    
+
+
     #files
     build.classify('game/icon.ico','files')
     build.classify('game/*.rpy','files')
@@ -213,7 +213,7 @@ init python:
     build.classify('game/mini_game/**.png', 'files')
     build.classify('game/days/**.rpy', 'files')
     build.classify('game/days/**.rpyc', 'files')
-    
+
     #multimedia
     build.classify('game/audio/**.ogg','multimedia')
     build.classify('game/audio/**.mp3','multimedia')
@@ -225,15 +225,15 @@ init python:
     build.classify('game/images/**.webm','multimedia')
     build.classify('game/images/**.cur','multimedia')
     build.classify('game/movies/**.ogv','multimedia')
-    
+
     #languages
     build.classify('game/tl/**.rpym','languages')
     build.classify('game/tl/**.rpymc','languages')
-    
+
     #custom_renpy
     build.classify('game/core/**.rpym','custom_renpy')
     build.classify('game/core/**.rpymc','custom_renpy')
-    
+
     #debugger
     build.classify('game/debug/**.rpy','debugger')
     build.classify('game/debug/**.rpyc','debugger')
@@ -243,21 +243,21 @@ init python:
 
     # build.classify('game/**.png', 'archive')
     # build.classify('game/**.jpg', 'archive')
-    
+
     ## packege
     build.package("staff", "zip", "windows linux renpy debugger_rpa debugger_text all",description="with debugger - STAFF ONLY")
     build.package("multimedia", "zip", "multimedia_rpa",description="Multimedia Update")
     build.package("languages", "zip", "languages_rpa",description="languages Update")
-    
+
     ## Files matching documentation patterns are duplicated in a mac app build,
     ## so they appear in both the app and the zip file.
 
     build.documentation('*.html')
     build.documentation('*.txt')
-    
+
     #webupdater https://lemmasoft.renai.us/forums/viewtopic.php?t=48048#p477122
     #validate version https://lemmasoft.renai.us/forums/viewtopic.php?t=48345#p479079
-    
+
     #build.include_update=True
 
 ## Set this to a string containing your Apple Developer ID Application to enable
