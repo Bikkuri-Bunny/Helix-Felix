@@ -1,8 +1,58 @@
 
-*.rpyc
 *.rpyb
-*.rpymc
+*.rpyc
+*.save
 log.txt
+<<<<<<< HEAD
 *.save
 game/saves/persistent
 traceback.txt
+=======
+traceback.txt
+errors.txt
+game/draw0.png
+game/draw1.png
+game/images/BG/Thumbs.db
+game/images/sprites/Thumbs.db
+game/images/CG/Thumbs.db
+game/gui/Thumbs.db
+game/gui/bar/Thumbs.db
+game/gui/button/Thumbs.db
+game/gui/overlay/Thumbs.db
+game/gui/phone/Thumbs.db
+game/gui/scrollbar/Thumbs.db
+game/gui/slider/Thumbs.db
+game/Thumbs.db
+files.txt
+game/images/CG/Part 2/Thumbs.db
+game/logic/Thumbs.db
+renpy-freehand-draw-master/Thumbs.db
+game/images/transitions/Thumbs.db
+game/gui/gallery/BG/Thumbs.db
+game/gui/gallery/Thumbs.db
+game/images/Thumbs.db
+game/images/Thumbs.db
+game/saves/persistent
+game/saves/persistent
+game/saves/navigation.json
+game/tl/None/common.rpymc
+menu_choise outline
+game/images/BONUS/Thumbs.db
+game/images/sprites_webm/Thumbs.db
+game/images/cards/Thumbs.db
+game/mini_game/hide_seek/Thumbs.db
+*.rpymc
+game/images/.DS_Store
+game/images/sprites/Addison/Costume/Thumbs.db
+game/images/sprites/Addison/Pajamas/Thumbs.db
+game/images/sprites/Addison/Still Sprites (backup)/Thumbs.db
+game/images/sprites/Addison/Thumbs.db
+game/images/sprites/Addison/Uniform/Thumbs.db
+game/images/sprites/Ainsley/Thumbs.db
+game/images/sprites/Charlie/Thumbs.db
+game/images/sprites/Jesse/Thumbs.db
+game/images/sprites/Lukas/Thumbs.db
+game/images/sprites/Steven/Thumbs.db
+game/images/Thumbs.db
+game/gui/achievements/Thumbs.db
+>>>>>>> d1ddef6bf9741499cc3218751c82f21182107558
