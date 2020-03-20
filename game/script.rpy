@@ -3,6 +3,7 @@
 #    alpha 0 zoom 4
 #    linear 1 alpha 1 zoom 0.335
 
+
 label splashscreen:
     scene warning
     $ renpy.pause(float(3.0), hard=True)
@@ -27,7 +28,11 @@ label splashscreen:
     $ renpy.movie_cutscene('movies/intro.ogv') # https://www.youtube.com/watch?v=afKvS95MvhI&feature=youtu.be
     return
 
+label after_load:
+  $ rich_presence(config.window_title,'A Bikkuri Bunny Production')
+  return
 label start:
+  $ rich_presence('Part I: Family','A Bikkuri Bunny Production')
   $renpy.scene()
   $ hide_quick_menu(True)
   play music musicneutral loop
@@ -37,6 +42,7 @@ label start:
   jump day0
 
 label before_main_menu:
+  $ rich_presence('Helix Felix','Main Menu')
   $ minutes, seconds = divmod(int(playtime), 60)
   $ hours, minutes = divmod(minutes, 60)
   #easter egg to show in gallery this bonus image
