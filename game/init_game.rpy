@@ -243,7 +243,7 @@ layeredimage pumpkin:
         attribute surprised:
             "images/sprites/Pumpkin/Uniform/pumpkin_surprised.png"
         attribute confused:
-            "images/sprites/Pumpkin/Unifrom/pumpkin_confused.png"
+            "images/sprites/Pumpkin/Uniform/pumpkin_confused.png"
         #attribute makeup_excited:
             #"images/sprites/Pumpkin/Uniform/pumpkin_makeup_excited.png"
 layeredimage pumpkin costume:
