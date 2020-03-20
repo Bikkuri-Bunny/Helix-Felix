@@ -68,7 +68,9 @@ label day4:
 
   s "Oh, Addison! Good morning. What can I do for you?"
   a thinking "You wanted me here, sir. You said I could help you?"
-  s neutral "Oh, right. Yes, thank you for coming."
+  show steven neutral
+  with dissolve
+  s "Oh, right. Yes, thank you for coming."
 
   "Dr. Moore nods and collects up papers to tidy his desk. It sure has gotten a lot more cozy in the last day or two. The new posters are up; I like them a lot. I sit down across from him, still glancing around."
 
@@ -89,35 +91,42 @@ label menuday4:
       a "Well, I was born as a girl."
       s "I saw that on your chart. It looks like everything is going well. Although, I noticed that you're not on hormones, would you like to be?"
       a smile "No, Dr. Collbreed said human hormones wouldn't work- and I don't want hormones anyways, I'm fine."
-      s confused "Did he? I'll have to look into that... But if you don't want them, I guess that's fine."
+      show steven confused
+      with dissolve
+      s "Did he? I'll have to look into that... But if you don't want them, I guess that's fine."
       jump menuday4
     "I'm the Staff Companion.":
       $ steven_points -= 1
       a "I'm the Staff Companion, so I know almost everybody here, not just the kittens. I can introduce you to people if you wan-"
       "He cuts me off."
-      s neutral "No, no thank you. I want to know about you, not your job."
+      show steven neutral
+      with dissolve
+      s "No, no thank you. I want to know about you, not your job."
       jump menuday4
     "I like art?":
       a "Ah, I guess I like art."
-      s surprised "Art? So you draw?"
+      show steven surprised
+      with dissolve
+      s "Art? So you draw?"
       a nod "I'm not good, but it's what I do in my free time."
 
 label art:
+    show steven smile
+    with dissolve
+    s "Could I see some, perhaps? Only if you're comfortable showing me."
+    a thinking "See it? Ah-"
 
-  s smile "Could I see some, perhaps? Only if you're comfortable showing me."
-  a thinking "See it? Ah-"
+    play sound ding
 
-  play sound ding
-
-  menu:
-    "Yes":
-      $ steven_points += 1
-      jump artyes
-    "No":
-      a blush "Ah, I don't know, it's pretty embarrassing."
-      s neutral "Oh- don't worry. I know it can be hard to show people."
-      "He seems pretty disappointed, so I try and change the subject."
-      jump artno
+    menu:
+        "Yes":
+            $ steven_points += 1
+            jump artyes
+        "No":
+            a blush "Ah, I don't know, it's pretty embarrassing."
+            s neutral "Oh- don't worry. I know it can be hard to show people."
+            "He seems pretty disappointed, so I try and change the subject."
+            jump artno
 
 label artyes:
 
@@ -148,7 +157,7 @@ label artyes:
   with easeinright
 
   a "Here you are..."
-  s happy "Addison..."
+  s "Addison..."
 
   hide steven
   $ config.side_image_tag = "alfa"
@@ -158,37 +167,49 @@ label artyes:
 
   s "Addison, these are wonderful. You did these yourself? Where did you learn all this?"
   a "I didn't, I just looked at pictures and I tried to copy them..."
-  s "You taught yourself all this? Addison, you must be very tallented. These are fantastic! You obviously worked hard on these and it really shows. Thank you for showing me."
+  s "You taught yourself all this? Addison, you must be very talented. These are fantastic! You obviously worked hard on these and it really shows. Thank you for showing me."
 
   "I can't stand this. He sets my drawings down on the desk and I try to change the subject as fast as I can."
 
   hide showsteven onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show steven happy
 
 label artno:
 
   a "Dr. Moore, had you ever seen a Felix before?"
-  s thinking "What do you mean? Before I came here?"
+  show steven thinking
+  with dissolve
+  s "What do you mean? Before I came here?"
   a nod "Yes, before you came here, had you ever seen one? When we first met, you just looked so... confused."
 
   "'Confused' isn't the right word, but it will work. I don't want to say 'mean' or 'scary' or anything like that."
 
-  s sad "No, I hadn't. There are only maybe 10,000 of you. I had only seen Felixes in pictures until I came here for the first time."
+  show steven sad
+  with dissolve
+  s "No, I hadn't. There are only maybe 10,000 of you. I had only seen Felixes in pictures until I came here for the first time."
   a thinking "So that means we're really rare outside?"
-  s sigh "There are about 12 billion humans on Earth. That would be more than one million people for every single Felix."
+  show steven sigh
+  with dissolve
+  s "There are about 12 billion humans on Earth. That would be more than one million people for every single Felix."
   a "... How many is a million?"
 
   "He leans forward at his desk, that frown of his coming back. Oh no, did I say something wrong?"
 
-  s angry "A lot. Quite a lot. So yes, you're very rare outside of this building."
+  show steven angry
+  with dissolve
+  s "A lot. Quite a lot. So yes, you're very rare outside of this building."
   a "Oh..."
   s "... Don't worry though. I didn't mean to make you uncomfortable."
   a "No, I was just wondering."
-  s happy "Well, that's good."
+  show steven happy
+  with dissolve
+  s "Well, that's good."
   a "Actually, is it okay if I go to lunch now? I can come back after that."
-  s thinking "Of course. You don't have to stay here with me if you don't want to. I'd never want to keep you here."
+  show steven thinking
+  with dissolve
+  s "Of course. You don't have to stay here with me if you don't want to. I'd never want to keep you here."
   a happy "Okay. I'll be back."
 
   scene hallway1
@@ -217,20 +238,24 @@ label artno:
   "He taps at his computer a bit while we sit, but he's not as distracted as the last time."
 
   a "How many is a million?"
-  l confused "Hm?"
+  show lukas confused
+  with dissolve
+  l "Hm?"
   a "How many is a million? Dr. Moore said there's a million humans for every Felix."
   l "Really?"
 
   "He sits and thinks about it."
 
   l "I guess that's right... It feels like there's more of you."
-  l happy "But I get to see you every day, so I'm biased."
+  show lukas happy
+  with dissolve
+  l "But I get to see you every day, so I'm biased."
   a "But does that mean we're really rare?"
   l "You're special. Rare, yes, like... Like diamonds. You know what a diamond is?"
 
   l "You're rare, special and valuable. It's a good thing."
   a "Oh, okay."
-  l happy "Why are you worried about that?"
+  l "Why are you worried about that?"
   a "Just because Dr. Moore looked at me funny the from first time we met."
   l "Right- I remember you saying that. He doesn't look at you funny anymore, right?"
   a "No."
@@ -357,7 +382,7 @@ label artno:
   l "It will, you just can't know with what. I can neither confirm nor deny."
   a excited "Wait, so it could be?"
 
-  l nod "Like I said, I can neither confirm nor deny. I just need to test it first."
+  l "Like I said, I can neither confirm nor deny. I just need to test it first."
 
   "I kick my feet happily. Maybe it will make my heat die out? Or maybe it will make it hurt less?"
   "I am due to start sometime next week... So it really could be it after all! "
@@ -365,7 +390,7 @@ label artno:
 
   l "I brought you something to make up for the trouble."
 
-  a surrpised "Oh, another coloring book?"
+  a surpised "Oh, another coloring book?"
   l "No..."
 
   "He's digging through his bag, and when he turns to face me he's holding a silver ball in the palm of his hand."
@@ -395,7 +420,7 @@ label artno:
 
   hide sparkle1 onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show lukas happy
 
   "He wraps an arm around my shoulder, pulling me into him. There's no resistance as I grin and cuddle up beside him, shaking the ball and twirling it to see how else the glitter might react."
@@ -421,7 +446,9 @@ label artno:
   with dissolve
 
   a "Yeah, or maybe I counted wrong?"
-  l happy "Don't worry about it."
+  show lukas happy
+  with dissolve
+  l "Don't worry about it."
 
   "He takes my wrist, pulling my hand away from his neck while he leans in, stealing himself a kiss."
 

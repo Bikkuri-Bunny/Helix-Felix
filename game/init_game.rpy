@@ -180,7 +180,7 @@ layeredimage side addison:
         attribute excited:
             Movie(play="images/sprites/Addison/Uniform/addison_excited_color.webm", mask="images/sprites/Addison/Uniform/addison_excited_alpha.webm", loop=False, image="images/sprites/Addison/Uniform/addison_excited.png",start_image="images/sprites/Addison/Uniform/addison_excited_000.png")
         attribute thinking:
-            Movie(play="images/sprites/Addison/Uniform/addison_thinking_color.webm", mask="images/sprites/Addison/Uniform/addison_thinking_alpha.webm", loop=False, image="images/sprites/Addison/Uniform/addiso_thinking.png",start_image="images/sprites/Addison/Uniform/addison_thinking_000.png")
+            Movie(play="images/sprites/Addison/Uniform/addison_thinking_color.webm", mask="images/sprites/Addison/Uniform/addison_thinking_alpha.webm", loop=False, image="images/sprites/Addison/Uniform/addison_thinking.png",start_image="images/sprites/Addison/Uniform/addison_thinking_000.png")
         attribute mad:
             Movie(play="images/sprites/Addison/Uniform/addison_angry_color.webm", mask="images/sprites/Addison/Uniform/addison_angry_alpha.webm", loop=False, image="images/sprites/Addison/Uniform/addison_angry.png",start_image="images/sprites/Addison/Uniform/addison_angry_000.png")
         attribute sad_smile:
@@ -237,7 +237,7 @@ layeredimage pumpkin:
         attribute blush:
             "images/sprites/Pumpkin/Uniform/pumpkin_blush.png"
         attribute laugh:
-            "images/sprites/Pumnpkin/Uniform/pumpkin_laugh.png"
+            "images/sprites/Pumpkin/Uniform/pumpkin_laugh.png"
         attribute angry:
             "images/sprites/Pumpkin/Uniform/pumpkin_angry.png"
         attribute surprised:
@@ -305,7 +305,7 @@ layeredimage lukas:
         attribute angry:
             "images/sprites/Lukas/lukas_angry.png"
         attribute sad_smile:
-            "images/sprites/Lukas/lukas_sad smile.png"
+            "images/sprites/Lukas/lukas_sad_smile.png"
         attribute confused:
             "images/sprites/Lukas/lukas_confused.png"
         attribute surprised:

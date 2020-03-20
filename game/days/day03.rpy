@@ -71,7 +71,7 @@ label day3:
   a surprised "What are you doing, Pumpkin? You'll lose your place in line."
   show pumpkin nervous
   with dissolve
-  p nervous "Haha, that's okay. Is it okay if I stand with you?"
+  p "Haha, that's okay. Is it okay if I stand with you?"
   a thinking "Yeah. You're still nervous about your test aren't you?"
   p "Well..."
   a happy "It's after the shots, right? I told you, you're going to do great."
@@ -324,7 +324,9 @@ label followpumpkin:
 
   p "This looks really fun."
   o "I thought you might say that. Today we're going to just be doing some photography so you can get used to the makeup and clothes. How does that sound?"
-  p excited "Great!"
+  show pumpkin excited
+  with dissolve
+  p "Great!"
 
   hide jesse
   with easeoutright
@@ -411,7 +413,7 @@ label followpumpkin:
   p "Yeah, someone pretending to be my Master."
   show pumpkin happy
   with dissolve
-  p happy "I'm excited! I hope he's cute."
+  p "I'm excited! I hope he's cute."
   a happy "Mmhm."
 
   "He inhales his food and scrambles back up to the stage. At least I can take my time with mine, I haven't even touched anything yet. It's hard for me to eat and talk at the same time."
@@ -469,11 +471,11 @@ label followpumpkin:
   a excited "Wow!"
   show pumpkin excited
   with dissolve
-  p excited "Yep. This is all mine. Nobody has ever seen it before but you."
+  p "Yep. This is all mine. Nobody has ever seen it before but you."
   a "How did you do all this? How did you even find this place?"
   show pumpkin happy
   with dissolve
-  p happy "I found it a really long time ago. Then I saved up some sheets and some holiday decorations that Mr. Jesse was throwing out. I've even got pillows, and Christmas lights, and-"
+  p "I found it a really long time ago. Then I saved up some sheets and some holiday decorations that Mr. Jesse was throwing out. I've even got pillows, and Christmas lights, and-"
   a "You put all this together?"
   p "Yeah, aren't you listening? The Christmas lights were dead but it's easy to get them to turn on again. There's a little glass tube in the plug that you have to move."
   a "Wow..."

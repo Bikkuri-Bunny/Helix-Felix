@@ -26,6 +26,7 @@
 #day 5
 label day5:
   calendar day 5
+  $ config.side_image_tag = "addison"
   play audio bell
   play music musicsleepy loop
 
@@ -44,7 +45,8 @@ label day5:
   scene bg hallway1
   show pumpkin happy
   with dissolve
-
+  pause (2)
+  scene bg cafeteria
   p "Addy, come sit with me!"
   a laugh "Alright."
 
@@ -57,9 +59,14 @@ label day5:
   "He winks at me and I try not to roll my eyes as I smile. We chatter about the meaty scramble for breakfast and about what kind of trouble the kittens might try to get into today."
   "I tell him about how Dr. Moore asked me to help him in the clinic."
 
-  p confused "Huh. That's neat, but you're always working and helping. Don't you need time for yourself?"
+  show pumpkin confused
+  with dissolve
+
+  p "Huh. That's neat, but you're always working and helping. Don't you need time for yourself?"
   a nervous "That's what Dr. Kronauer said, too... But busy is good, it's nice to learn new things."
-  p happy "Yeah, I get that."
+  show pumpkin happy
+  with dissolve
+  p "Yeah, I get that."
 
   "He finishes up his plate that had been piled high."
 
@@ -92,14 +99,19 @@ label day5:
 
   s "It's Ainsley. She was supposed to come in to get her shot yesterday- it's a vaccine she's due for- but she didn't come in. I think she's scared."
   a thinking "Scared of you?"
-  s sad smile "I am new, after all."
+  show steven sad_smile
+  with dissolve
+  s "I am new, after all."
   a "Hmm."
   s "Can you help me find her? I tried looking for her yesterday but I couldn't find her anywhere. I worry that she's hiding from me. If you were there, she may feel more safe."
   a "Oh, yeah. I can do that."
 
   "That seems to calm Dr. Moore down."
 
-  s neutral "Thank you, Addison."
+  show steven neutral
+  with dissolve
+
+  s "Thank you, Addison."
 
   scene bg playroom2
   show steven neutral
@@ -139,7 +151,9 @@ label hs_diag2:
   l "Addy? What are you- oh, Ste-"
   "Dr. Kronauer's gaze seems stuck on Dr. Moore. I look between them."
   a "We're trying to find Ainsley. She won't take her medicine."
-  s angry "Mh."
+  show steven angry
+  with dissolve
+  s "Mh."
   l "Oh. I can help if you-"
   s "We're fine, thanks."
   hide steven
@@ -168,8 +182,12 @@ label hs_end:
 
   $ hide_quick_menu(True)
 
-  l happy "You found her!"
-  s sad smile "Yep, but now you have to come out."
+  show lukas happy
+  with dissolve
+  l "You found her!"
+  show steven sad_smile
+  with dissolve
+  s "Yep, but now you have to come out."
   g "I don't wanna."
   a sad smile "It's okay, Ainsley. Come on, I promise it won't be that bad."
   g "Mhhhh. No."
@@ -184,16 +202,20 @@ label hs_end:
 
   s "I can make it worth your time, too. You know I have some candy in the clinic, and you can have some. I'm not mad at you, Ainsley..."
 
-  "Dr. Kroanuer and I watch as Ainsley peeks her head out from the cabinet."
+  "Dr. Kronanuer and I watch as Ainsley peeks her head out from the cabinet."
 
   show ainsley sad
   with dissolve
   g "Really?"
-  s happy "Really."
+  show steven happy
+  with dissolve
+  s "Really."
 
   "She comes out from her hiding spot and nervously glances around before taking hold of Dr. Moore's sleeve."
 
-  s sad smile "Hah, it's okay, Ainsley. I told you, you're not in trouble."
+  show steven sad_smile
+  with dissolve
+  s "Hah, it's okay, Ainsley. I told you, you're not in trouble."
   g "Yeah..."
   s "Okay..."
 
@@ -250,7 +272,7 @@ label hs_end:
   "I turn around and go back to the paperwork I was going to organize for Dr. Moore today. He wanted certain pages pulled out of files, photocopied, and to be put back in."
   "I expected Ainsley to run back to the playroom, but she sticks around and holds onto Dr. Moore's pant leg as he works, and with her eyes wide she asks a lot of questions."
   "Reminds me a bit of myself, I guess."
-
+  #add a few transforms so that she runs around the screen
   g "What's that?"
   g "What's this?"
   g "What does that do?"
@@ -267,17 +289,25 @@ label hs_end:
   with easeinleft
 
   l "Hey- everything turn out alright?"
-  s neutral "Yes."
+  show steven neutral
+  with dissolve
+  s "Yes."
   a "Yeah, she got her shot just fine. Now she's having fun."
   g "Yeah! I like Dr. Moore!"
-  l happy "That's good!"
+  show lukas happy
+  with dissolve
+  l "That's good!"
   s "Is there a reason why you're here?"
-  l neutral "Ah, just wanted to make sure everything was okay- see if you needed some help."
+  show lukas neutral
+  with dissolve
+  l "Ah, just wanted to make sure everything was okay- see if you needed some help."
   s "I'm fine. I have Addison to help me."
   l "Oh, well, let's all have lunch together then."
   a "Sure!"
   s "I'm busy right now."
-  l sad smile "Oh, okay."
+  show lukas sad_smile
+  with dissolve
+  l "Oh, okay."
 
   "Dr. Kronauer glances at me."
 
@@ -294,12 +324,16 @@ label hs_end:
   a "Ainsley, you need to go eat now."
   g "Nooooo. I wanna stay here."
   a "Come on. We'll go together, how's that?"
-  g sad "Nooo. I wanna stay here with Dr. Moore."
+  show ainsley sad
+  with dissolve
+  g "Nooo. I wanna stay here with Dr. Moore."
 
   "Already? I thought this morning she was afraid of him."
 
   a "You'll get hungry."
-  s happy "He's right. You should go eat, I'll be right here when you're done."
+  show steven happy
+  with dissolve
+  s "He's right. You should go eat, I'll be right here when you're done."
   g "Mhhh... Okay."
 
   hide steven
@@ -361,12 +395,16 @@ label continueday5:
   p "So I wanted you to come with me."
   a "Oh..."
   "You want me to watch?"
-  p laugh "Haha. That's not what I meant- I mean- I feel better when you're around, you know?"
+  show pumpkin laugh
+  with dissolve
+  p "Haha. That's not what I meant- I mean- I feel better when you're around, you know?"
 
   "He's blushing so hard. Of course, it's probably really embarrassing for him to ask me like this .."
 
   a "Yeah. I can be there for you. Don't worry, I'll come with."
-  p happy "Okay. Thank you Addy."
+  show pumpkin happy
+  with dissolve
+  p "Okay. Thank you Addy."
 
   "We finished up our lunch and we went out. Pumpkin gently wraps his fingers around mine. His hand is gentle and nothing like his usual grip. I squeeze it softly to reassure him."
 
@@ -375,10 +413,10 @@ label continueday5:
   with dissolve
   pause (2)
   scene bg filmset2
-  show pumpkin happy
+  show pumpkin excited
   with dissolve
 
-  p excited "Pumpkins!!!"
+  p "Pumpkins!!!"
 
   play music musicupbeat loop
 
@@ -392,7 +430,7 @@ label continueday5:
   "It's nice to see him in his makeup again. While he's doing that, I scan over the stage and cameras, wandering around the room and finding a seat between some equipment. It's where Pumpkin and I will be able to see each other clearly."
   "Soon Pumpkin is dragged behind a door labeled 'Dressing Room' and disapears."
 
-  if _legal_age = True:
+  if persistent._legal_age:
       play sound ding
 
       menu:

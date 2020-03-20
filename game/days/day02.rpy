@@ -25,6 +25,7 @@
 
 #Day 2
 label day2:
+    $ config.side_image_tag ="addison"
     calendar day 2
     play audio bell
     a pajamas happy "Mmmmm! Big stretch!"
@@ -263,7 +264,7 @@ label continueday1:
 
     s "Okay. I'll also get a couple of plants to liven it up a bit more too."
     a excited "I love plants!"
-    s happy "Okay. Lots of plants then."
+    s "Okay. Lots of plants then."
     j "That sounds wonderful. Addy, we'll have to talk about some things privately. Will you excuse us?"
     a thinking "Oh, okay."
 
