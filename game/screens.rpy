@@ -111,9 +111,16 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                text who:
-                   id "who"
-                   #font "fonts/bucc.ttf"
+                frame:
+                  background "#000000AA" #None hide background
+                  area (10,10,178,91)#(x0,y0,xsize,ysize)
+                  text who:
+                    id "who"
+                    color "#35b2c7"
+                    #size 28
+                    xalign 0.5
+                    yalign 0.5
+                    font "fonts/ConcertOne-Regular.ttf"
 
 
         text what:
