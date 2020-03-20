@@ -505,12 +505,13 @@ style choice_vbox:
 
     spacing gui.choice_spacing
 
-style choice_button is default:
+style choice_button is button:
     properties gui.button_properties("choice_button")
 
 style choice_button_text is default:
     properties gui.button_text_properties("choice_button")
     outlines  [(1, "#330000", 0, 0)]
+    yalign 0.5
 ## Calendar screen #############################################################
 ##
 ##
