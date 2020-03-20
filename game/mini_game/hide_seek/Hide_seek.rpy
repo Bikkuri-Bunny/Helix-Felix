@@ -97,6 +97,7 @@ screen hs_minigame(hide_seek):
                 hover hide_seek.oN[i]+"_hover"
                 mouse "minigame_hs"
                 if hide_seek.oActive:
+                    hovered Play("purring", "audio/cat_1s.ogg",loop=False)
                     action [oClick(i), Return()]
                 else:
                     action []
