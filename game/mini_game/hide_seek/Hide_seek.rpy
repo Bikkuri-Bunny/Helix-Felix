@@ -94,7 +94,7 @@ screen hs_minigame(hide_seek):
                 focus_mask True
                 pos(hide_seek.oXY[i])
                 idle hide_seek.oN[i]
-                hover hide_seek.oN[i]
+                hover hide_seek.oN[i]+"_hover"
                 mouse "minigame_hs"
                 if hide_seek.oActive:
                     action [oClick(i), Return()]

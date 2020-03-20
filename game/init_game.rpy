@@ -350,6 +350,11 @@ image hs2 = "mini_game/hide_seek/hs2.png"
 image hs3 = "mini_game/hide_seek/hs3.png"
 image hs4 = "mini_game/hide_seek/hs4.png"
 image hs5 = "mini_game/hide_seek/hs5.png"
+image hs1_hover = "mini_game/hide_seek/hs1_hover.png"
+image hs2_hover = "mini_game/hide_seek/hs2_hover.png"
+image hs3_hover = "mini_game/hide_seek/hs3_hover.png"
+image hs4_hover = "mini_game/hide_seek/hs4_hover.png"
+image hs5_hover = "mini_game/hide_seek/hs5_hover.png"
 #coding notes
 #rpy monologue single
 
