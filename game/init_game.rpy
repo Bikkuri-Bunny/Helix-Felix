@@ -44,7 +44,7 @@ define narrator = Character(what_outlines=[ (1, "#000000") ], ctc="ctc_blink", c
 define narrator_nvl = Character(None, kind=nvl,what_outlines=[ (1, "#000000") ], ctc="ctc_blink",ctc_position="nestled",callback=purring_voice)
 #CTC
 image ctc_blink:
-       "gui/arrow.png"
+       "gui/CTC.png"
        linear 0.75 alpha 1.0
        linear 0.75 alpha 0.0
        repeat
@@ -374,6 +374,7 @@ default steven_points = 0
 default lukas_points = 0
 
 default main_menu_bt=[True]*22
+default choice_menu_bt=[True]*23
 
 ##### calendar text #########
 define calendar_menu_text=[]
@@ -394,19 +395,19 @@ init -1 python hide:
 
 ###### days ###############
 init:
-  calendar add "Sun" "7th" "March" #day0
-  calendar add "Mon" "8th" "March" #day1
-  calendar add "Tues" "9th" "March" #day2
-  calendar add "Wed" "10th" "March" #day3
-  calendar add "Fri" "13th" "March" #day4
-  calendar add "Mon" "16th" "March" #day5
-  calendar add "Wed" "18th" "March" #day6
-  calendar add "Thur" "19th" "March" #day7
-  calendar add "Fri" "20th" "March" #day8
-  calendar add "Sat" "21th" "March" #day9
-  calendar add "Mon" "23rd" "March" #day10
-  calendar add "Wed" "25th" "March" #day11
-  calendar add "Thur" "26th" "March" #day12
+  calendar add "Sun" "7" "3" #day0
+  calendar add "Mon" "8" "3" #day1
+  calendar add "Tues" "9" "3" #day2
+  calendar add "Wed" "10" "3" #day3
+  calendar add "Fri" "13" "3" #day4
+  calendar add "Mon" "16" "3" #day5
+  calendar add "Wed" "18" "3" #day6
+  calendar add "Thur" "19" "3" #day7
+  calendar add "Fri" "20" "3" #day8
+  calendar add "Sat" "21" "3" #day9
+  calendar add "Mon" "23" "3" #day10
+  calendar add "Wed" "25" "3" #day11
+  calendar add "Thur" "26" "3" #day12
 
 ###########################
 
@@ -431,7 +432,7 @@ init python:
   renpy.music.register_channel("purring", "sfx", True)
   #config.speaking_attribute = "speaking"
   #addison side allways
-  config.side_image_tag = None
+  config.side_image_tag = "addison"
   #narrator.image_tag = "addison"
   config.tag_layer['bg'] = 'background'
   config.tag_layer['cg'] = 'event'
@@ -441,6 +442,12 @@ init python:
    else:
     renpy.store.quick_menu=False
    return None
+  def hovered_choice_menu_bt(var):
+    renpy.store.choice_menu_bt[var]=False
+    return None
+  def unhovered_choice_menu_bt(var):
+    renpy.store.choice_menu_bt[var]=True
+    return None
   def hovered_main_menu_bt(var):
     renpy.store.main_menu_bt[var]=False
     return None

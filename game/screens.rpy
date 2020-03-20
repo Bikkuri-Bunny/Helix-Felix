@@ -98,10 +98,7 @@ style frame:
 screen say(who, what):
     style_prefix "say"
 
-    ## If there's a side image, display it above the text. Do not display on the
-    ## phone variant - there's no room.
-    if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+
 
     window:
         id "window"
@@ -112,8 +109,8 @@ screen say(who, what):
                 id "namebox"
                 style "namebox"
                 frame:
-                  background "#000000AA" #None hide background
-                  area (10,10,178,91)#(x0,y0,xsize,ysize)
+                  background None #None hide background
+                  area (100,10,178,91)#(x0,y0,xsize,ysize)
                   text who:
                     id "who"
                     color "#35b2c7"
@@ -126,7 +123,10 @@ screen say(who, what):
         text what:
            id "what"
            #font "fonts/bucc.ttf"
-
+    ## If there's a side image, display it above the text. Do not display on the
+    ## phone variant - there's no room.
+    if not renpy.variant("small"):
+        add SideImage() xalign 0.0 yalign 1.0
 
 
 
@@ -488,12 +488,17 @@ screen choice(items,badge=True):
     style_prefix "choice"
 
     vbox:
-        for i in items:
+        for j,i in enumerate(items):
             #$ badge = i.kwargs.get("badge", None)
             textbutton i.caption:
               action i.action
+              hovered Function(hovered_choice_menu_bt,j)
+              unhovered Function(unhovered_choice_menu_bt,j)
               if badge:
-                    foreground Transform("badge", xpos=0, yalign=.5)
+                     if choice_menu_bt[j]:
+                         foreground None
+                     else:
+                         foreground Transform("badge", xpos=0, yalign=.5)
 
 
 ## When this is true, menu captions will be spoken by the narrator. When false,
@@ -507,7 +512,7 @@ style choice_button_text is button_text
 
 style choice_vbox:
     xalign 0.5
-    ypos 405
+    ypos 505
     yanchor 0.5
 
     spacing gui.choice_spacing
@@ -527,34 +532,36 @@ screen calendar_menu():
     zorder 110
     if True:
       frame:
-        xfill True
         background "gui/calendar.png"
+        xpos 1575
         frame:
             background None #"#000000AA"
-            area (1385,32,178,91)#(1392,37,176,91)
+            area (80, 225, 178, 91)#(1392,37,176,91)
             text calendar_text[0]:
               color "#35b2c7"
-              #size 28
+              size 50
               xalign 0.5
               yalign 0.5
-              font "fonts/ConcertOne-Regular.ttf"
+              font "fonts/endutt.otf"
 
         frame:
             background None
-            area (1583,32,113,91)#(1589,40,113,84)
+            area (70,75,113,91)#(1589,40,113,84)
             text calendar_text[1]:
               color "#35b2c7"
+              size 125
               xalign 0.5
               yalign 0.5
-              font "fonts/ConcertOne-Regular.ttf"
+              font "fonts/Chewy.ttf"
         frame:
             background None
-            area (1710,32,112,91)
+            area (150,155,112,91)
             text calendar_text[2]:
               color "#35b2c7"
+              size 125
               xalign 0.5
               yalign 0.5
-              font "fonts/ConcertOne-Regular.ttf"
+              font "fonts/Chewy.ttf"
 
 
 ## Quick Menu screen ###########################################################
@@ -570,16 +577,16 @@ screen quick_menu():
       use renedit_overlay
     if quick_menu:
       if not menu_mini_game:
-        imagemap:
-          idle "gui/main_menu_all_small.png"
-          hover "gui/main_menu_all_small_hover.png"
-          ground "gui/main_menu_all_small.png"
-          hotspot (1582,822,76,71) action Preference("auto-forward", "toggle")
-          hotspot (1752,723,70,76) action Skip() alternate Skip(fast=True, confirm=True)
-          hotspot (1814,831,62,62) action Rollback()
-          hotspot (1752,922,72,70) action QuickLoad()
-          hotspot (1641,922,74,70) action QuickSave()
-          hotspot (1697,825,72,71) action ShowMenu('load')#Function(hide_quick_menu,**{"var":False})
+        hbox:
+          style_prefix "quick"
+          xalign 0.5
+          yalign 1.0
+          textbutton "Save" action QuickSave()
+          textbutton "Load" action QuickLoad()
+          textbutton "Skip" action Skip() alternate Skip(fast=True, confirm=True)
+          textbutton "Auto" action Preference("auto-forward", "toggle")
+          textbutton "Back"action Rollback()
+          textbutton "Menu" action ShowMenu("preferences")
 
       else:
         vbox:
@@ -612,9 +619,6 @@ init python:
     config.overlay_screens.append("quick_menu")
 
 default quick_menu = True
-
-style quick_button is default
-style quick_button_text is button_text
 
 style quick_button:
     properties gui.button_properties("quick_button")
