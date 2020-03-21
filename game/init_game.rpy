@@ -448,6 +448,7 @@ init python:
   def unhovered_choice_menu_bt(var):
     renpy.store.choice_menu_bt[var]=True
     return None
+
   def hovered_main_menu_bt(var):
     renpy.store.main_menu_bt[var]=False
     return None

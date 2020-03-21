@@ -59,6 +59,8 @@ style vscrollbar:
     xsize gui.scrollbar_size
     base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
     thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    unscrollable "hide" # Prevents Ren'Py from showing a scrollbar when there's nothing to scroll
+
 
 style slider:
     ysize gui.slider_size
@@ -117,7 +119,7 @@ screen say(who, what):
                     #size 28
                     xalign 0.5
                     yalign 0.5
-                    font "fonts/ConcertOne-Regular.ttf"
+                    #font "fonts/ConcertOne-Regular.ttf"
 
 
         text what:
@@ -583,9 +585,10 @@ screen quick_menu():
           yalign 1.0
           textbutton "Save" action QuickSave()
           textbutton "Load" action QuickLoad()
-          textbutton "Skip" action Skip() alternate Skip(fast=True, confirm=True)
           textbutton "Auto" action Preference("auto-forward", "toggle")
-          textbutton "Back"action Rollback()
+          textbutton "Skip" action Skip() alternate Skip(fast=True, confirm=True)
+          textbutton "Back" action Rollback()
+          textbutton "History" action ShowMenu("history")
           textbutton "Menu" action ShowMenu("preferences")
 
       else:
@@ -1565,38 +1568,62 @@ screen history():
 
     tag menu
 
-    ## Avoid predicting this screen, as it can be very large.
     predict False
 
-    use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
+    frame:
 
         style_prefix "history"
 
-        for h in _history_list:
+        label _("History")
 
-            window:
+        left_margin 200
+        right_margin 200
+        top_margin 50
+        bottom_margin 50
 
-                ## This lays things out properly if history_height is None.
-                has fixed:
-                    yfit True
+        left_padding 50
+        right_padding 100
+        top_padding 150
+        bottom_padding 100
 
-                if h.who:
+        vpgrid:
 
-                    label h.who:
-                        style "history_name"
-                        substitute False
+            cols 1
+            yinitial 1.0
 
-                        ## Take the color of the who text from the Character, if
-                        ## set.
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
+            draggable True
+            mousewheel True
+            scrollbars "vertical"
 
-                $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                text what:
-                    substitute False
+            for h in _history_list:
 
-        if not _history_list:
-            label _("The dialogue history is empty.")
+                window:
+
+                    ## This lays things out properly if history_height is None.
+                    has fixed:
+                        yfit True
+
+                    if h.who:
+
+                        label h.who:
+                            style "history_name"
+
+                            ## Take the color of the who text from the Character, if
+                            ## set.
+                            if "color" in h.who_args:
+                                text_color h.who_args["color"]
+
+                    $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
+                    text what
+
+            if not _history_list:
+
+                text "The dialogue history is empty." line_spacing 10
+                ## Adding line_spacing prevents the bottom of the text
+                ## from getting cut off. Adjust when replacing the
+                ## default fonts.
+
+        textbutton _("Return") action Return() yalign 1.1 xalign 1.0
 
 
 ## This determines what tags are allowed to be displayed on the history screen.
@@ -1616,8 +1643,7 @@ style history_label is gui_label
 style history_label_text is gui_label_text
 
 style history_window:
-    #xfill True
-    xsize 1100
+    xfill True
     ysize gui.history_height
 
 style history_name:
@@ -1644,7 +1670,8 @@ style history_label:
 
 style history_label_text:
     xalign 0.5
-
+    ypos -100
+    size gui.label_text_size
 
 ## Help screen #################################################################
 ##
