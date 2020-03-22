@@ -21,24 +21,24 @@ transform myright:
     xalign 0.7
     yalign 1.0
 
-define a = Character(_("Addison"), who_color="#ffdb90", who_outlines=[ (1, "#d1910a") ], what_color="#ffdb90", what_outlines=[ (1, "#d1910a") ], image="addison",ctc="ctc_blink",ctc_position="nestled",callback=purring_voice)
+define a = Character(_("Addison"), who_color="#ffdb90", who_outlines=[ (1, "#ffffff") ], what_color="#ffdb90", what_outlines=[ (1, "#ffffff") ], image="addison",ctc="ctc_blink",ctc_position="nestled",callback=purring_voice)
 #orange
-define l = Character(_("Dr. Kronauer"), who_color="#a6f7e3", who_outlines=[ (1, "#119071") ], what_color="#a6f7e3", what_outlines=[ (1, "#119071") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"lukas"
+define l = Character(_("Dr. Kronauer"), who_color="#a6f7e3", who_outlines=[ (1, "#ffffff") ], what_color="#a6f7e3", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"lukas"
 #cyan
 #Because names can be confusing when reading this script; Dr. Lukas Kronauer, usually referred to as Lukas ooc
-define s = Character(_("Dr. Moore"), who_color="#fd9ebb", who_outlines=[ (1, "#ff2367") ], what_color="#fd9ebb", what_outlines=[ (1, "#ff2367") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"steven"
+define s = Character(_("Dr. Moore"), who_color="#fd9ebb", who_outlines=[ (1, "#ffffff") ], what_color="#fd9ebb", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"steven"
 #pink
 #Dr. Steven Moore, usually referred to as Steven ooc
-define p = Character(_("Pumpkin"), who_color="#b2fa99", who_outlines=[ (1, "#30a00a") ], what_color="#b2fa99", what_outlines=[ (1, "#30a00a") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"pumpkin"
+define p = Character(_("Pumpkin"), who_color="#b2fa99", who_outlines=[ (1, "#ffffff") ], what_color="#b2fa99", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"pumpkin"
 #green
-define j = Character(_("Mr. Jesse"), who_color="#fbf896", who_outlines=[ (1, "#b2ad08") ], what_color="#fbf896", what_outlines=[ (1, "#b2ad08") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"jesse"
+define j = Character(_("Mr. Jesse"), who_color="#fbf896", who_outlines=[ (1, "#ffffff") ], what_color="#fbf896", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"jesse"
 #yellow
-define c = Character(_("Charlie"), who_color="#99a8ff", who_outlines=[ (1, "#3654ff") ], what_color="#99a8ff", what_outlines=[ (1, "#3654ff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"charlie"
+define c = Character(_("Charlie"), who_color="#99a8ff", who_outlines=[ (1, "#ffffff") ], what_color="#99a8ff", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"charlie"
 #blue
-define g = Character(_("Ainsley"), who_color="#eba9ff", who_outlines=[ (1, "#ce2dff") ], what_color="#eba9ff", what_outlines=[ (1, "#ce2dff") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)#"ainsley"
+define g = Character(_("Ainsley"), who_color="#eba9ff", who_outlines=[ (1, "#ffffff") ], what_color="#eba9ff", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"ainsley"
 #purple
 #Note she had to be 'G' for 'Good Girl'
-define o = Character(_("Staff"), who_color="#ffffff", who_outlines=[ (1, "#000000") ], what_color="#ffffff", what_outlines=[ (1, "#000000") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
+define o = Character(_("Staff"), who_color="#000000", who_outlines=[ (1, "#ffffff") ], what_color="#000000", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)
 #grey
 define narrator = Character(what_color="#ffffff", what_outlines=[ (1, "#000000") ],  ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
 define narrator_nvl = Character(None, kind=nvl,what_outlines=[ (1, "#000000") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
