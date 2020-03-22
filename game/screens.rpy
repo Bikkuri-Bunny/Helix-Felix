@@ -598,15 +598,6 @@ screen quick_menu():
           imagebutton auto "gui/open_menu_%s.png" action Function(hide_quick_menu,**{"var":True})
         else:
           pass
-        #if not renpy.android or not renpy.ios:
-        #  imagemap:
-        #    idle "gui/main_menu_all_small_close.png"
-        #    hover "gui/main_menu_all_small_close_hover.png"
-        #    ground "gui/main_menu_all_small_close.png"
-        #    hotspot (1594,692,71,66) action Function(hide_quick_menu,**{"var":True})
-        #else:
-        #  imagebutton auto "gui/open_menu_%s.png" action Function(hide_quick_menu,**{"var":True})
-
 
 
 ## This code ensures that the quick_menu screen is displayed in-game, whenever
@@ -817,63 +808,54 @@ style navigation_button:
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
 
-## Navigation main screen ###########################################################
+
+
+
+
+## Main Menu screen ############################################################
 ##
-## This screen is included in the main and game menus, and provides navigation
-## to other menus, and to start the game.
+## Used to display the main menu when Ren'Py starts.
+##
+## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
-screen navigation_main():
+screen main_menu():
 
+    ## This ensures that any other menu screen is replaced.
+    tag menu
+
+    style_prefix "main_menu"
+
+    add gui.main_menu_background
+
+    ## This empty frame darkens the main menu
+    frame:
+        pass
+
+    ## The use statement includes another screen inside this one. The actual
+    ## contents of the main menu are in the navigation screen.
     vbox:
-        style_prefix "navigation_main"
+        style_prefix "main_menu"
 
         #xpos gui.navigation_xpos
-        #yalign 0.5
-        xpos 1366#1134
-        ypos 424
-        xmaximum 500
-        xminimum 500
-        xalign 0.5
+        yalign 0.5
+        xsize 500
+        xalign 1.0
         ysize 600
 
         spacing gui.navigation_spacing
 
 
         frame:
-            background None
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action Start()
-
-         # if main_menu_bt[0]:
-        #    background im.Scale("gui/button_hover.png", 500, 100)
-         # else:
-        #    background im.Scale("gui/button_idle.png", 500, 100)
-         # hbox:
-        #    textbutton _("S T A R T"):
-        #      action [Play("sound", "audio/ding.ogg"), Start() ]
-        #      hovered Function(hovered_main_menu_bt,0)
-        #      unhovered Function(unhovered_main_menu_bt,0)
-        #      xmaximum 500
-        #      xminimum 500
-        #      xalign 0.5
-        #      ypos 10
-
+            text _("Start")
 
         frame:
-          if main_menu_bt[1]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("L O A D"):
-              action ShowMenu("load")
-              hovered Function(hovered_main_menu_bt,1)
-              unhovered Function(unhovered_main_menu_bt,1)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action ShowMenu("load")
+            text _("Load")
 
         frame:
           if main_menu_bt[2]:
@@ -921,9 +903,6 @@ screen navigation_main():
               xalign 0.5
               ypos 10
         if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
             frame:
               if main_menu_bt[5]:
                 background im.Scale("gui/button_hover.png", 500, 100)
@@ -957,47 +936,6 @@ screen navigation_main():
                   xalign 0.5
                   ypos 10
 
-style navigation_main_button is gui_button
-style navigation_main_button_text:# is gui_button_text
-  color "#7f7ab1"
-  hover_color "#b1ddff"
-  selected_color "#ff0"
-  #bold True
-  size 50
-  xalign 0.5
-
-
-style navigation_button:
-    size_group "navigation_main"
-    properties gui.button_properties("navigation_button")
-
-style navigation_button_text:
-    properties gui.button_text_properties("navigation_button")
-
-## Main Menu screen ############################################################
-##
-## Used to display the main menu when Ren'Py starts.
-##
-## https://www.renpy.org/doc/html/screen_special.html#main-menu
-
-screen main_menu():
-
-    ## This ensures that any other menu screen is replaced.
-    tag menu
-
-    style_prefix "main_menu"
-
-    add gui.main_menu_background
-
-    ## This empty frame darkens the main menu
-    frame:
-        pass
-
-    ## The use statement includes another screen inside this one. The actual
-    ## contents of the main menu are in the navigation screen.
-    use navigation_main
-
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
@@ -1005,9 +943,6 @@ style main_menu_text is gui_text
 style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
-style main_menu_frame:
-    xsize 430
-    yfill True
 
     #background "gui/overlay/main_menu.png"
 
@@ -1030,6 +965,16 @@ style main_menu_version:
     #xpos 1280
     #ypos 322
     color "#7f7ab1"
+style main_menu_button is gui_button
+style main_menu_button_text:# is gui_button_text
+  color "#7f7ab1"
+  hover_color "#b1ddff"
+  selected_color "#ff0"
+  #bold True
+  size 50
+  xalign 0.5
+
+
 
 
 ## Game Menu screen ############################################################
