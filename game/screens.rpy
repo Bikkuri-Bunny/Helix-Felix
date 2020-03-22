@@ -488,12 +488,11 @@ style input:
 
 screen choice(items,badge=True):
     style_prefix "choice"
-
     vbox:
         for j,i in enumerate(items):
             #$ badge = i.kwargs.get("badge", None)
             textbutton i.caption:
-              action i.action
+              action [i.action,Function(reset_choice_menu_bt)]
               hovered Function(hovered_choice_menu_bt,j)
               unhovered Function(unhovered_choice_menu_bt,j)
               if badge:
@@ -820,6 +819,7 @@ style navigation_button_text:
 
 screen main_menu():
 
+<<<<<<< HEAD
     ## This ensures that any other menu screen is replaced.
     tag menu
 
@@ -833,18 +833,34 @@ screen main_menu():
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
+=======
+    if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')):
+
+              vbox:
+                style_prefix "debug"
+                textbutton _("Debugger"):
+                  action Show("_debuger")
+>>>>>>> a78cc4d430492ae75eff32fc8f9ea731af1ed439
     vbox:
         style_prefix "main_menu"
 
         #xpos gui.navigation_xpos
+<<<<<<< HEAD
         yalign 0.5
         xsize 500
         xalign 1.0
+=======
+        #yalign 0.5
+        xpos 1474#1134
+        ypos 504
+        xsize 578#500
+        xalign 0.5
+>>>>>>> a78cc4d430492ae75eff32fc8f9ea731af1ed439
         ysize 600
 
-        spacing gui.navigation_spacing
+        #spacing gui.navigation_spacing
 
-
+<<<<<<< HEAD
         frame:
             imagebutton:
                 auto "gui/button/short_button_%s.png"
@@ -856,51 +872,65 @@ screen main_menu():
                 auto "gui/button/short_button_%s.png"
                 action ShowMenu("load")
             text _("Load")
+=======
+
+        #frame:
+        #    background None
+        #    imagebutton:
+        #        auto "gui/button/short_button_%s.png"
+        #        action Start()
+        #    hbox:
+        #      textbutton _("Start"):
+        #        action NullAction()
+        #        xmaximum 500
+        #        xminimum 500
+        #        xalign 0.5
+        #        ypos 10
+
+        frame:
+         if main_menu_bt[0]:
+            background "gui/button/short_button_idle.png"#im.Scale("gui/button/short_button_hover.png", 500, 100)
+         else:
+            background "gui/button/short_button_hover.png"#im.Scale("gui/button/short_button_idle.png", 500, 100)
+         hbox:
+            textbutton _("New Game"):
+              action [Play("sound", "audio/ding.ogg"), Start(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
+              hovered Function(hovered_main_menu_bt,0)
+              unhovered Function(unhovered_main_menu_bt,0)
+              xsize 570
+              xalign 0.5
+              ysize 117
+              yalign 0.5
+
+        frame:
+          if main_menu_bt[1]:
+            background "gui/button/short_button_idle.png"
+          else:
+            background "gui/button/short_button_hover.png"
+          hbox:
+            textbutton _("Options"):
+              action [ShowMenu("preferences"), Function(reset_main_menu_bt)]
+              hovered Function(hovered_main_menu_bt,1)
+              unhovered Function(unhovered_main_menu_bt,1)
+              xsize 570
+              xalign 0.5
+              ysize 117
+              yalign 0.5
+>>>>>>> a78cc4d430492ae75eff32fc8f9ea731af1ed439
 
         frame:
           if main_menu_bt[2]:
-            background im.Scale("gui/button_hover.png", 500, 100)
+            background "gui/button/short_button_idle.png"
           else:
-            background im.Scale("gui/button_idle.png", 500, 100)
+            background "gui/button/short_button_hover.png"
           hbox:
-            textbutton _("PREFERENCES"):
-              action [Play("sound", "audio/ding.ogg"), ShowMenu("preferences") ]
+            textbutton _("Gallery"):
+              action [ShowMenu("gallery"), Function(reset_main_menu_bt)]
               hovered Function(hovered_main_menu_bt,2)
               unhovered Function(unhovered_main_menu_bt,2)
-              xmaximum 500
-              xminimum 500
+              xsize 570
               xalign 0.5
-              ypos 10
-
-        frame:
-          if main_menu_bt[3]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("G A L L E R Y"):
-              action ShowMenu("gallery")
-              hovered Function(hovered_main_menu_bt,3)
-              unhovered Function(unhovered_main_menu_bt,3)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
-
-        if persistent.draw_mode:
-         frame:
-          if main_menu_bt[4]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("D R A W"):
-              action Start("dibujar")#ShowMenu("about") #"headtoart"
-              hovered Function(hovered_main_menu_bt,4)
-              unhovered Function(unhovered_main_menu_bt,4)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
+<<<<<<< HEAD
               ypos 10
         if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')):
             frame:
@@ -917,25 +947,80 @@ screen main_menu():
                   xminimum 500
                   xalign 0.5
                   ypos 10
+=======
+              ysize 117
+              yalign 0.5
+
+        #remember this variable --> persistent.draw_mode
+>>>>>>> a78cc4d430492ae75eff32fc8f9ea731af1ed439
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
             frame:
-              if main_menu_bt[6]:
-                background im.Scale("gui/button_hover.png", 500, 100)
+              if main_menu_bt[3]:
+                background "gui/button/short_button_idle.png"
               else:
-                background im.Scale("gui/button_idle.png", 500, 100)
+                background "gui/button/short_button_hover.png"
               hbox:
-                textbutton _("Q U I T"):
+                textbutton _("Quit"):
                   action Quit(confirm= main_menu)
-                  hovered Function(hovered_main_menu_bt,6)
-                  unhovered Function(unhovered_main_menu_bt,6)
-                  xmaximum 500
-                  xminimum 500
+                  hovered Function(hovered_main_menu_bt,3)
+                  unhovered Function(unhovered_main_menu_bt,3)
+                  xsize 570
                   xalign 0.5
-                  ypos 10
+                  ysize 117
+                  yalign 0.5
 
+<<<<<<< HEAD
+=======
+style debug_button_text:
+  hover_color "#7f7ab1"
+  color "#9ba9a5"
+  size 50
+  xalign 0.5
+style navigation_main_button is gui_button
+style navigation_main_button_text:# is gui_button_text
+  hover_color "#7f7ab1"
+  color "#b1ddff"
+  selected_color "#ff0"
+  #bold True
+  size 50
+  xalign 0.5
+
+
+style navigation_button:
+    size_group "navigation_main"
+    properties gui.button_properties("navigation_button")
+
+style navigation_button_text:
+    properties gui.button_text_properties("navigation_button")
+
+## Main Menu screen ############################################################
+##
+## Used to display the main menu when Ren'Py starts.
+##
+## https://www.renpy.org/doc/html/screen_special.html#main-menu
+
+screen main_menu():
+
+    ## This ensures that any other menu screen is replaced.
+    tag menu
+
+    style_prefix "main_menu"
+
+    add gui.main_menu_background
+
+    ## This empty frame darkens the main menu
+    frame:
+        pass
+
+    ## The use statement includes another screen inside this one. The actual
+    ## contents of the main menu are in the navigation screen.
+    use navigation_main
+
+
+>>>>>>> a78cc4d430492ae75eff32fc8f9ea731af1ed439
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox
