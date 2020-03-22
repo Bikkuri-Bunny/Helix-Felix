@@ -48,6 +48,7 @@ label before_main_menu:
   #easter egg to show in gallery this bonus image
   if not (renpy.exists('thanks.png') or persistent.thanks1year):
     $persistent.thanks1year=True
+    $persistent.secrets = True
     if not achievement.has("ee_bonus"):
       $ achievement.grant("ee_bonus")
     scene bg playroom

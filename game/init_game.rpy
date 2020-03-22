@@ -35,13 +35,13 @@ define j = Character(_("Mr. Jesse"), who_color="#fbf896", who_outlines=[ (1, "#b
 #yellow
 define c = Character(_("Charlie"), who_color="#99a8ff", who_outlines=[ (1, "#3654ff") ], what_color="#99a8ff", what_outlines=[ (1, "#3654ff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"charlie"
 #blue
-define g = Character(_("Ainsley"), who_color="#eba9ff", who_outlines=[ (1, "#ce2dff") ], what_color="#eba9ff", what_outlines=[ (1, "#ce2dff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"ainsley"
+define g = Character(_("Ainsley"), who_color="#eba9ff", who_outlines=[ (1, "#ce2dff") ], what_color="#eba9ff", what_outlines=[ (1, "#ce2dff") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)#"ainsley"
 #purple
 #Note she had to be 'G' for 'Good Girl'
-define o = Character(_("Staff"), who_color="#ffffff", who_outlines=[ (1, "#000000") ], what_color="#ffffff", what_outlines=[ (1, "#000000") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)
+define o = Character(_("Staff"), who_color="#ffffff", who_outlines=[ (1, "#000000") ], what_color="#ffffff", what_outlines=[ (1, "#000000") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
 #grey
-define narrator = Character(what_outlines=[ (1, "#000000") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
-define narrator_nvl = Character(None, kind=nvl,what_outlines=[ (1, "#000000") ], ctc="ctc_blink",ctc_position="nestled",callback=purring_voice)
+define narrator = Character(what_color="#ffffff", what_outlines=[ (1, "#000000") ],  ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
+define narrator_nvl = Character(None, kind=nvl,what_outlines=[ (1, "#000000") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
 #CTC
 image ctc_blink:
        "gui/CTC.png"
@@ -62,8 +62,8 @@ define bites = ImageDissolve(im.Tile("images/transitions/bites.jpg"), 2, 8)
 define test_t = ImageDissolve(im.Tile("images/transitions/test.png"), 2, 8)
 define test2_t = ImageDissolve(im.Tile("images/transitions/test2.png"), 2, 8)
 
-#bagde
-image badge = "gui/button/badge.png" #badge for choice menu
+#badge
+image badge = "gui/button/paw.png" #badge for choice menu
 #cards
 image card1 = "images/cards/card1.png"
 image card2 = "images/cards/card2.png"
@@ -76,6 +76,7 @@ image partone = "images/cards/partone.png"
 image parttwo = "images/cards/parttwo.png"
 
 #backgrounds
+image gallocked = "gui/newgallery/black.png"
 image bg playroom = "images/BG/playroom.jpg"
 image bg playroom2 = "images/BG/playroom2.jpg"
 image bg hallway1 = "images/BG/hallway1.png"
@@ -99,8 +100,8 @@ image bg outside2 = "images/BG/outsdie2.png"
 image bg officespace = "images/BG/officespace.png"
 image bg secretspace = "images/BG/secretspace.png"
 image bg staffroom = "images/BG/staffroom.jpg"
-image bg hideandseakclosed = "images/BG/unchecked.png"
-image bg hideandseakopen = "images/BG/checked.png"
+image bg hideandseekclosed = "images/BG/unchecked.png"
+image bg hideandseekopen = "images/BG/checked.png"
 
 #event pictures, they're called 'CGs'
 image warning = "images/CG/warning.png"
@@ -372,6 +373,8 @@ default menu_mini_game=False
 default pumpkin_points = 0
 default steven_points = 0
 default lukas_points = 0
+
+default persistent.secrets = False
 
 default main_menu_bt=[True]*22
 default choice_menu_bt=[True]*23

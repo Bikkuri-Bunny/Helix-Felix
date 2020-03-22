@@ -503,6 +503,8 @@ screen choice(items,badge=True):
                          foreground Transform("badge", xpos=0, yalign=.5)
 
 
+
+
 ## When this is true, menu captions will be spoken by the narrator. When false,
 ## menu captions will be displayed as empty buttons.
 define config.narrator_menu = True
@@ -540,7 +542,7 @@ screen calendar_menu():
             background None #"#000000AA"
             area (80, 225, 178, 91)#(1392,37,176,91)
             text calendar_text[0]:
-              color "#35b2c7"
+              color "#7c8cc6"
               size 50
               xalign 0.5
               yalign 0.5
@@ -550,7 +552,7 @@ screen calendar_menu():
             background None
             area (70,75,113,91)#(1589,40,113,84)
             text calendar_text[1]:
-              color "#35b2c7"
+              color "#7c8cc6"
               size 125
               xalign 0.5
               yalign 0.5
@@ -559,7 +561,7 @@ screen calendar_menu():
             background None
             area (150,155,112,91)
             text calendar_text[2]:
-              color "#35b2c7"
+              color "#7c8cc6"
               size 125
               xalign 0.5
               yalign 0.5
@@ -583,23 +585,14 @@ screen quick_menu():
           style_prefix "quick"
           xalign 0.5
           yalign 1.0
-          textbutton "Save" action QuickSave()
-          textbutton "Load" action QuickLoad()
-          textbutton "Auto" action Preference("auto-forward", "toggle")
-          textbutton "Skip" action Skip() alternate Skip(fast=True, confirm=True)
-          textbutton "Back" action Rollback()
-          textbutton "History" action ShowMenu("history")
-          textbutton "Menu" action ShowMenu("preferences")
+          textbutton _("Save") action QuickSave()
+          textbutton _("Load") action QuickLoad()
+          textbutton _("Auto") action Preference("auto-forward", "toggle")
+          textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+          textbutton _("Back") action Rollback()
+          textbutton _("History") action ShowMenu("history")
+          textbutton _("Menu") action ShowMenu("preferences")
 
-      else:
-        vbox:
-          xalign 0.0
-          imagebutton auto "gui/autoplay_%s.png" action Preference("auto-forward", "toggle")
-          imagebutton auto "gui/skip_%s.png" action Skip() alternate Skip(fast=True, confirm=True)
-          imagebutton auto "gui/backtrack_%s.png" action Rollback()
-          imagebutton auto "gui/load_%s.png" action QuickLoad()
-          imagebutton auto "gui/save_%s.png" action QuickSave()
-          imagebutton auto "gui/menu_%s.png" action Function(hide_quick_menu,**{"var":False})
     else:
         if menu_mini_game:
           imagebutton auto "gui/open_menu_%s.png" action Function(hide_quick_menu,**{"var":True})
@@ -658,19 +651,22 @@ screen navigation():
 
         if main_menu:
          frame:
-          if main_menu_bt[11]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("S T A R T"):
-              action Start()
-              hovered Function(hovered_main_menu_bt,11)
-              unhovered Function(unhovered_main_menu_bt,11)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
+             imagebutton:
+                 auto "gui/button/short_button_%s.png"
+                 action Start()
+          #if main_menu_bt[11]:
+        #    background im.Scale("gui/button_hover.png", 500, 100)
+         # else:
+        #    background im.Scale("gui/button_idle.png", 500, 100)
+         # hbox:
+        #    textbutton _("S T A R T"):
+        #      action Start()
+        #      hovered Function(hovered_main_menu_bt,11)
+        #      unhovered Function(unhovered_main_menu_bt,11)
+        #      xmaximum 500
+        #      xminimum 500
+        #      xalign 0.5
+        #      ypos 10
         else:
          frame:
           if main_menu_bt[12]:
@@ -844,19 +840,24 @@ screen navigation_main():
 
 
         frame:
-          if main_menu_bt[0]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("S T A R T"):
-              action [Play("sound", "audio/ding.ogg"), Start() ]
-              hovered Function(hovered_main_menu_bt,0)
-              unhovered Function(unhovered_main_menu_bt,0)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
+            background None
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action Start()
+
+         # if main_menu_bt[0]:
+        #    background im.Scale("gui/button_hover.png", 500, 100)
+         # else:
+        #    background im.Scale("gui/button_idle.png", 500, 100)
+         # hbox:
+        #    textbutton _("S T A R T"):
+        #      action [Play("sound", "audio/ding.ogg"), Start() ]
+        #      hovered Function(hovered_main_menu_bt,0)
+        #      unhovered Function(unhovered_main_menu_bt,0)
+        #      xmaximum 500
+        #      xminimum 500
+        #      xalign 0.5
+        #      ypos 10
 
 
         frame:
@@ -956,7 +957,6 @@ screen navigation_main():
                   xalign 0.5
                   ypos 10
 
-
 style navigation_main_button is gui_button
 style navigation_main_button_text:# is gui_button_text
   color "#7f7ab1"
@@ -996,11 +996,7 @@ screen main_menu():
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation_main
-    $ textImagen=At(Text(gui.text_version_menu), Transform(rotate=-2))
-    if gui.show_name:
-            image textImagen:
-                xpos gui.text_version_rightX
-                ypos gui.text_version_rightY
+
 
 
 style main_menu_frame is empty
@@ -1188,7 +1184,6 @@ screen about():
         style_prefix "about"
 
         vbox:
-
             label "[config.name!t]":
               xalign 0.5
             text _("Version [config.version!t]"):
@@ -1605,7 +1600,7 @@ screen history():
 
                     if h.who:
 
-                        label h.who:
+                        label h.who + ":":
                             style "history_name"
 
                             ## Take the color of the who text from the Character, if
@@ -1614,7 +1609,10 @@ screen history():
                                 text_color h.who_args["color"]
 
                     $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
-                    text what
+                    text h.what:
+                        color h.what_args["color"]
+
+
 
             if not _history_list:
 

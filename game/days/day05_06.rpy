@@ -120,7 +120,7 @@ label day5:
   pause (2)
 
 #hide-and-seek minigame for finding Ainsley
-  scene bg hideandseakclosed
+  scene bg hideandseekclosed
   a confused "Ainsley, it's okay to come out."
   show steven sad
   s "Ainsley? Are you in here?"
@@ -175,7 +175,7 @@ label hs_diag5:
   return
 #hide and seek minigame ends
 label hs_end:
-  scene bg hideandseakopen
+  scene bg hideandseekopen
   show steven neutral at myleft
   show lukas confused at myright
   with dissolve
