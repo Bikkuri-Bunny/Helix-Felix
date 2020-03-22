@@ -140,6 +140,27 @@ style freehand_draw_button_text:# is gui_button_text
   size 50
   xalign 0.5
 
+label dibujar:
+    #freehand_draw(id_draw) id_draw unique value dont repeat only numbers
+    scene bg bedroomlight with test2_t
+    a happy"Let's go to the drawing board"
+    #$ rv=renpy.roll_forward_info()
+    #$ renpy.checkpoint(rv) # Store the result of the interaction.
+    scene bg bedroomlight
+    minigame draw start 0
+    a happy "My first drawing"
+    p happy "show me your drawing"
+    minigame draw open 160 40 0
+    a happy "My first drawing"
+    minigame draw close
+    show screen show_gift_steven(0)
+    " "
+    hide screen show_gift_steven
+    show screen show_gift_pumpkin(0)
+    " "
+    hide screen show_gift_pumpkin
+    return
+
 screen show_hand_draw(x=160,y=40,id_img=0):
 
   frame:
