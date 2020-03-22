@@ -894,7 +894,7 @@ screen main_menu():
             background "gui/button/short_button_hover.png"#im.Scale("gui/button/short_button_idle.png", 500, 100)
          hbox:
             textbutton _("New Game"):
-              action [Play("sound", "audio/ding.ogg"), Start(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
+              action [Play("sound", "audio/ding.ogg"), LoadMostRecent(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
               hovered Function(hovered_main_menu_bt,0)
               unhovered Function(unhovered_main_menu_bt,0)
               xsize 570

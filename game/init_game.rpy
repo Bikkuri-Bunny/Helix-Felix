@@ -464,3 +464,15 @@ init python:
   def reset_main_menu_bt():
     renpy.store.main_menu_bt=[True]*10
     return None
+
+init +1 python:
+    class LoadMostRecent(Action):
+
+        def __init__(self):
+            self.slot = renpy.newest_slot()
+
+        def __call__(self):
+            renpy.load(self.slot)
+
+        def get_sensitive(self):
+            return self.slot is not None
