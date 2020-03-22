@@ -488,12 +488,11 @@ style input:
 
 screen choice(items,badge=True):
     style_prefix "choice"
-
     vbox:
         for j,i in enumerate(items):
             #$ badge = i.kwargs.get("badge", None)
             textbutton i.caption:
-              action i.action
+              action [i.action,Function(reset_choice_menu_bt)]
               hovered Function(hovered_choice_menu_bt,j)
               unhovered Function(unhovered_choice_menu_bt,j)
               if badge:
