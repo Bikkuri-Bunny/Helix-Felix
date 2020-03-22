@@ -376,7 +376,7 @@ default lukas_points = 0
 
 default persistent.secrets = False
 
-default main_menu_bt=[True]*22
+default main_menu_bt=[True]*10
 default choice_menu_bt=[True]*10
 
 ##### calendar text #########
@@ -460,4 +460,7 @@ init python:
     return None
   def unhovered_main_menu_bt(var):
     renpy.store.main_menu_bt[var]=True
+    return None
+  def reset_main_menu_bt():
+    renpy.store.main_menu_bt=[True]*10
     return None

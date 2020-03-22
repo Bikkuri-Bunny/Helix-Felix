@@ -823,143 +823,113 @@ style navigation_button_text:
 
 screen navigation_main():
 
+    if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')):
+
+              vbox:
+                style_prefix "debug"
+                textbutton _("Debugger"):
+                  action Show("_debuger")
     vbox:
         style_prefix "navigation_main"
 
         #xpos gui.navigation_xpos
         #yalign 0.5
-        xpos 1366#1134
-        ypos 424
-        xmaximum 500
-        xminimum 500
+        xpos 1474#1134
+        ypos 504
+        xsize 578#500
         xalign 0.5
         ysize 600
 
-        spacing gui.navigation_spacing
+        #spacing gui.navigation_spacing
 
+
+        #frame:
+        #    background None
+        #    imagebutton:
+        #        auto "gui/button/short_button_%s.png"
+        #        action Start()
+        #    hbox:
+        #      textbutton _("Start"):
+        #        action NullAction()
+        #        xmaximum 500
+        #        xminimum 500
+        #        xalign 0.5
+        #        ypos 10
 
         frame:
-            background None
-            imagebutton:
-                auto "gui/button/short_button_%s.png"
-                action Start()
-
-         # if main_menu_bt[0]:
-        #    background im.Scale("gui/button_hover.png", 500, 100)
-         # else:
-        #    background im.Scale("gui/button_idle.png", 500, 100)
-         # hbox:
-        #    textbutton _("S T A R T"):
-        #      action [Play("sound", "audio/ding.ogg"), Start() ]
-        #      hovered Function(hovered_main_menu_bt,0)
-        #      unhovered Function(unhovered_main_menu_bt,0)
-        #      xmaximum 500
-        #      xminimum 500
-        #      xalign 0.5
-        #      ypos 10
-
+         if main_menu_bt[0]:
+            background "gui/button/short_button_idle.png"#im.Scale("gui/button/short_button_hover.png", 500, 100)
+         else:
+            background "gui/button/short_button_hover.png"#im.Scale("gui/button/short_button_idle.png", 500, 100)
+         hbox:
+            textbutton _("New Game"):
+              action [Play("sound", "audio/ding.ogg"), Start(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
+              hovered Function(hovered_main_menu_bt,0)
+              unhovered Function(unhovered_main_menu_bt,0)
+              xsize 570
+              xalign 0.5
+              ysize 117
+              yalign 0.5
 
         frame:
           if main_menu_bt[1]:
-            background im.Scale("gui/button_hover.png", 500, 100)
+            background "gui/button/short_button_idle.png"
           else:
-            background im.Scale("gui/button_idle.png", 500, 100)
+            background "gui/button/short_button_hover.png"
           hbox:
-            textbutton _("L O A D"):
-              action ShowMenu("load")
+            textbutton _("Options"):
+              action [ShowMenu("preferences"), Function(reset_main_menu_bt)]
               hovered Function(hovered_main_menu_bt,1)
               unhovered Function(unhovered_main_menu_bt,1)
-              xmaximum 500
-              xminimum 500
+              xsize 570
               xalign 0.5
-              ypos 10
+              ysize 117
+              yalign 0.5
 
         frame:
           if main_menu_bt[2]:
-            background im.Scale("gui/button_hover.png", 500, 100)
+            background "gui/button/short_button_idle.png"
           else:
-            background im.Scale("gui/button_idle.png", 500, 100)
+            background "gui/button/short_button_hover.png"
           hbox:
-            textbutton _("PREFERENCES"):
-              action [Play("sound", "audio/ding.ogg"), ShowMenu("preferences") ]
+            textbutton _("Gallery"):
+              action [ShowMenu("gallery"), Function(reset_main_menu_bt)]
               hovered Function(hovered_main_menu_bt,2)
               unhovered Function(unhovered_main_menu_bt,2)
-              xmaximum 500
-              xminimum 500
+              xsize 570
               xalign 0.5
-              ypos 10
+              ysize 117
+              yalign 0.5
 
-        frame:
-          if main_menu_bt[3]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("G A L L E R Y"):
-              action ShowMenu("gallery")
-              hovered Function(hovered_main_menu_bt,3)
-              unhovered Function(unhovered_main_menu_bt,3)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
-
-        if persistent.draw_mode:
-         frame:
-          if main_menu_bt[4]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("D R A W"):
-              action Start("dibujar")#ShowMenu("about") #"headtoart"
-              hovered Function(hovered_main_menu_bt,4)
-              unhovered Function(unhovered_main_menu_bt,4)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
-        if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            frame:
-              if main_menu_bt[5]:
-                background im.Scale("gui/button_hover.png", 500, 100)
-              else:
-                background im.Scale("gui/button_idle.png", 500, 100)
-              hbox:
-                textbutton _("Debugger"):
-                  action Show("_debuger")
-                  hovered Function(hovered_main_menu_bt,5)
-                  unhovered Function(unhovered_main_menu_bt,5)
-                  xmaximum 500
-                  xminimum 500
-                  xalign 0.5
-                  ypos 10
+        #remember this variable --> persistent.draw_mode
         if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
             frame:
-              if main_menu_bt[6]:
-                background im.Scale("gui/button_hover.png", 500, 100)
+              if main_menu_bt[3]:
+                background "gui/button/short_button_idle.png"
               else:
-                background im.Scale("gui/button_idle.png", 500, 100)
+                background "gui/button/short_button_hover.png"
               hbox:
-                textbutton _("Q U I T"):
+                textbutton _("Quit"):
                   action Quit(confirm= main_menu)
-                  hovered Function(hovered_main_menu_bt,6)
-                  unhovered Function(unhovered_main_menu_bt,6)
-                  xmaximum 500
-                  xminimum 500
+                  hovered Function(hovered_main_menu_bt,3)
+                  unhovered Function(unhovered_main_menu_bt,3)
+                  xsize 570
                   xalign 0.5
-                  ypos 10
+                  ysize 117
+                  yalign 0.5
 
+style debug_button_text:
+  hover_color "#7f7ab1"
+  color "#9ba9a5"
+  size 50
+  xalign 0.5
 style navigation_main_button is gui_button
 style navigation_main_button_text:# is gui_button_text
-  color "#7f7ab1"
-  hover_color "#b1ddff"
+  hover_color "#7f7ab1"
+  color "#b1ddff"
   selected_color "#ff0"
   #bold True
   size 50
