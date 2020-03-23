@@ -62,21 +62,7 @@ init python:
     init_gallery(gal,list_gal_cg,"cg_")
     init_gallery(gal,list_gal_bonus)
 
-    #gal.button("bg playroom") #this is the name/label associated with your button for a particular image, can be modified
-    #gal.condition("persistent.bg_playroom") #this is the requirement/condition that must be met for this gallery image to unlock
-    #gal.image("bg playroom") #this creates a gallery image that overlaps a foreground on top of a bg, you can also use a single flattened image here
 
-    #gal.button("bg playroom2")
-    #gal.condition("persistent.bg_playroom2")
-    #gal.image("bg playroom2")
-
-    #gal.button("bg hallway1")
-    #gal.condition("persistent.bg_hallway1")
-    #gal.image("bg hallway1")
-
-    #gal.button("bg hallway2")
-    #gal.condition("persistent.bg_hallway2")
-    #gal.image("bg hallway2")
 
 screen gallery():
     # Ensure this replaces the main menu.
@@ -91,6 +77,7 @@ screen gallery():
     default img7=[6]
     default img8=[7]
     default img9=[8]
+
     if page_gallery<=0:
       $ page_gallery=1
     if page_title in ["BG"]:
@@ -125,136 +112,56 @@ screen gallery():
 
     zorder 100
     # The background.
-    add "gui/gallery/gallery_menu.png" #this is the bg image for the gallery; found in the images folder
-    $ textImagen=At(Text(gui.text_version_menu), Transform(rotate=-2))
-    image textImagen:
-       xpos gui.text_version_leftX#1280
-       ypos gui.text_version_leftY
+    add gui.gallery_background
+
 
 
 
     # A grid of buttons.
 
     vbox:
-        style_prefix "navigation_main"
-
+        style_prefix "gallery"
         xpos gui.navigation_xpos
         #yalign 0.5
-        ypos 424
+        ypos 425
         xsize 500
         xalign 0.0
         ysize 400
 
         #spacing gui.navigation_spacing
-        frame:
-            background None
-            ysize 55
+        fixed:
+            xsize 550
+            ysize 120
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action SetScreenVariable("page_title", "BG")
-                hovered Function(hovered_choice_menu_bt,1)
-                unhovered Function(unhovered_choice_menu_bt,1)
-                if choice_menu_bt[1]:
-                    foreground None
-                else:
-                    foreground Transform("badge", xpos=0, yalign=.5)
             text _("Backgrounds"):
                 xalign 0.5
-                yalign 3.5
+                yalign 0.5
 
-        frame:
-            ysize 55
+        fixed:
+            xsize 550
+            ysize 120
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action SetScreenVariable("page_title", "CG")
-                hovered Function(hovered_choice_menu_bt,2)
-                unhovered Function(unhovered_choice_menu_bt,2)
-                if choice_menu_bt[2]:
-                    foreground None
-                else:
-                    foreground Transform("badge", xpos=0, yalign=.5)
-            text _("CGs") xalign 0.5 yalign 3.5
-        frame:
-            ysize 55
+            text _("CGs") xalign 0.5 yalign 0.5
+        fixed:
+            xsize 550
+            ysize 120
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action SetScreenVariable("page_title", "BONUS")
-                hovered Function(hovered_choice_menu_bt,3)
-                unhovered Function(unhovered_choice_menu_bt,3)
-                if choice_menu_bt[3]:
-                    foreground None
-                else:
-                    foreground Transform("badge", xpos=0, yalign=.5)
-            text _("Bonus") xalign 0.5 yalign 3.5
-        frame:
-            ysize 55
+            text _("Bonus") xalign 0.5 yalign 0.5
+        fixed:
+            xsize 550
+            ysize 120
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action Return()
-                hovered Function(hovered_choice_menu_bt,4)
-                unhovered Function(unhovered_choice_menu_bt,4)
-                if choice_menu_bt[4]:
-                    foreground None
-                else:
-                    foreground Transform("badge", xpos=0, yalign=.5)
-            text _("Back") xalign 0.5 yalign 3.5
+            text _("Back") xalign 0.5 yalign 0.5
 
-    #    frame:
-        #    if main_menu_bt[7]:
-        #        background im.Scale("gui/button_hover.png", 500, 100)
-        #    else:
-        #        background im.Scale("gui/button_idle.png", 500, 100)
-        #    hbox:
-        #        textbutton _("B G"):
-        #            action SetScreenVariable("page_title", "BG")
-        #            hovered Function(hovered_main_menu_bt,7)
-        #            unhovered Function(unhovered_main_menu_bt,7)
-        #            xmaximum 500
-        #            xminimum 500
-        #            xalign 0.5
-        #            ypos 10
-        #frame:
-         # if main_menu_bt[8]:
-        #    background im.Scale("gui/button_hover.png", 500, 100)
-         # else:
-        #    background im.Scale("gui/button_idle.png", 500, 100)
-         # hbox:
-        #    textbutton _("C G"):
-        #      action SetScreenVariable("page_title", "CG")
-        #      hovered Function(hovered_main_menu_bt,8)
-        #      unhovered Function(unhovered_main_menu_bt,8)
-        #      xmaximum 500
-        #      xminimum 500
-        #      xalign 0.5
-        #      ypos 10
-        #frame:
-         # if main_menu_bt[9]:
-        #    background im.Scale("gui/button_hover.png", 500, 100)
-         # else:
-        #    background im.Scale("gui/button_idle.png", 500, 100)
-         # hbox:
-        #    textbutton _("B O N U S"):
-        #      action SetScreenVariable("page_title", "BONUS")
-        #      hovered Function(hovered_main_menu_bt,9)
-        #      unhovered Function(unhovered_main_menu_bt,9)
-        #      xmaximum 500
-        #      xminimum 500
-        #      xalign 0.5
-        #      ypos 10
-        #frame:
-         # if main_menu_bt[10]:
-        #    background im.Scale("gui/button_hover.png", 500, 100)
-         # else:
-        #    background im.Scale("gui/button_idle.png", 500, 100)
-         # hbox:
-        #    textbutton _("B A C K"):
-        #      action Return()
-        #      hovered Function(hovered_main_menu_bt,10)
-        #      unhovered Function(unhovered_main_menu_bt,10)
-        #      xmaximum 500
-        #      xminimum 500
-        #      xalign 0.5
-        #      ypos 10
+
     ####Imgs
     grid 3 3:
 
@@ -313,8 +220,11 @@ screen gallery():
           textbutton "<<" action SetScreenVariable("page_gallery", page_gallery-1) xalign 0.5 yalign 0.5
         else:
           text "{color=#FFFFFF00}<<{/color}"
-        text "{font=fonts/endutt.otf}{color=#7f7ab1}Page {font=fonts/Chewy.ttf}[page_gallery]{/font}{/color}{/font}" xalign 0.5 yalign 0.5
+        text "{font=fonts/endutt.otf}{color=#767777}Page {font=fonts/Chewy.ttf}[page_gallery]{/font}{/color}{/font}" xalign 0.5 yalign 0.5
         if page_gallery!=max_page:
           textbutton ">>" action SetScreenVariable("page_gallery", page_gallery+1) xalign 0.5 yalign 0.5
         else:
           text "{color=#FFFFFF00}>>{/color}"
+style gallery_text:
+    font gui.gallery_text_font
+    size gui.gallery_text_size

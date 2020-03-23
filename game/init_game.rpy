@@ -54,7 +54,7 @@ image white = "#ffffff"
 
 image logo2 = Composite(
     (662, 653+50),
-    (0, 0), "gui/logo.png",
+    (0, 0), "gui/bikkuri_bunny_logo.png",
     (110, 680), Text("{color=#0000ffff}A Bikkuri Bunny Production{/color}"))
 
 #transition
