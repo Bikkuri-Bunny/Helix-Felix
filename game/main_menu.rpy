@@ -2,25 +2,25 @@
 # -*- coding: utf-8 -*-
 #
 #  main_menu.rpy
-#  
+#
 #  Copyright 2020 badanni <dannyvasconeze@gmail.com>
-#  
+#
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
 #  the Free Software Foundation; either version 2 of the License, or
 #  (at your option) any later version.
-#  
+#
 #  This program is distributed in the hope that it will be useful,
 #  but WITHOUT ANY WARRANTY; without even the implied warranty of
 #  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 #  GNU General Public License for more details.
-#  
+#
 #  You should have received a copy of the GNU General Public License
 #  along with this program; if not, write to the Free Software
 #  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 #  MA 02110-1301, USA.
-#  
-#  
+#
+#
 
 ## Navigation main screen ###########################################################
 ##
@@ -28,7 +28,7 @@
 ## to other menus, and to start the game.
 
 screen navigation_main():
-    
+
     if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')):
 
               vbox:
@@ -62,22 +62,6 @@ screen navigation_main():
         #        xalign 0.5
         #        ypos 10
 
-        if LoadMostRecent().get_sensitive():
-         frame:
-          if main_menu_bt[4]:
-             background "gui/button/short_button_idle.png"#im.Scale("gui/button/short_button_hover.png", 500, 100)
-          else:
-             background "gui/button/short_button_hover.png"#im.Scale("gui/button/short_button_idle.png", 500, 100)
-          hbox:
-             textbutton _("Continue"):
-              action [Play("sound", "audio/ding.ogg"), LoadMostRecent(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
-              hovered Function(hovered_main_menu_bt,4)
-              unhovered Function(unhovered_main_menu_bt,4)
-              xsize 570
-              xalign 0.5
-              ysize 117
-              yalign 0.5
-
         frame:
          if main_menu_bt[0]:
             background "gui/button/short_button_idle.png"#im.Scale("gui/button/short_button_hover.png", 500, 100)
@@ -85,10 +69,7 @@ screen navigation_main():
             background "gui/button/short_button_hover.png"#im.Scale("gui/button/short_button_idle.png", 500, 100)
          hbox:
             textbutton _("New Game"):
-              if LoadMostRecent().get_sensitive():
-               action [Play("sound", "audio/ding.ogg"), Confirm("Are you sure you want to restart the game?", yes=Start(), no=Return()), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
-              else:
-               action [Play("sound", "audio/ding.ogg"), Start(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
+              action [Play("sound", "audio/ding.ogg"), LoadMostRecent(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
               hovered Function(hovered_main_menu_bt,0)
               unhovered Function(unhovered_main_menu_bt,0)
               xsize 570
@@ -182,7 +163,8 @@ screen main_menu():
     style_prefix "main_menu"
 
     add gui.main_menu_background
-
+    add gui.main_menu_overlay
+    add gui.logo xalign 1.0
     ## This empty frame darkens the main menu
     frame:
         pass
