@@ -834,7 +834,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     if main_menu:
         add gui.main_menu_background
-        add gui.main_menu_overlay
     else:
         add gui.game_menu_background
 

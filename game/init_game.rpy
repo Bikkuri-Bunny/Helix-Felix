@@ -62,8 +62,6 @@ define bites = ImageDissolve(im.Tile("images/transitions/bites.jpg"), 2, 8)
 define test_t = ImageDissolve(im.Tile("images/transitions/test.png"), 2, 8)
 define test2_t = ImageDissolve(im.Tile("images/transitions/test2.png"), 2, 8)
 
-image logo = "gui/logo.png"
-
 #badge
 image badge = "gui/button/paw.png" #badge for choice menu
 #cards

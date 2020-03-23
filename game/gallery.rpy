@@ -113,7 +113,7 @@ screen gallery():
     zorder 100
     # The background.
     add gui.gallery_background
-    add gui.logo size 750, 400 xoffset -20 yoffset -20
+
 
 
 
@@ -122,10 +122,13 @@ screen gallery():
     vbox:
         style_prefix "gallery"
         xpos gui.navigation_xpos
-        yalign 0.7
+        #yalign 0.5
+        ypos 425
         xsize 500
         xalign 0.0
         ysize 400
+
+        #spacing gui.navigation_spacing
         fixed:
             xsize 550
             ysize 120
