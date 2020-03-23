@@ -40,27 +40,12 @@ screen navigation_main():
 
         #xpos gui.navigation_xpos
         #yalign 0.5
-        xpos 1474#1134
         ypos 504
         xsize 578#500
-        xalign 0.5
+        xalign 1.0
+        xoffset -150
         ysize 600
 
-        #spacing gui.navigation_spacing
-
-
-        #frame:
-        #    background None
-        #    imagebutton:
-        #        auto "gui/button/short_button_%s.png"
-        #        action Start()
-        #    hbox:
-        #      textbutton _("Start"):
-        #        action NullAction()
-        #        xmaximum 500
-        #        xminimum 500
-        #        xalign 0.5
-        #        ypos 10
         if LoadMostRecent().get_sensitive():
          frame:
           if main_menu_bt[4]:
@@ -68,8 +53,6 @@ screen navigation_main():
           else:
              background "gui/button/short_button_hover.png"#im.Scale("gui/button/short_button_idle.png", 500, 100)
           hbox:
-            $ recent_save = renpy.newest_slot("[^_]")
-            $ recent_save_page, recent_save_name = recent_save.split("-")
             textbutton _("Continue"):
                 action [Play("sound", "audio/ding.ogg"), LoadMostRecent(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
                 hovered Function(hovered_main_menu_bt,4)
@@ -186,9 +169,6 @@ screen main_menu():
     add gui.main_menu_overlay
     add gui.logo xalign 1.0
 
-    ## This empty frame darkens the main menu
-    frame:
-        pass
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.

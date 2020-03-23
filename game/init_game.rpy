@@ -471,7 +471,7 @@ init +1 python:
     class LoadMostRecent(Action):
 
         def __init__(self):
-            self.slot = renpy.newest_slot()
+            self.slot = renpy.newest_slot("[^_]")
 
         def __call__(self):
             renpy.load(self.slot)
