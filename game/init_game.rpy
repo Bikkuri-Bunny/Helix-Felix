@@ -378,7 +378,7 @@ default lukas_points = 0
 
 default persistent.secrets = False
 
-default main_menu_bt=[True]*10
+default main_menu_bt=[True]*23 #by the code of the previous GUI
 default choice_menu_bt=[True]*10
 
 ##### calendar text #########
@@ -464,14 +464,14 @@ init python:
     renpy.store.main_menu_bt[var]=True
     return None
   def reset_main_menu_bt():
-    renpy.store.main_menu_bt=[True]*10
+    renpy.store.main_menu_bt=[True]*23 #by the code of the previous GUI
     return None
 
 init +1 python:
     class LoadMostRecent(Action):
 
         def __init__(self):
-            self.slot = renpy.newest_slot("[^_]")
+            self.slot = renpy.newest_slot("[^_]") #this way for mac
 
         def __call__(self):
             renpy.load(self.slot)
