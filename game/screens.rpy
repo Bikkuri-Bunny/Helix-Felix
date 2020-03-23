@@ -634,7 +634,7 @@ style quick_button_text:
 screen navigation():
 
     vbox:
-        style_prefix "navigation_main"
+        style_prefix "menu_button"
 
         #xpos gui.navigation_xpos
         #yalign 0.5
@@ -645,127 +645,60 @@ screen navigation():
         xalign 0.5
         #ysize 600
 
-        #spacing gui.navigation_spacing
-
-
-        if main_menu:
-         frame:
-             imagebutton:
-                 auto "gui/button/short_button_%s.png"
-                 action Start()
-          #if main_menu_bt[11]:
-        #    background im.Scale("gui/button_hover.png", 500, 100)
-         # else:
-        #    background im.Scale("gui/button_idle.png", 500, 100)
-         # hbox:
-        #    textbutton _("S T A R T"):
-        #      action Start()
-        #      hovered Function(hovered_main_menu_bt,11)
-        #      unhovered Function(unhovered_main_menu_bt,11)
-        #      xmaximum 500
-        #      xminimum 500
-        #      xalign 0.5
-        #      ypos 10
-        else:
-         frame:
-          if main_menu_bt[12]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("H I S T O R Y"):
-              action ShowMenu("history")
-              hovered Function(hovered_main_menu_bt,12)
-              unhovered Function(unhovered_main_menu_bt,12)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
-         frame:
-          if main_menu_bt[13]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("S A V E"):
-              action ShowMenu("save")
-              hovered Function(hovered_main_menu_bt,13)
-              unhovered Function(unhovered_main_menu_bt,13)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
-        frame:
-          if main_menu_bt[14]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("L O A D"):
-              action ShowMenu("load")
-              hovered Function(hovered_main_menu_bt,14)
-              unhovered Function(unhovered_main_menu_bt,14)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
-        frame:
-          if main_menu_bt[15]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("PREFERENCES"):
-              action ShowMenu("preferences")
-              hovered Function(hovered_main_menu_bt,15)
-              unhovered Function(unhovered_main_menu_bt,15)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
-        frame:
-          if main_menu_bt[16]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("G A L L E R Y"):
-              action ShowMenu("gallery")
-              hovered Function(hovered_main_menu_bt,16)
-              unhovered Function(unhovered_main_menu_bt,16)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
-        frame:
-          if main_menu_bt[21]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("ACHIEVEMENTS"):
-              action ShowMenu("achievements")
-              hovered Function(hovered_main_menu_bt,21)
-              unhovered Function(unhovered_main_menu_bt,21)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
-        if not main_menu:
-         frame:
-          if main_menu_bt[17]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("MAIN  MENU"):
-              action MainMenu()
-              hovered Function(hovered_main_menu_bt,17)
-              unhovered Function(unhovered_main_menu_bt,17)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
+        fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action ShowMenu("save")
+            text _("Save"):
+                xalign 0.5
+                yalign 0.5
+        fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action ShowMenu("load")
+            text _("Load"):
+                xalign 0.5
+                yalign 0.5
+        fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action ShowMenu("preferences")
+            text _("Preferences"):
+                xalign 0.5
+                yalign 0.5
+        fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action ShowMenu("gallery")
+            text _("Gallery"):
+                xalign 0.5
+                yalign 0.5
+        fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action ShowMenu("achievements")
+            text _("Achievements"):
+                xalign 0.5
+                yalign 0.5
+        fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action MainMenu()
+            text _("Main Menu"):
+                xalign 0.5
+                yalign 0.5
         if main_menu:
          frame:
           if main_menu_bt[18]:
@@ -781,30 +714,6 @@ screen navigation():
               xminimum 500
               xalign 0.5
               ypos 10
-        if main_menu:
-         frame:
-          if main_menu_bt[19]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("R E T U R N"):
-              action Return()
-              hovered Function(hovered_main_menu_bt,19)
-              unhovered Function(unhovered_main_menu_bt,19)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
-    if not main_menu:
-      frame:
-          background None
-          xpos 1744
-          ypos 36
-          imagebutton:
-             idle "gui/overlay/close_idle.png"
-             hover "gui/overlay/close_hover.png"
-             action Return()
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
@@ -816,7 +725,6 @@ style navigation_button:
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
 
-#main_menu here
 
 
 ## Game Menu screen ############################################################
@@ -832,11 +740,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-        add gui.main_menu_overlay
-    else:
-        add gui.game_menu_background
+    add gui.game_menu_background
 
     frame:
         style "game_menu_outer_frame"
@@ -884,15 +788,6 @@ screen game_menu(title, scroll=None, yinitial=0.0):
                     transclude
 
     use navigation
-
-    #label title
-    $ textImagen=At(Text(gui.text_version_menu), Transform(rotate=-2))
-    image textImagen:
-       xpos gui.text_version_leftX#1280
-       ypos gui.text_version_leftY
-
-    if main_menu:
-        key "game_menu" action ShowMenu("main_menu")
 
 
 style game_menu_outer_frame is empty
@@ -1142,201 +1037,6 @@ style slot_button:
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
-
-
-## Preferences screen ##########################################################
-##
-## The preferences screen allows the player to configure the game to better suit
-## themselves.
-##
-## https://www.renpy.org/doc/html/screen_special.html#preferences
-
-screen preferences():
-
-    tag menu
-
-    use game_menu(_("Preferences"), scroll="viewport"):
-
-        vbox:
-            hbox:
-                box_wrap True
-
-                if renpy.variant("pc") or renpy.variant("web"):
-
-                    vbox:
-                        style_prefix "radio"
-                        label _("Display")
-                        textbutton _("Window") action Preference("display", "window")
-                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
-
-                vbox:
-                    style_prefix "radio"
-                    label _("Rollback Side")
-                    textbutton _("Disable") action Preference("rollback side", "disable")
-                    textbutton _("Left") action Preference("rollback side", "left")
-                    textbutton _("Right") action Preference("rollback side", "right")
-
-                vbox:
-                    style_prefix "check"
-                    label _("Skip")
-                    textbutton _("Unseen Text") action Preference("skip", "toggle")
-                    textbutton _("After Choices") action Preference("after choices", "toggle")
-                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
-
-                ## Additional vboxes of type "radio_pref" or "check_pref" can be
-                ## added here, to add additional creator-defined preferences.
-
-            null height (4 * gui.pref_spacing)
-
-            vbox:
-                style_prefix "slider"
-                box_wrap True
-                xalign 0.5
-
-                vbox:
-
-                    label _("Text Speed")
-
-                    hbox:
-                       add im.Scale("gui/slider/horizontal_idle_bar2a.png",50,73)#73
-                       bar value Preference("text speed"):
-                          right_bar Frame("gui/slider/horizontal_idle_bar2.png")
-                          left_bar Frame("gui/slider/horizontal_hover_bar2.png")
-                          ypos 18#6
-                       add im.Scale("gui/slider/horizontal_idle_bar2b.png",109,88) ypos -10
-
-                    label _("Auto-Forward Time")
-
-                    hbox:
-                       add im.Scale("gui/slider/horizontal_idle_bar2a.png",50,73)
-                       bar value Preference("auto-forward time"):
-                          right_bar Frame("gui/slider/horizontal_idle_bar2.png", 0, 0)
-                          left_bar Frame("gui/slider/horizontal_hover_bar2.png", 0, 0)
-                          ypos 18
-                       add im.Scale("gui/slider/horizontal_idle_bar2b.png",109,88) ypos -10
-
-                vbox:
-
-                    null height 80
-                    if config.has_music:
-                        label _("Music Volume")
-
-                        hbox:
-                            add im.Scale("gui/slider/horizontal_idle_bar2a.png",50,73)
-                            bar value Preference("music volume"):
-                              right_bar Frame("gui/slider/horizontal_idle_bar2.png", 0, 0)
-                              left_bar Frame("gui/slider/horizontal_hover_bar2.png", 0, 0)
-                              ypos 18
-                            add im.Scale("gui/slider/horizontal_idle_bar2b.png",109,88) ypos -10
-
-                    if config.has_sound:
-
-                        label _("Sound Volume")
-
-                        hbox:
-                            add im.Scale("gui/slider/horizontal_idle_bar2a.png",50,73)
-                            bar value Preference("sound volume"):
-                              right_bar Frame("gui/slider/horizontal_idle_bar2.png", 0, 0)
-                              left_bar Frame("gui/slider/horizontal_hover_bar2.png", 0, 0)
-                              ypos 18
-                            add im.Scale("gui/slider/horizontal_idle_bar2b.png",109,88) ypos -10
-
-                            if config.sample_sound:
-                                textbutton _("Test") action Play("sound", config.sample_sound)
-
-
-                    if config.has_voice:
-                        label _("Voice Volume")
-
-                        hbox:
-                            add im.Scale("gui/slider/horizontal_idle_bar2a.png",50,73)
-                            bar value Preference("voice volume"):
-                              right_bar Frame("gui/slider/horizontal_idle_bar2.png", 0, 0)
-                              left_bar Frame("gui/slider/horizontal_hover_bar2.png", 0, 0)
-                              ypos 18
-                            add im.Scale("gui/slider/horizontal_idle_bar2b.png",109,88) ypos -10
-
-                            if config.sample_voice:
-                                textbutton _("Test") action Play("voice", config.sample_voice)
-
-                    if config.has_music or config.has_sound or config.has_voice:
-                        null height gui.pref_spacing
-
-                        textbutton _("Mute All"):
-                            action Preference("all mute", "toggle")
-                            style "mute_all_button"
-                            xalign 0.5
-
-
-style pref_label is gui_label
-style pref_label_text is gui_label_text
-style pref_vbox is vbox
-
-style radio_label is pref_label
-style radio_label_text is pref_label_text
-style radio_button is gui_button
-style radio_button_text is gui_button_text
-style radio_vbox is pref_vbox
-
-style check_label is pref_label
-style check_label_text is pref_label_text
-style check_button is gui_button
-style check_button_text is gui_button_text
-style check_vbox is pref_vbox
-
-style slider_label is pref_label
-style slider_label_text is pref_label_text
-style slider_slider is gui_slider
-style slider_button is gui_button
-style slider_button_text is gui_button_text
-style slider_pref_vbox is pref_vbox
-
-style mute_all_button is check_button
-style mute_all_button_text is check_button_text
-
-style pref_label:
-    top_margin gui.pref_spacing
-    bottom_margin 3
-
-style pref_label_text:
-    yalign 1.0
-
-style pref_vbox:
-    xsize 338
-
-style radio_vbox:
-    spacing gui.pref_button_spacing
-
-style radio_button:
-    properties gui.button_properties("radio_button")
-    foreground "gui/button/radio_[prefix_]foreground.png"
-
-style radio_button_text:
-    properties gui.button_text_properties("radio_button")
-
-style check_vbox:
-    spacing gui.pref_button_spacing
-
-style check_button:
-    properties gui.button_properties("check_button")
-    foreground "gui/button/check_[prefix_]foreground.png"
-
-style check_button_text:
-    properties gui.button_text_properties("check_button")
-
-style slider_slider:
-    xsize 525
-
-style slider_button:
-    properties gui.button_properties("slider_button")
-    yalign 0.5
-    left_margin 15
-
-style slider_button_text:
-    properties gui.button_text_properties("slider_button")
-
-style slider_vbox:
-    xsize 675
 
 
 ## History screen ##############################################################

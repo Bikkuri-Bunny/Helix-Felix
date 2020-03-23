@@ -36,7 +36,6 @@ init python:
     gal = Gallery()
     gal.locked_button = "gui/gallery/locked.png" #this is the thumbnail image for ALL LOCKED gallery previews, found in the images folder
     gal.transition = dissolve
-    #gal.hover_border = "gui/newgallery/black.png"
 
     # Step 2. Add buttons and images to the gallery.
     # A button that contains an image that automatically unlocks.
