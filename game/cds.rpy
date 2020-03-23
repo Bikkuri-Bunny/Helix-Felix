@@ -132,16 +132,16 @@ python early:
     def execute_minigame(o):
        minigame,option,id_draw,xpos,ypos=o
        if minigame in ["draw"] and option in ["start"]:
-        #renpy.game.interface.mouse="minigame_draw"
         config.mouse["default"]=config.mouse["minigame_draw"]
         hide_quick_menu(False) #unshow quickmenu not hide
+        renpy.hide_screen("calendar_menu")
         menu_mini_game=True
         #call screen freehand_draw(0)
         renpy.call_screen("freehand_draw",id_draw)
         hide_quick_menu(False) #unshow quickmenu not hide
         menu_mini_game=False
         hide_quick_menu(True) #show quickmenu
-        #renpy.game.interface.mouse="default"
+        renpy.show_screen("calendar_menu")
         config.mouse["default"]=config.mouse["base"]
        elif minigame in ["draw"] and option in ["open"]:
         renpy.free_memory()
