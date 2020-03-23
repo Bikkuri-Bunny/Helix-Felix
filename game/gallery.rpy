@@ -137,21 +137,21 @@ screen gallery():
 
         fixed:
             xsize 570
-            ysize 120
+            ysize 140
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action SetScreenVariable("page_title", "CG")
             text _("CGs") xalign 0.5 yalign 0.5
         fixed:
             xsize 570
-            ysize 120
+            ysize 130
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action SetScreenVariable("page_title", "BONUS")
             text _("Bonus") xalign 0.5 yalign 0.5
         fixed:
             xsize 570
-            ysize 120
+            ysize 130
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action Return()

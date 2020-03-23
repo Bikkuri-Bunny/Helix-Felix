@@ -636,33 +636,32 @@ screen navigation():
     vbox:
         style_prefix "menu_button"
 
-        #xpos gui.navigation_xpos
         #yalign 0.5
-        xpos 112+250#1134
         ypos 424
         xmaximum 500
         xminimum 500
-        xalign 0.5
+        xalign 0
+        xoffset 60
         #ysize 600
-
-        fixed:
-            xsize 570
-            ysize 130
-            imagebutton:
-                auto "gui/button/short_button_%s.png"
-                action ShowMenu("save")
-            text _("Save"):
-                xalign 0.5
-                yalign 0.5
-        fixed:
-            xsize 570
-            ysize 130
-            imagebutton:
-                auto "gui/button/short_button_%s.png"
-                action ShowMenu("load")
-            text _("Load"):
-                xalign 0.5
-                yalign 0.5
+        if not main_menu:
+            fixed:
+                xsize 570
+                ysize 130
+                imagebutton:
+                    auto "gui/button/short_button_%s.png"
+                    action ShowMenu("save")
+                text _("Save"):
+                    xalign 0.5
+                    yalign 0.5
+            fixed:
+                xsize 570
+                ysize 130
+                imagebutton:
+                    auto "gui/button/short_button_%s.png"
+                    action ShowMenu("load")
+                text _("Load"):
+                    xalign 0.5
+                    yalign 0.5
         fixed:
             xsize 570
             ysize 130
@@ -672,24 +671,25 @@ screen navigation():
             text _("Preferences"):
                 xalign 0.5
                 yalign 0.5
-        fixed:
-            xsize 570
-            ysize 130
-            imagebutton:
-                auto "gui/button/short_button_%s.png"
-                action ShowMenu("gallery")
-            text _("Gallery"):
-                xalign 0.5
-                yalign 0.5
-        fixed:
-            xsize 570
-            ysize 130
-            imagebutton:
-                auto "gui/button/short_button_%s.png"
-                action ShowMenu("achievements")
-            text _("Achievements"):
-                xalign 0.5
-                yalign 0.5
+        if main_menu:
+            fixed:
+                xsize 570
+                ysize 130
+                imagebutton:
+                    auto "gui/button/short_button_%s.png"
+                    action ShowMenu("gallery")
+                text _("Gallery"):
+                    xalign 0.5
+                    yalign 0.5
+            fixed:
+                xsize 570
+                ysize 130
+                imagebutton:
+                    auto "gui/button/short_button_%s.png"
+                    action ShowMenu("achievements")
+                text _("Achievements"):
+                    xalign 0.5
+                    yalign 0.5
         fixed:
             xsize 570
             ysize 130

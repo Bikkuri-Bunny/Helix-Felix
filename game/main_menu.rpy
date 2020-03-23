@@ -93,8 +93,7 @@ screen main_menu():
             text _("Gallery"):
                 xalign 0.5
                 yalign 0.5
-        ## The quit button is banned on iOS and unnecessary on Android and
-        ## Web.
+        ## The quit button is banned on iOS and unnecessary on Android and Web.
         if renpy.variant("pc"):
             fixed:
                 xsize 570
