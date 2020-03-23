@@ -218,6 +218,7 @@ define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color
 define gui.quick_button_text_font = "fonts/endutt.otf"
 
+define gui.menu_button_text_font = "fonts/endutt.otf"
 define gui.gal_button_text_font = "fonts/endutt.otf"
 define gui.gal_button_text_size = 100
 

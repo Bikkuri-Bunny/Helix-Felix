@@ -28,7 +28,6 @@
 ## to other menus, and to start the game.
 
 screen main_menu():
-
     ## This ensures that any other menu screen is replaced.
     tag menu
 
@@ -37,112 +36,81 @@ screen main_menu():
     add gui.main_menu_background
     add gui.main_menu_overlay
     add gui.logo xalign 1.0
+    #Debug options
     if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')):
-
-              vbox:
-                style_prefix "debug"
-                textbutton _("Debugger"):
-                  action Show("_debuger")
+        vbox:
+            style_prefix "debug"
+            textbutton _("Debugger"):
+                action Show("_debuger")
     vbox:
-        style_prefix "navigation_main"
-
-        #xpos gui.navigation_xpos
-        #yalign 0.5
-        ypos 504
-        xsize 578#500
+        style_prefix "menu_button"
+        spacing -5
+        ypos 450
+        xsize 570
         xalign 1.0
         xoffset -150
         ysize 600
 
         if LoadMostRecent().get_sensitive():
-         frame:
-          if main_menu_bt[4]:
-             background "gui/button/short_button_idle.png"#im.Scale("gui/button/short_button_hover.png", 500, 100)
-          else:
-             background "gui/button/short_button_hover.png"#im.Scale("gui/button/short_button_idle.png", 500, 100)
-          hbox:
-            textbutton _("Continue"):
-                action [Play("sound", "audio/ding.ogg"), LoadMostRecent(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
-                hovered Function(hovered_main_menu_bt,4)
-                unhovered Function(unhovered_main_menu_bt,4)
+            fixed:
                 xsize 570
+                ysize 130
+                imagebutton:
+                    auto "gui/button/short_button_%s.png"
+                    action [Play("sound", "audio/ding.ogg"), LoadMostRecent()]
+                text _("Load"):
+                    xalign 0.5
+                    yalign 0.5
+        fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                if LoadMostRecent().get_sensitive():
+                    action [Play("sound", "audio/ding.ogg"), Confirm("Are you sure you want to restart the game?", yes=Start(), no=Return())]
+                else:
+                  action [Play("sound", "audio/ding.ogg"), Start()]
+            text _("New Game"):
                 xalign 0.5
-                ysize 117
                 yalign 0.5
 
-        frame:
-         if main_menu_bt[0]:
-            background "gui/button/short_button_idle.png"#im.Scale("gui/button/short_button_hover.png", 500, 100)
-         else:
-            background "gui/button/short_button_hover.png"#im.Scale("gui/button/short_button_idle.png", 500, 100)
-         hbox:
-            textbutton _("New Game"):
-              if LoadMostRecent().get_sensitive():
-               action [Play("sound", "audio/ding.ogg"), Confirm("Are you sure you want to restart the game?", yes=Start(), no=Return()), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
-              else:
-               action [Play("sound", "audio/ding.ogg"), Start(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
-              hovered Function(hovered_main_menu_bt,0)
-              unhovered Function(unhovered_main_menu_bt,0)
-              xsize 570
-              xalign 0.5
-              ysize 117
-              yalign 0.5
+        fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action ShowMenu("preferences")
+            text _("Options"):
+                xalign 0.5
+                yalign 0.5
 
-        frame:
-          if main_menu_bt[1]:
-            background "gui/button/short_button_idle.png"
-          else:
-            background "gui/button/short_button_hover.png"
-          hbox:
-            textbutton _("Options"):
-              action [ShowMenu("preferences"), Function(reset_main_menu_bt)]
-              hovered Function(hovered_main_menu_bt,1)
-              unhovered Function(unhovered_main_menu_bt,1)
-              xsize 570
-              xalign 0.5
-              ysize 117
-              yalign 0.5
-
-        frame:
-          if main_menu_bt[2]:
-            background "gui/button/short_button_idle.png"
-          else:
-            background "gui/button/short_button_hover.png"
-          hbox:
-            textbutton _("Gallery"):
-              action [ShowMenu("gallery"), Function(reset_main_menu_bt)]
-              hovered Function(hovered_main_menu_bt,2)
-              unhovered Function(unhovered_main_menu_bt,2)
-              xsize 570
-              xalign 0.5
-              ysize 117
-              yalign 0.5
-
-        #remember this variable --> persistent.draw_mode
+        fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action ShowMenu("gallery")
+            text _("Gallery"):
+                xalign 0.5
+                yalign 0.5
+        ## The quit button is banned on iOS and unnecessary on Android and
+        ## Web.
         if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            frame:
-              if main_menu_bt[3]:
-                background "gui/button/short_button_idle.png"
-              else:
-                background "gui/button/short_button_hover.png"
-              hbox:
-                textbutton _("Quit"):
-                  action Quit(confirm= main_menu)
-                  hovered Function(hovered_main_menu_bt,3)
-                  unhovered Function(unhovered_main_menu_bt,3)
-                  xsize 570
-                  xalign 0.5
-                  ysize 117
-                  yalign 0.5
+            fixed:
+                xsize 570
+                ysize 130
+                imagebutton:
+                    auto "gui/button/short_button_%s.png"
+                    action Quit()
+                text _("Quit"):
+                    xalign 0.5
+                    yalign 0.5
 
 style debug_button_text:
-  hover_color "#7f7ab1"
-  color "#9ba9a5"
-  size 50
-  xalign 0.5
+    hover_color "#7f7ab1"
+    color "#000000"
+    size 50
+    xalign 0.5
 style navigation_main_button is gui_button
 style navigation_main_button_text:# is gui_button_text
   hover_color "#7f7ab1"
@@ -201,3 +169,7 @@ style main_menu_version:
     #xpos 1280
     #ypos 322
     color "#7f7ab1"
+style menu_button_text:
+    font gui.menu_button_text_font
+    size 70
+    color "#ffffffBF"

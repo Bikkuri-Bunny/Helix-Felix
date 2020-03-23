@@ -120,14 +120,14 @@ screen gallery():
     # A grid of buttons.
 
     vbox:
-        style_prefix "gallery"
-        xpos gui.navigation_xpos
+        style_prefix "menu_button"
         yalign 0.7
         xsize 500
         xalign 0.0
+        xoffset 60
         ysize 400
         fixed:
-            xsize 550
+            xsize 570
             ysize 120
             imagebutton:
                 auto "gui/button/short_button_%s.png"
@@ -137,21 +137,21 @@ screen gallery():
                 yalign 0.5
 
         fixed:
-            xsize 550
+            xsize 570
             ysize 120
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action SetScreenVariable("page_title", "CG")
             text _("CGs") xalign 0.5 yalign 0.5
         fixed:
-            xsize 550
+            xsize 570
             ysize 120
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action SetScreenVariable("page_title", "BONUS")
             text _("Bonus") xalign 0.5 yalign 0.5
         fixed:
-            xsize 550
+            xsize 570
             ysize 120
             imagebutton:
                 auto "gui/button/short_button_%s.png"
@@ -225,3 +225,7 @@ screen gallery():
 style gallery_text:
     font gui.gallery_text_font
     size gui.gallery_text_size
+style menu_button_text:
+    font gui.menu_button_text_font
+    size 70
+    color "#ffffffBF"
