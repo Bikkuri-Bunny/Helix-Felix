@@ -61,8 +61,7 @@ screen navigation_main():
         #        xminimum 500
         #        xalign 0.5
         #        ypos 10
-        $ recent_save = renpy.newest_slot("[^_]")
-        if (recent_save is not None):
+        if LoadMostRecent().get_sensitive():
          frame:
           if main_menu_bt[4]:
              background "gui/button/short_button_idle.png"#im.Scale("gui/button/short_button_hover.png", 500, 100)
@@ -72,7 +71,7 @@ screen navigation_main():
             $ recent_save = renpy.newest_slot("[^_]")
             $ recent_save_page, recent_save_name = recent_save.split("-")
             textbutton _("Continue"):
-                action [Play("sound", "audio/ding.ogg"), FileLoad(recent_save_name, confirm=True, page=recent_save_page), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
+                action [Play("sound", "audio/ding.ogg"), LoadMostRecent(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
                 hovered Function(hovered_main_menu_bt,4)
                 unhovered Function(unhovered_main_menu_bt,4)
                 xsize 570
@@ -184,6 +183,8 @@ screen main_menu():
     style_prefix "main_menu"
 
     add gui.main_menu_background
+    add gui.main_menu_overlay
+    add gui.logo xalign 1.0
 
     ## This empty frame darkens the main menu
     frame:
