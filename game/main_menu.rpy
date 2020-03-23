@@ -28,7 +28,7 @@
 ## to other menus, and to start the game.
 
 screen navigation_main():
-
+    
     if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')):
 
               vbox:
@@ -62,6 +62,22 @@ screen navigation_main():
         #        xalign 0.5
         #        ypos 10
 
+        if LoadMostRecent().get_sensitive():
+         frame:
+          if main_menu_bt[4]:
+             background "gui/button/short_button_idle.png"#im.Scale("gui/button/short_button_hover.png", 500, 100)
+          else:
+             background "gui/button/short_button_hover.png"#im.Scale("gui/button/short_button_idle.png", 500, 100)
+          hbox:
+             textbutton _("Continue"):
+              action [Play("sound", "audio/ding.ogg"), LoadMostRecent(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
+              hovered Function(hovered_main_menu_bt,4)
+              unhovered Function(unhovered_main_menu_bt,4)
+              xsize 570
+              xalign 0.5
+              ysize 117
+              yalign 0.5
+
         frame:
          if main_menu_bt[0]:
             background "gui/button/short_button_idle.png"#im.Scale("gui/button/short_button_hover.png", 500, 100)
@@ -69,7 +85,10 @@ screen navigation_main():
             background "gui/button/short_button_hover.png"#im.Scale("gui/button/short_button_idle.png", 500, 100)
          hbox:
             textbutton _("New Game"):
-              action [Play("sound", "audio/ding.ogg"), LoadMostRecent(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
+              if LoadMostRecent().get_sensitive():
+               action [Play("sound", "audio/ding.ogg"), Confirm("Are you sure you want to restart the game?", yes=Start(), no=Return()), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
+              else:
+               action [Play("sound", "audio/ding.ogg"), Start(), Function(reset_main_menu_bt)] #[ShowMenu("load"), Function(reset_main_menu_bt)]
               hovered Function(hovered_main_menu_bt,0)
               unhovered Function(unhovered_main_menu_bt,0)
               xsize 570
