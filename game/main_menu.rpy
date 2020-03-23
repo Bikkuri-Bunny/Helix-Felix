@@ -27,8 +27,16 @@
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
-screen navigation_main():
+screen main_menu():
 
+    ## This ensures that any other menu screen is replaced.
+    tag menu
+
+    style_prefix "main_menu"
+
+    add gui.main_menu_background
+    add gui.main_menu_overlay
+    add gui.logo xalign 1.0
     if (renpy.exists('debug/debug.rpyc') or renpy.exists('debugger.rpa')):
 
               vbox:
@@ -158,21 +166,7 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
-screen main_menu():
 
-    ## This ensures that any other menu screen is replaced.
-    tag menu
-
-    style_prefix "main_menu"
-
-    add gui.main_menu_background
-    add gui.main_menu_overlay
-    add gui.logo xalign 1.0
-
-
-    ## The use statement includes another screen inside this one. The actual
-    ## contents of the main menu are in the navigation screen.
-    use navigation_main
 
 
 
