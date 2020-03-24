@@ -637,7 +637,7 @@ screen navigation():
         style_prefix "menu_button"
 
         #yalign 0.5
-        ypos 424
+        ypos 354
         xmaximum 500
         xminimum 500
         xalign 0
@@ -690,6 +690,25 @@ screen navigation():
                 text _("Achievements"):
                     xalign 0.5
                     yalign 0.5
+        if main_menu:
+         fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action ShowMenu("about")
+            text _("About"):
+                xalign 0.5
+                yalign 0.5
+         fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action Return()
+            text _("Return"):
+                xalign 0.5
+                yalign 0.5
         if not main_menu:
           fixed:
             xsize 570
@@ -700,31 +719,6 @@ screen navigation():
             text _("Main Menu"):
                 xalign 0.5
                 yalign 0.5
-        else:
-          fixed:
-            xsize 570
-            ysize 130
-            imagebutton:
-                auto "gui/button/short_button_%s.png"
-                action Return()
-            text _("Return"):
-                xalign 0.5
-                yalign 0.5
-        if main_menu:
-         frame:
-          if main_menu_bt[18]:
-            background im.Scale("gui/button_hover.png", 500, 100)
-          else:
-            background im.Scale("gui/button_idle.png", 500, 100)
-          hbox:
-            textbutton _("A B O U T"):
-              action ShowMenu("about")
-              hovered Function(hovered_main_menu_bt,18)
-              unhovered Function(unhovered_main_menu_bt,18)
-              xmaximum 500
-              xminimum 500
-              xalign 0.5
-              ypos 10
 
 style navigation_button is gui_button
 style navigation_button_text is gui_button_text
