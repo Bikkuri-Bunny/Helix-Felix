@@ -432,6 +432,7 @@ init python:
 
   #load custom module from renpy
   renpy.exports.load_module("core/_errorhandling")
+  renpy.exports.load_module("core/_accessibility")
 
   #purring channel
   renpy.music.register_channel("purring", "sfx", True)
