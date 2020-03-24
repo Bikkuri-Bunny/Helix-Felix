@@ -671,7 +671,7 @@ screen navigation():
             text _("Preferences"):
                 xalign 0.5
                 yalign 0.5
-        if main_menu:
+        if not main_menu:
             fixed:
                 xsize 570
                 ysize 130
@@ -690,13 +690,24 @@ screen navigation():
                 text _("Achievements"):
                     xalign 0.5
                     yalign 0.5
-        fixed:
+        if not main_menu:
+          fixed:
             xsize 570
             ysize 130
             imagebutton:
                 auto "gui/button/short_button_%s.png"
                 action MainMenu()
             text _("Main Menu"):
+                xalign 0.5
+                yalign 0.5
+        else:
+          fixed:
+            xsize 570
+            ysize 130
+            imagebutton:
+                auto "gui/button/short_button_%s.png"
+                action Return()
+            text _("Return"):
                 xalign 0.5
                 yalign 0.5
         if main_menu:

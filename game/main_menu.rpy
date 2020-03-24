@@ -107,7 +107,7 @@ screen main_menu():
 
 style debug_button_text:
     hover_color "#7f7ab1"
-    color "#000000"
+    color "#9ba9a5"
     size 50
     xalign 0.5
 style navigation_main_button is gui_button
