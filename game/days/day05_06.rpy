@@ -736,7 +736,7 @@ label day6sex:
   a "No-"
   l "You're not lying to me?"
   a "No! I'm fine, I-"
-  if _legal_age = True:
+  if persistent._legal_age == True:
       play sound ding
       menu:
         "Skip Sex Scene":

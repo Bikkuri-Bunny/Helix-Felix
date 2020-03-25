@@ -758,7 +758,7 @@ label heatfood:
 
   a thinking "What?"
   l "I'm just so lucky."
-  if _legal_age = True:
+  if persistent._legal_age == True:
       play sound ding
       menu:
         "Skip Sex Scene":
