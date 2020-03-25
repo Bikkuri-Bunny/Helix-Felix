@@ -110,7 +110,9 @@ screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                frame:
+                $ names=who.split(" ")
+                if len(names)==1:
+                 frame:
                   background None #None hide background
                   area (100,10,178,91)#(x0,y0,xsize,ysize)
                   text who:
@@ -120,7 +122,25 @@ screen say(who, what):
                     xalign 0.5
                     yalign 0.5
                     #font "fonts/ConcertOne-Regular.ttf"
-
+                elif len(names)==2:
+                 frame:
+                  background None #None hide background
+                  area (-20,10,178,91)#(x0,y0,xsize,ysize)
+                  text names[0]:
+                    id "who"
+                    color "#35b2c7"
+                    #size 28
+                    xalign 0.5
+                    yalign 0.5
+                 frame:
+                  background None #None hide background
+                  area (100,10,178,91)#(x0,y0,xsize,ysize)
+                  text names[1]:
+                    id "who"
+                    color "#35b2c7"
+                    #size 28
+                    xalign 0.5
+                    yalign 0.5
 
         text what:
            id "what"
