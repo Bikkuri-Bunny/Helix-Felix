@@ -32,26 +32,29 @@ init offset = 42
 screen _accessibility():
     zorder 2000
     modal True
-
+    add "gui/accessibility/accessibility_menu.png"
     frame:
+        background "gui/accessibility/frame.png"#"#dd98c3"
+        xsize 1718
+        ysize 948
+        xalign 0.5
+        yalign 0.5
         style_group ""
 
-        has side "c b":
-            spacing gui._scale(10)
-            xfill True
-            yfill True
-
-        fixed:
-
-            viewport:
+        vbox:
+           viewport:
                 scrollbars "vertical"
+                ysize 648
                 mousewheel True
 
-                has grid 2 1:
+                has grid 1 2:
                     xfill True
                     spacing 20
 
-                vbox:
+                hbox:
+                  xfill True
+                  spacing 100
+                  vbox:
 
                     label _("Font Override")
 
@@ -60,6 +63,7 @@ screen _accessibility():
                     textbutton _("Default test"):
                         action Preference("font transform", None)
                         style_suffix "radio_button"
+                        #font "fonts/endutt.otf"
 
                     textbutton _("DejaVu Sans"):
                         action Preference("font transform", "dejavusans")
@@ -69,30 +73,7 @@ screen _accessibility():
                         action Preference("font transform", "opendyslexic")
                         style_suffix "radio_button"
 
-                    null height 10
-
-                    label _("Text Size Scaling")
-
-                    null height 10
-
-                    bar value Preference("font size")
-
-                    textbutton _("Reset"):
-                        action Preference("font size", 1.0)
-
-                    null height 10
-
-                    label _("Line Spacing Scaling")
-
-                    null height 10
-
-                    bar value Preference("font line spacing")
-
-                    textbutton _("Reset"):
-                        action Preference("font line spacing", 1.0)
-
-
-                vbox:
+                  vbox:
 
                     label _("Self-Voicing")
 
@@ -114,13 +95,56 @@ screen _accessibility():
                         action Preference("debug voicing", "enable")
                         style_suffix "radio_button"
 
-        vbox:
+                hbox:
+                  xfill True
+                  spacing 100
+                  vbox:
+                    xsize 500
+                    label _("Text Size Scaling")
 
-            text _("The options on this menu are intended to improve accessibility. They may not work with all games, and some combinations of options may render the game unplayable. This is not an issue with the game or engine. For the best results when changing fonts, try to keep the text size the same as it originally was.")
+                    null height 10
 
-            hbox:
-                spacing gui._scale(25)
+                    hbox:
+                      add im.Scale("gui/slider/horizontal_idle_bar2a.png",50,73)#73
+                      bar value Preference("font size"):
+                          right_bar Frame("gui/slider/horizontal_idle_bar2.png")
+                          left_bar Frame("gui/slider/horizontal_hover_bar2.png")
+                          ypos 25#18#6
+                      add im.Scale("gui/slider/horizontal_idle_bar2b.png",109,88) ypos -5 #-10
 
-                textbutton _("Return"):
-                    action Hide("_accessibility")
-                    yalign 1.0
+                    textbutton _("Reset"):
+                        action Preference("font size", 1.0)
+
+                  vbox:
+                    xsize 500
+                    label _("Line Spacing Scaling")
+
+                    null height 10
+
+                    hbox:
+                      add im.Scale("gui/slider/horizontal_idle_bar2a.png",50,73)#73
+                      bar value Preference("font line spacing"):
+                          right_bar Frame("gui/slider/horizontal_idle_bar2.png")
+                          left_bar Frame("gui/slider/horizontal_hover_bar2.png")
+                          ypos 25#18#6
+                      add im.Scale("gui/slider/horizontal_idle_bar2b.png",109,88) ypos -5 #-10
+
+                    textbutton _("Reset"):
+                        action Preference("font line spacing", 1.0)
+
+           text _("The options on this menu are intended to improve accessibility. They may not work with all games, and some combinations of options may render the game unplayable. This is not an issue with the game or engine. For the best results when changing fonts, try to keep the text size the same as it originally was.")
+
+        fixed:
+            ypos 775 #792
+            xsize 168
+            ysize 156
+            xalign 1.0
+
+            imagebutton:
+               auto "gui/button/paw_button_%s.png"
+               action Hide("_accessibility")
+            text _("Return"):
+               xalign 0.5
+               yalign 0.3
+
+init offset = 0
