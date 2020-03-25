@@ -61,7 +61,7 @@ label day0:
   with easeoutleft
   hide ainsley
   with easeoutright
-
+  pov attrs -happy
   "There's something so charming about them. I can never stay mad at them."
   "All the kittens here are like that."
   "It's hard to be a Big Brother for 87 siblings, but it's worth every bit of effort. Whenever they smile, I always smile back."

@@ -166,7 +166,9 @@ define audio.musicupbeat = "audio/wonder snow.ogg"
 
 layeredimage side addison:
     group anim:
-        attribute happy default:
+        attribute idle default:
+            Movie(play="images/sprites/Addison/Uniform/addison_idle_color.webm", mask="images/sprites/Addison/Uniform/addison_idle_alpha.webm", loop=True)
+        attribute happy:
             Movie(play="images/sprites/Addison/Uniform/addison_happy_color.webm", mask="images/sprites/Addison/Uniform/addison_happy_alpha.webm", loop=False, image="images/sprites/Addison/Uniform/addison_happy.png", start_image="images/sprites/Addison/Uniform/addison_happy_000.png")
         attribute blush:
             Movie(play="images/sprites/Addison/Uniform/addison_blush_color.webm", mask="images/sprites/Addison/Uniform/addison_blush_alpha.webm", loop=False, image="images/sprites/Addison/Uniform/addison_blush.png",start_image="images/sprites/Addison/Uniform/addison_blush_000.png")
