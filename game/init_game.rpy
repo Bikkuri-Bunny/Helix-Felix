@@ -388,7 +388,10 @@ define calendar_menu_text=[]
 #############################
 
 ######### layers #############
-define config.layers = [ 'background', 'master', 'event', 'transient', 'screens', 'overlay' ]
+#define config.layers = [ 'background', 'master', 'event', 'transient', 'screens', 'overlay' ]
+define config.layers = ['background','master', 'background2', 'middle', 'forward','event', 'transient', 'screens', 'overlay']
+init python:
+    register_3d_layer('background2', 'middle', 'forward')
 ##############################
 
 ######### icon for app.exe ##########
