@@ -194,7 +194,9 @@ layeredimage side addison:
             Movie(play="images/sprites/Addison/Uniform/addison_nervous_color.webm", mask="images/sprites/Addison/Uniform/addison_nervous_alpha.webm", loop=False, image="images/sprites/Addison/Uniform/addison_nervous.png",start_image="images/sprites/Addison/Uniform/addison_nervous_000.png")
 layeredimage side addison costume:
     group anim:
-        attribute happy default:
+        attribute idle default:
+            Movie(play="images/sprites/Addison/Costume/addison_costume_idle_color.webm", mask="images/sprites/Addison/Costume/addison_costume_idle_alpha.webm", loop=True)
+        attribute happy:
             Movie(play="images/sprites/Addison/Costume/addison_costume_happy_color.webm",mask="images/sprites/Addison/Costume/addison_costume_happy_alpha.webm",loop=False,image="images/sprites/Addison/Costume/addison_costume_happy.png",start_image="images/sprites/Addison/Costume/addison_costume_happy_000.png")
         attribute blush:
             Movie(play="images/sprites/Addison/Costume/addison_costume_blush_color.webm", mask="images/sprites/Addison/Costume/addison_costume_blush_alpha.webm", loop=False, image="images/sprites/Addison/Costume/addison_costume_blush.png",start_image="images/sprites/Addison/Costume/addison_costume_blush_000.png")
@@ -219,6 +221,8 @@ layeredimage side addison costume:
         attribute nervous null #need this
 layeredimage side addison pajamas:
     group anim:
+        attribute idle default:
+            Movie(play="images/sprites/Addison/Pajamas/addison_idle_pajamas_color.webm", mask="images/sprites/Addison/Pajamas/addison_idle_pajamas_alpha.webm", loop=True)
         attribute happy:
             Movie(play="images/sprites/Addison/Pajamas/addison_happy_pajamas_color.webm", mask="images/sprites/Addison/Pajamas/addison_happy_pajamas_alpha.webm", loop=False, image="images/sprites/Addison/Pajamas/addison_happy_pajamas.png",start_image="images/sprites/Addison/Pajamas/addison_happy_pajamas_000.png")
         attribute sad:
