@@ -36,17 +36,26 @@ init python:
     gal = Gallery()
     gal.locked_button = "gui/gallery/locked.png" #this is the thumbnail image for ALL LOCKED gallery previews, found in the images folder
     gal.transition = dissolve
+    gal.idle_border = "gui/gallery/frame.png"
+    gal.hover_border = "gui/gallery/framehover.png"
+    thumbnailx = 400
+    thumbnaily = 300
+
 
     # Step 2. Add buttons and images to the gallery.
     # A button that contains an image that automatically unlocks.
     list_gal_bg=["bg playroom","bg playroom2","bg hallway1","bg hallway2","bg bedroomdark","bg bedroomlight","bg barracks","bg cafeteria","bg classroom","bg clinic","bg filmset","bg filmset2","bg filmset3","bg stevenoffice1","bg stevenoffice2","bg lukasoffice","bg cherryblossoms1","bg cherryblossoms2","bg outside1","bg outside2","bg officespace", "bg secretspace", "bg staffroom"]
-    list_gal_bg_img=["/gui/gallery/BG/playroom.png", "/gui/gallery/BG/playroom2.png", "/gui/gallery/BG/hallway1.png", "/gui/gallery/BG/hallway2.png", "/gui/gallery/BG/bedroomdark.png", "/gui/gallery/BG/bedroomlight.png", "/gui/gallery/BG/barracks.png", "/gui/gallery/BG/cafeteria.png", "/gui/gallery/BG/classroom.png", "/gui/gallery/BG/clinic.png", "/gui/gallery/BG/filmset1.png", "/gui/gallery/BG/filmset2.png", "/gui/gallery/BG/filmset3.jpg", "/gui/gallery/BG/stevenoffice1.png", "/gui/gallery/BG/stevenoffice2.png", "/gui/gallery/BG/lukasoffice.png", "/gui/gallery/BG/cherryblossoms1.png", "/gui/gallery/BG/cherryblossoms2.png", "/gui/gallery/BG/outside1.png", "/gui/gallery/BG/outside2.png", "/gui/gallery/BG/officespace.png", "/gui/gallery/BG/secretspace.png", "/gui/gallery/BG/staffroom.jpg"]
+    list_gal_bg_img=["/images/BG/playroom.png", "/images/BG/playroom2.png", "/images/BG/hallway1.png", "/images/BG/hallway2.png", "/images/BG/bedroomdark.png", "/images/BG/bedroomlight.png", "/images/BG/barracks.png", "/images/BG/cafeteria.png", "/images/BG/classroom.png", "/images/BG/clinic.png", "/images/BG/filmset1.png", "/images/BG/filmset2.png", "/images/BG/filmset3.jpg", "/images/BG/stevenoffice1.png", "/images/BG/stevenoffice2.png", "/images/BG/lukasoffice.png", "/images/BG/cherryblossoms1.png", "/images/BG/cherryblossoms2.png", "/images/BG/outside1.png", "/images/BG/outside2.png", "/images/BG/officespace.png", "/images/BG/secretspace.png", "/images/BG/staffroom.jpg"]
     list_gal_aux=list_gal_bg
     list_gal_aux_img=list_gal_bg_img
     cantidad_paginas_bg=math.ceil(len(list_gal_bg)/float(9))
-    list_gal_cg=["simonsays","mathclass","food","shot","pumpkin_model","secretspace","lukasride","showsteven","lesson","sparkle1","piggyback","pumpkin1","lukasblow1","lukasoral1","lukassleeping","artsupplies","giftsteven","lukasgift","giftpumpkin","ss2ahph","charliecrying","stevencrying1"]
-    list_gal_cg_img=["/gui/gallery/CG/simon_says.png","/gui/gallery/CG/math_class.png","/gui/gallery/CG/food.png","/gui/gallery/CG/shot.png","/gui/gallery/CG/pumpkin_model.png","/gui/gallery/CG/secret_space.png","/gui/gallery/CG/lukas_ride.png","/gui/gallery/CG/showsteven.png","/gui/gallery/CG/lessons.png","/gui/gallery/CG/sparkle1.png","/gui/gallery/CG/piggy_back.png","/gui/gallery/CG/pumpkin1.png","/gui/gallery/CG/lukas_blow_1.png","/gui/gallery/CG/lukasoral.png","/gui/gallery/CG/lukassleeping.png","/gui/gallery/CG/artsupplies.png","/gui/gallery/CG/gift_steven.png","/gui/gallery/CG/lukasgift.png","/gui/gallery/CG/gift_pumpkin.png","/gui/gallery/CG/secretspace_Ahappy_Phappy.png","/gui/gallery/CG/Part_2/charliecrying.png","/gui/gallery/CG/Part_2/stevencrying1.png"]
+    list_gal_cg=["simonsays","mathclass","food","shot","pumpkin_model","secretspace","showsteven","lesson","sparkle1","piggyback","lukassleeping","artsupplies","giftsteven","lukasgift","giftpumpkin","ss2ahph","charliecrying","stevencrying1"]
+    list_gal_cg_img=["/images/CG/simon_says.png","/images/CG/math_class.png","/images/CG/food.png","/images/CG/shot.png","/images/CG/pumpkin_model.png","/images/CG/secret_space.png","/images/CG/showsteven.png","/images/CG/lessons.png","/images/CG/sparkle1.png","/images/CG/piggy_back.png","/images/CG/lukassleeping.png","/images/CG/artsupplies.png","/images/CG/gift_steven.png","/images/CG/lukasgift.png","/images/CG/gift_pumpkin.png","/images/CG/secretspace_Ahappy_Phappy.png","/images/CG/Part_2/charliecrying.png","/images/CG/Part_2/stevencrying1.png"]
     cantidad_paginas_cg=math.ceil(len(list_gal_cg)/float(9))
+    list_gal_r18=["lukasride", "pumpkin1", "lukasblow1", "lukasoral1",]
+    list_gal_r18_img=["/images/CG/lukas_ride.png", "/images/CG/pumpkin1.png", "/images/CG/lukas_blow_1.png", "/images/CG/lukasoral.png",]
+    cantidad_paginas_r18=math.ceil(len(list_gal_r18)/float(9))
+
 
     list_gal_bonus=["thanks1year"]
     list_gal_bonus_img=["/gui/gallery/BONUS/thanks.png"]
@@ -60,6 +69,7 @@ init python:
     init_gallery(gal,list_gal_bg)
     init_gallery(gal,list_gal_cg,"cg_")
     init_gallery(gal,list_gal_bonus)
+    init_gallery(gal,list_gal_r18)
 
 
 
@@ -91,11 +101,17 @@ screen gallery():
       $ max_page=int(cantidad_paginas_bonus)
       $ list_gal_aux=list_gal_bonus
       $ list_gal_aux_img=list_gal_bonus_img
+    if page_title in ["R18"]:
+      $ max_page=int(cantidad_paginas_r18)
+      $ list_gal_aux=list_gal_r18
+      $ list_gal_aux_img=list_gal_r18_img
     if page_title in ["BG"] and page_gallery>cantidad_paginas_bg:
       $ page_gallery = int(cantidad_paginas_bg)
     if page_title in ["CG"] and page_gallery>cantidad_paginas_cg:
       $ page_gallery = int(cantidad_paginas_cg)
     if page_title in ["BONUS"] and page_gallery>cantidad_paginas_bonus:
+      $ page_gallery = int(cantidad_paginas_bonus)
+    if page_title in ["R18"] and page_gallery>cantidad_paginas_bonus:
       $ page_gallery = int(cantidad_paginas_bonus)
     $ img1=generate_pos(0,max_page)
     $ img2=generate_pos(1,max_page)
@@ -120,7 +136,7 @@ screen gallery():
 
     vbox:
         style_prefix "menu_button"
-        yalign 0.7
+        yalign 0.8
         xsize 500
         xalign 0.0
         xoffset 60
@@ -149,6 +165,14 @@ screen gallery():
                 auto "gui/button/short_button_%s.png"
                 action SetScreenVariable("page_title", "BONUS")
             text _("Bonus") xalign 0.5 yalign 0.5
+        if persistent._legal_age == True:
+            fixed:
+                xsize 570
+                ysize 130
+                imagebutton:
+                    auto "gui/button/short_button_%s.png"
+                    action SetScreenVariable("page_title", "R18")
+                text _("R{font=fonts/chewy.ttf}18{/font}") xalign 0.5 yalign 0.5
         fixed:
             xsize 570
             ysize 130
@@ -161,7 +185,7 @@ screen gallery():
     ####Imgs
     grid 3 3:
 
-        area (728,58,1162,868)
+        area (728,58,1200,900)
         xfill True
         yfill True
 
@@ -170,39 +194,39 @@ screen gallery():
         # validar con serias (mas 4) para cada elemento de la galeria
         # verificar si existe posicion antes de graficar
         if 0<=img1[page_gallery-1]<len(list_gal_aux):
-          add gal.make_button(list_gal_aux[img1[page_gallery-1]], list_gal_aux_img[img1[page_gallery-1]], xalign=0.5, yalign=0.5) # 0,4,8,12,16,20,24
+          add gal.make_button(list_gal_aux[img1[page_gallery-1]], im.Scale(list_gal_aux_img[img1[page_gallery-1]], thumbnailx, thumbnaily), xalign=0.5, yalign=0.5) # 0,4,8,12,16,20,24
         else:
           null
         if 0<=img2[page_gallery-1]<len(list_gal_aux):
-          add gal.make_button(list_gal_aux[img2[page_gallery-1]], list_gal_aux_img[img2[page_gallery-1]], xalign=0.5, yalign=0.5) # 1,5,9,13,17,21,25
+          add gal.make_button(list_gal_aux[img2[page_gallery-1]], im.Scale(list_gal_aux_img[img2[page_gallery-1]], thumbnailx, thumbnaily), xalign=0.5, yalign=0.5) # 1,5,9,13,17,21,25
         else:
           null
         if 0<=img3[page_gallery-1]<len(list_gal_aux):
-          add gal.make_button(list_gal_aux[img3[page_gallery-1]], list_gal_aux_img[img3[page_gallery-1]], xalign=0.5, yalign=0.5) # 2,6,10,14,18,22,26
+          add gal.make_button(list_gal_aux[img3[page_gallery-1]], im.Scale(list_gal_aux_img[img3[page_gallery-1]], thumbnailx, thumbnaily), xalign=0.5, yalign=0.5) # 2,6,10,14,18,22,26
         else:
           null
         if 0<=img4[page_gallery-1]<len(list_gal_aux):
-          add gal.make_button(list_gal_aux[img4[page_gallery-1]], list_gal_aux_img[img4[page_gallery-1]], xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
+          add gal.make_button(list_gal_aux[img4[page_gallery-1]], im.Scale(list_gal_aux_img[img4[page_gallery-1]], thumbnailx, thumbnaily), xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
         else:
           null
         if 0<=img5[page_gallery-1]<len(list_gal_aux):
-          add gal.make_button(list_gal_aux[img5[page_gallery-1]], list_gal_aux_img[img5[page_gallery-1]], xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
+          add gal.make_button(list_gal_aux[img5[page_gallery-1]], im.Scale(list_gal_aux_img[img5[page_gallery-1]], thumbnailx, thumbnaily), xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
         else:
           null
         if 0<=img6[page_gallery-1]<len(list_gal_aux):
-          add gal.make_button(list_gal_aux[img6[page_gallery-1]], list_gal_aux_img[img6[page_gallery-1]], xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
+          add gal.make_button(list_gal_aux[img6[page_gallery-1]], im.Scale(list_gal_aux_img[img6[page_gallery-1]], thumbnailx, thumbnaily), xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
         else:
           null
         if 0<=img7[page_gallery-1]<len(list_gal_aux):
-          add gal.make_button(list_gal_aux[img7[page_gallery-1]], list_gal_aux_img[img7[page_gallery-1]], xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
+          add gal.make_button(list_gal_aux[img7[page_gallery-1]], im.Scale(list_gal_aux_img[img7[page_gallery-1]], thumbnailx, thumbnaily), xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
         else:
            null
         if 0<=img8[page_gallery-1]<len(list_gal_aux):
-            add gal.make_button(list_gal_aux[img8[page_gallery-1]], list_gal_aux_img[img8[page_gallery-1]], xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
+            add gal.make_button(list_gal_aux[img8[page_gallery-1]], im.Scale(list_gal_aux_img[img8[page_gallery-1]], thumbnailx, thumbnaily), xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
         else:
             null
         if 0<=img9[page_gallery-1]<len(list_gal_aux):
-          add gal.make_button(list_gal_aux[img9[page_gallery-1]], list_gal_aux_img[img9[page_gallery-1]], xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
+          add gal.make_button(list_gal_aux[img9[page_gallery-1]], im.Scale(list_gal_aux_img[img9[page_gallery-1]], thumbnailx, thumbnaily), xalign=0.5, yalign=0.5) # 3,7,1115,19,23,27
         else:
           null
 
