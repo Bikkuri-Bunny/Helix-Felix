@@ -476,6 +476,12 @@ init python:
   def reset_main_menu_bt():
     renpy.store.main_menu_bt=[True]*23 #by the code of the previous GUI
     return None
+  def crop_scale(d,area):
+    #area=(x,y,x_SIZE,y_SIZE)
+    b= renpy.easy_displayable(d)
+    #b=im.Crop(b,(x,y,x_SIZE,y_SIZE)) x+x_SIZE<=width y+y_SIZE<=height
+    b=im.Crop(b,area) 
+    return b
 
 init +1 python:
     class LoadMostRecent(Action):
