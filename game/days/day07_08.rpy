@@ -761,6 +761,11 @@ label giftsteven:
   with easeoutleft
 
   "He heads out and I turn to clean up the big mess I've made at my new desk."
+  "Something about what he said..."
+  "No, something about how he said what he said... It's bothering me."
+  "I really have to figure out why he's so tense and nervous around me, around the subject of Felixes even."
+  "He has such a kind smile. So why does he always seem so sad?"
+  "I finished cleaning up while I pondered those thoughts."
 
   jump day8end
 
@@ -835,6 +840,12 @@ label giftlukas:
   with easeoutleft
 
   a "-sigh-"
+  "Something really is bothering him."
+  "I can tell because we're so close. He's been caring for me for ten years now. We're best friends. He should be able to tell me anything that might be on his mind."
+  "So why does it feel like he's hiding something?"
+  "I don't want him to feel blue. I want to make him feel better. I want to be there for him, like he's always been there for me."
+  "I guess I have to step up and let him know he can talk to me somehow."
+  "Hopefully this was a good first step."
 
   jump day8end
 
@@ -914,6 +925,13 @@ label giftpumpkin:
   a "Me too."
 
   "Yeah. It's nice to have a friend."
+  "I want to be better friends with him. He's such a good boy and now I have a chance to spend more time with him, without the fear of him ever leaving."
+  "It's not something I've ever had before."
+  "But even so, there's doubts in the back of my mind... our situtations are so different... We're practically oposites."
+  "I stayed here because I'm concidered 'broken', but he's staying because he's so pretty and confident..."
+  "No one wants me, but everyone want's him..."
+  "But that shouldn't change our relationship, right?"
+  "We can still become even closer as family."
 
   scene bg bedroomdark
   hide giftpumpkin onlayer event with fade
@@ -925,7 +943,7 @@ label day8end:
 
   "With all that out of the way, I end up sneaking into the back of the cafeteria and grabbing a few bites of leftovers before heading to bed."
   "I can't believe I worked straight through two meals, but..."
-  "I haven't had this much fun in a very long time. Even now, I still can't stop smiling."
+  "I haven't had this much fun in a very long time. Even now I still can't stop smiling."
 
   scene bg bedroomlight
   with dissolve
