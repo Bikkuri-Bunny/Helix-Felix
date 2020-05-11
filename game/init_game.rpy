@@ -78,6 +78,8 @@ image partone = "images/cards/partone.png"
 image parttwo = "images/cards/parttwo.png"
 
 #backgrounds
+
+#backgrounds
 image gallocked = "gui/newgallery/black.png"
 image bg playroom = "images/BG/playroom.jpg"
 image bg playroom2 = "images/BG/playroom2.jpg"
