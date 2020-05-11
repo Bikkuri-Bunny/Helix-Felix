@@ -21,30 +21,30 @@ transform myright:
     xalign 0.7
     yalign 1.0
 
-define a = Character(_("Addison"), who_color="#ffdb90", who_outlines=[ (1, "#ffffff") ], what_color="#ffdb90", what_outlines=[ (1, "#ffffff") ], image="addison",ctc="ctc_blink",ctc_position="nestled",callback=purring_voice)
+define a = Character(_("Addison"), who_color="#ffdb90", who_outlines=[ (1, "#d1910a") ], what_color="#ffdb90", what_outlines=[ (1, "#d1910a") ], image="addison",ctc="ctc_blink",ctc_position="nestled",callback=purring_voice)
 #orange
-define l = Character(_("Dr. Kronauer"), who_color="#a6f7e3", who_outlines=[ (1, "#ffffff") ], what_color="#a6f7e3", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"lukas"
+define l = Character(_("Dr. Kronauer"), who_color="#a6f7e3", who_outlines=[ (1, "#119071") ], what_color="#a6f7e3", what_outlines=[ (1, "#119071") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"lukas"
 #cyan
 #Because names can be confusing when reading this script; Dr. Lukas Kronauer, usually referred to as Lukas ooc
-define s = Character(_("Dr. Moore"), who_color="#fd9ebb", who_outlines=[ (1, "#ffffff") ], what_color="#fd9ebb", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"steven"
+define s = Character(_("Dr. Moore"), who_color="#fd9ebb", who_outlines=[ (1, "#ff2367") ], what_color="#fd9ebb", what_outlines=[ (1, "#ff2367") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"steven"
 #pink
 #Dr. Steven Moore, usually referred to as Steven ooc
-define p = Character(_("Pumpkin"), who_color="#b2fa99", who_outlines=[ (1, "#ffffff") ], what_color="#b2fa99", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"pumpkin"
+define p = Character(_("Pumpkin"), who_color="#b2fa99", who_outlines=[ (1, "#30a00a") ], what_color="#b2fa99", what_outlines=[ (1, "#30a00a") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"pumpkin"
 #green
-define j = Character(_("Mr. Jesse"), who_color="#fbf896", who_outlines=[ (1, "#ffffff") ], what_color="#fbf896", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"jesse"
+define j = Character(_("Mr. Jesse"), who_color="#fbf896", who_outlines=[ (1, "#b2ad08") ], what_color="#fbf896", what_outlines=[ (1, "#b2ad08") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"jesse"
 #yellow
-define c = Character(_("Charlie"), who_color="#99a8ff", who_outlines=[ (1, "#ffffff") ], what_color="#99a8ff", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"charlie"
+define c = Character(_("Charlie"), who_color="#99a8ff", who_outlines=[ (1, "#3654ff") ], what_color="#99a8ff", what_outlines=[ (1, "#3654ff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"charlie"
 #blue
-define g = Character(_("Ainsley"), who_color="#eba9ff", who_outlines=[ (1, "#ffffff") ], what_color="#eba9ff", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)#"ainsley"
+define g = Character(_("Ainsley"), who_color="#eba9ff", who_outlines=[ (1, "#ce2dff") ], what_color="#eba9ff", what_outlines=[ (1, "#ce2dff") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)#"ainsley"
 #purple
 #Note she had to be 'G' for 'Good Girl'
-define o = Character(_("Staff"), who_color="#000000", who_outlines=[ (1, "#ffffff") ], what_color="#000000", what_outlines=[ (1, "#ffffff") ], ctc="ctc_blink",ctc_position="nestled", callback=purring_voice)
+define o = Character(_("Staff"), who_color="#ffffff", who_outlines=[ (1, "#000000") ], what_color="#ffffff", what_outlines=[ (1, "#000000") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
 #grey
-define narrator = Character(what_outlines=[ (1, "#000000") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
-define narrator_nvl = Character(None, kind=nvl,what_outlines=[ (1, "#000000") ], ctc="ctc_blink",ctc_position="nestled",callback=purring_voice)
+define narrator = Character(what_color="#ffffff", what_outlines=[ (1, "#000000") ],  ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
+define narrator_nvl = Character(None, kind=nvl,what_outlines=[ (1, "#000000") ], ctc="ctc_blink", ctc_position="nestled", callback=purring_voice)
 #CTC
 image ctc_blink:
-       "gui/arrow.png"
+       "gui/CTC.png"
        linear 0.75 alpha 1.0
        linear 0.75 alpha 0.0
        repeat
@@ -54,7 +54,7 @@ image white = "#ffffff"
 
 image logo2 = Composite(
     (662, 653+50),
-    (0, 0), "gui/logo.png",
+    (0, 0), "gui/bikkuri_bunny_logo.png",
     (110, 680), Text("{color=#0000ffff}A Bikkuri Bunny Production{/color}"))
 
 #transition
@@ -62,8 +62,10 @@ define bites = ImageDissolve(im.Tile("images/transitions/bites.jpg"), 2, 8)
 define test_t = ImageDissolve(im.Tile("images/transitions/test.png"), 2, 8)
 define test2_t = ImageDissolve(im.Tile("images/transitions/test2.png"), 2, 8)
 
-#bagde
-image badge = "gui/button/badge.png" #badge for choice menu
+image logo = "gui/logo.png"
+
+#badge
+image badge = "gui/button/paw.png" #badge for choice menu
 #cards
 image card1 = "images/cards/card1.png"
 image card2 = "images/cards/card2.png"
@@ -76,31 +78,32 @@ image partone = "images/cards/partone.png"
 image parttwo = "images/cards/parttwo.png"
 
 #backgrounds
-image bg playroom = "images/BG/playroom.jpg"
-image bg playroom2 = "images/BG/playroom2.jpg"
-image bg hallway1 = "images/BG/hallway1.png"
-image bg hallway2 = "images/BG/hallway2.png"
-image bg bedroomdark = "images/BG/bedroomdark.png"
-image bg bedroomlight = "images/BG/bedroomlight.png"
-image bg barracks = "images/BG/barracks.png"
-image bg cafeteria = "images/BG/cafeteria.png"
-image bg classroom = "images/BG/classroom.png"
-image bg clinic = "images/BG/clinic.png"
-image bg filmset = "images/BG/filmset1.png"
-image bg filmset2 = "images/BG/filmset2.png"
-image bg filmset3 = "images/BG/filmset3.jpg"
-image bg stevenoffice1 = "images/BG/stevenoffice1.png"
-image bg stevenoffice2 = "images/BG/stevenoffice2.png"
-image bg lukasoffice = "images/BG/lukasoffice.png"
-image bg cherryblossoms1 = "images/BG/cherryblossoms1.png"
-image bg cherryblossoms2 = "images/BG/cherryblossoms2.png"
-image bg outside1 = "images/BG/outside1.png"
-image bg outside2 = "images/BG/outsdie2.png"
-image bg officespace = "images/BG/officespace.png"
-image bg secretspace = "images/BG/secretspace.png"
-image bg staffroom = "images/BG/staffroom.jpg"
-image bg hideandseakclosed = "images/BG/unchecked.png"
-image bg hideandseakopen = "images/BG/checked.png"
+image gallocked = "gui/newgallery/black.png"
+image bg playroom = "images/BG/playroom.webp"
+image bg playroom2 = "images/BG/playroom2.webp"
+image bg hallway1 = "images/BG/hallway1.webp"
+image bg hallway2 = "images/BG/hallway2.webp"
+image bg bedroomdark = "images/BG/bedroomdark.webp"
+image bg bedroomlight = "images/BG/bedroomlight.webp"
+image bg barracks = "images/BG/barracks.webp"
+image bg cafeteria = "images/BG/cafeteria.webp"
+image bg classroom = "images/BG/classroom.webp"
+image bg clinic = "images/BG/clinic.webp"
+image bg filmset = "images/BG/filmset1.webp"
+image bg filmset2 = "images/BG/filmset2.webp"
+image bg filmset3 = "images/BG/filmset3.webp"
+image bg stevenoffice1 = "images/BG/stevenoffice1.webp"
+image bg stevenoffice2 = "images/BG/stevenoffice2.webp"
+image bg lukasoffice = "images/BG/lukasoffice.webp"
+image bg cherryblossoms1 = "images/BG/cherryblossoms1.webp"
+image bg cherryblossoms2 = "images/BG/cherryblossoms2.webp"
+image bg outside1 = "images/BG/outside1.webp"
+image bg outside2 = "images/BG/outsdie2.webp"
+image bg officespace = "images/BG/officespace.webp"
+image bg secretspace = "images/BG/secretspace.webp"
+image bg staffroom = "images/BG/Staffroom.webp"
+image bg hideandseekclosed = "images/BG/unchecked.webp"
+image bg hideandseekopen = "images/BG/checked.webp"
 
 #event pictures, they're called 'CGs'
 image warning = "images/CG/warning.png"
@@ -163,7 +166,9 @@ define audio.musicupbeat = "audio/wonder snow.ogg"
 
 layeredimage side addison:
     group anim:
-        attribute happy default:
+        attribute idle default:
+            Movie(play="images/sprites/Addison/Uniform/addison_idle_color.webm", mask="images/sprites/Addison/Uniform/addison_idle_alpha.webm", loop=True)
+        attribute happy:
             Movie(play="images/sprites/Addison/Uniform/addison_happy_color.webm", mask="images/sprites/Addison/Uniform/addison_happy_alpha.webm", loop=False, image="images/sprites/Addison/Uniform/addison_happy.png", start_image="images/sprites/Addison/Uniform/addison_happy_000.png")
         attribute blush:
             Movie(play="images/sprites/Addison/Uniform/addison_blush_color.webm", mask="images/sprites/Addison/Uniform/addison_blush_alpha.webm", loop=False, image="images/sprites/Addison/Uniform/addison_blush.png",start_image="images/sprites/Addison/Uniform/addison_blush_000.png")
@@ -189,7 +194,9 @@ layeredimage side addison:
             Movie(play="images/sprites/Addison/Uniform/addison_nervous_color.webm", mask="images/sprites/Addison/Uniform/addison_nervous_alpha.webm", loop=False, image="images/sprites/Addison/Uniform/addison_nervous.png",start_image="images/sprites/Addison/Uniform/addison_nervous_000.png")
 layeredimage side addison costume:
     group anim:
-        attribute happy default:
+        attribute idle default:
+            Movie(play="images/sprites/Addison/Costume/addison_costume_idle_color.webm", mask="images/sprites/Addison/Costume/addison_costume_idle_alpha.webm", loop=True)
+        attribute happy:
             Movie(play="images/sprites/Addison/Costume/addison_costume_happy_color.webm",mask="images/sprites/Addison/Costume/addison_costume_happy_alpha.webm",loop=False,image="images/sprites/Addison/Costume/addison_costume_happy.png",start_image="images/sprites/Addison/Costume/addison_costume_happy_000.png")
         attribute blush:
             Movie(play="images/sprites/Addison/Costume/addison_costume_blush_color.webm", mask="images/sprites/Addison/Costume/addison_costume_blush_alpha.webm", loop=False, image="images/sprites/Addison/Costume/addison_costume_blush.png",start_image="images/sprites/Addison/Costume/addison_costume_blush_000.png")
@@ -214,6 +221,8 @@ layeredimage side addison costume:
         attribute nervous null #need this
 layeredimage side addison pajamas:
     group anim:
+        attribute idle default:
+            Movie(play="images/sprites/Addison/Pajamas/addison_idle_pajamas_color.webm", mask="images/sprites/Addison/Pajamas/addison_idle_pajamas_alpha.webm", loop=True)
         attribute happy:
             Movie(play="images/sprites/Addison/Pajamas/addison_happy_pajamas_color.webm", mask="images/sprites/Addison/Pajamas/addison_happy_pajamas_alpha.webm", loop=False, image="images/sprites/Addison/Pajamas/addison_happy_pajamas.png",start_image="images/sprites/Addison/Pajamas/addison_happy_pajamas_000.png")
         attribute sad:
@@ -373,14 +382,20 @@ default pumpkin_points = 0
 default steven_points = 0
 default lukas_points = 0
 
-default main_menu_bt=[True]*22
+default persistent.secrets = False
+
+default main_menu_bt=[True]*23 #by the code of the previous GUI
+default choice_menu_bt=[True]*10
 
 ##### calendar text #########
 define calendar_menu_text=[]
 #############################
 
 ######### layers #############
-define config.layers = [ 'background', 'master', 'event', 'transient', 'screens', 'overlay' ]
+#define config.layers = [ 'background', 'master', 'event', 'transient', 'screens', 'overlay' ]
+define config.layers = ['background','master', 'background2', 'middle', 'forward','event', 'transient', 'screens', 'overlay']
+init python:
+    register_3d_layer('background2', 'middle', 'forward')
 ##############################
 
 ######### icon for app.exe ##########
@@ -394,19 +409,19 @@ init -1 python hide:
 
 ###### days ###############
 init:
-  calendar add "Sun" "7th" "March" #day0
-  calendar add "Mon" "8th" "March" #day1
-  calendar add "Tues" "9th" "March" #day2
-  calendar add "Wed" "10th" "March" #day3
-  calendar add "Fri" "13th" "March" #day4
-  calendar add "Mon" "16th" "March" #day5
-  calendar add "Wed" "18th" "March" #day6
-  calendar add "Thur" "19th" "March" #day7
-  calendar add "Fri" "20th" "March" #day8
-  calendar add "Sat" "21th" "March" #day9
-  calendar add "Mon" "23rd" "March" #day10
-  calendar add "Wed" "25th" "March" #day11
-  calendar add "Thur" "26th" "March" #day12
+  calendar add "Sun" "7" "3" #day0
+  calendar add "Mon" "8" "3" #day1
+  calendar add "Tues" "9" "3" #day2
+  calendar add "Wed" "10" "3" #day3
+  calendar add "Fri" "13" "3" #day4
+  calendar add "Mon" "16" "3" #day5
+  calendar add "Wed" "18" "3" #day6
+  calendar add "Thur" "19" "3" #day7
+  calendar add "Fri" "20" "3" #day8
+  calendar add "Sat" "21" "3" #day9
+  calendar add "Mon" "23" "3" #day10
+  calendar add "Wed" "25" "3" #day11
+  calendar add "Thur" "26" "3" #day12
 
 ###########################
 
@@ -426,12 +441,13 @@ init python:
 
   #load custom module from renpy
   renpy.exports.load_module("core/_errorhandling")
+  renpy.exports.load_module("core/_accessibility")
 
   #purring channel
   renpy.music.register_channel("purring", "sfx", True)
   #config.speaking_attribute = "speaking"
   #addison side allways
-  config.side_image_tag = None
+  config.side_image_tag = "addison"
   #narrator.image_tag = "addison"
   config.tag_layer['bg'] = 'background'
   config.tag_layer['cg'] = 'event'
@@ -441,9 +457,40 @@ init python:
    else:
     renpy.store.quick_menu=False
    return None
+  def hovered_choice_menu_bt(var):
+    renpy.store.choice_menu_bt[var]=False
+    return None
+  def unhovered_choice_menu_bt(var):
+    renpy.store.choice_menu_bt[var]=True
+    return None
+  def reset_choice_menu_bt():
+    renpy.store.choice_menu_bt=[True]*10
+    return None
+
   def hovered_main_menu_bt(var):
     renpy.store.main_menu_bt[var]=False
     return None
   def unhovered_main_menu_bt(var):
     renpy.store.main_menu_bt[var]=True
     return None
+  def reset_main_menu_bt():
+    renpy.store.main_menu_bt=[True]*23 #by the code of the previous GUI
+    return None
+  def crop_scale(d,area):
+    #area=(x,y,x_SIZE,y_SIZE)
+    b= renpy.easy_displayable(d)
+    #b=im.Crop(b,(x,y,x_SIZE,y_SIZE)) x+x_SIZE<=width y+y_SIZE<=height
+    b=im.Crop(b,area) 
+    return b
+
+init +1 python:
+    class LoadMostRecent(Action):
+
+        def __init__(self):
+            self.slot = renpy.newest_slot("[^_]") #this way for mac
+
+        def __call__(self):
+            renpy.load(self.slot)
+
+        def get_sensitive(self):
+            return self.slot is not None

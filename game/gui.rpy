@@ -40,10 +40,10 @@ define gui.achievement_text_size=23
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = '#0099cc'
+define gui.accent_color = '#48a5a5'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#009ba9'
+define gui.idle_color = '#b1b2b2'
 define gui.idle_outline = '#000000'
 
 ## The small color is used for small text, which needs to be brighter/darker to
@@ -51,7 +51,7 @@ define gui.idle_outline = '#000000'
 define gui.idle_small_color = '#aaaaaa'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#00c8da'
+define gui.hover_color = '#48a5a5'
 define gui.hover_outline = '#000000'
 
 ## The color used for a text button when it is selected but not focused. A
@@ -60,7 +60,7 @@ define gui.selected_color = '#00e4f9'
 define gui.selected_outline = '#000000'
 
 ## The color used for a text button when it cannot be selected.
-define gui.insensitive_color = '#8888887f'
+define gui.insensitive_color = '#bbbcbc'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
@@ -78,7 +78,7 @@ define gui.interface_text_color = "#7f7ab1"#'#ffffff'
 define gui.text_font = "fonts/BloggerSans-Light.ttf"#"DejaVuSans.ttf"
 
 ## The font used for character names.
-define gui.name_text_font = "fonts/ConcertOne-Regular.ttf"#"DejaVuSans.ttf"
+define gui.name_text_font = "fonts/ConcertOne-Regular.ttf"
 
 ## The font used for out-of-game text.
 define gui.interface_text_font = "fonts/ConcertOne-Regular.ttf"#"DejaVuSans.ttf"
@@ -106,7 +106,14 @@ define gui.title_text_size = 75
 
 ## The images used for the main and game menus.
 define gui.main_menu_background = "gui/main_menu.png"
+define gui.main_menu_overlay = "gui/overlay/main_menu.png"
 define gui.game_menu_background = "gui/game_menu.png"
+define gui.gallery_background = "gui/gallery/gallery_menu.png"
+define gui.logo = "gui/logo.png"
+
+## Gallery Styles
+define gui.gallery_text_font = "fonts/endutt.otf"
+define gui.gallery_text_size = 50
 
 
 ## Dialogue ####################################################################
@@ -206,23 +213,22 @@ define gui.confirm_button_text_xalign = 0.5
 define gui.page_button_borders = Borders(15, 6, 15, 6)
 
 define gui.quick_button_borders = Borders(15, 6, 15, 0)
-define gui.quick_button_text_size = 21
+define gui.quick_button_text_size = 50
 define gui.quick_button_text_idle_color = gui.idle_small_color
 define gui.quick_button_text_selected_color = gui.accent_color
+define gui.quick_button_text_font = "fonts/endutt.otf"
 
-## You can also add your own customizations, by adding properly-named variables.
-## For example, you can uncomment the following line to set the width of a
-## navigation button.
-
-# define gui.navigation_button_width = 250
+define gui.menu_button_text_font = "fonts/endutt.otf"
+define gui.gal_button_text_font = "fonts/endutt.otf"
+define gui.gal_button_text_size = 100
 
 
 ## Choice Buttons ##############################################################
 ##
 ## Choice buttons are used in the in-game menus.
 
-define gui.choice_button_width = 1185
-define gui.choice_button_height = None
+define gui.choice_button_width = int(config.screen_width * 0.75)
+define gui.choice_button_height = 94
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(150, 8, 150, 8)
 define gui.choice_button_text_font = gui.text_font
@@ -488,6 +494,3 @@ init python:
 
         gui.nvl_button_width = 1860
         gui.nvl_button_xpos = 30
-
-
-

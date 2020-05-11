@@ -280,7 +280,7 @@ label overhear:
   "He sets the tupperware aside and leans into me. I slowly fall back as he kisses my lips."
   "I do like the feeling of his weight on me, of the warmth and pressure."
   "Before I can really savor it though, he's sliding down to pull off my pants and he kneels on the floor. I place my arm over my face."
-  if _legal_age = True:
+  if persistent._legal_age == True:
       play sound ding
       menu:
         "Skip Sex Scene":
