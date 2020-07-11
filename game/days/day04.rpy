@@ -449,6 +449,10 @@ label artno:
   show lukas happy
   with dissolve
   l "Don't worry about it."
+  
+  show glitterballcuddle onlayer event
+  with dissolve
+  $ persistent.cg_sparkle1=True
 
   "He takes my wrist, pulling my hand away from his neck while he leans in, stealing himself a kiss."
 
@@ -461,6 +465,11 @@ label artno:
   "It's not unusual for him to kiss me like this. He has the biggest soft spot for me out of everyone at the facility, and he's probably my favorite, too."
   "I return the kisses, letting myself relax into the bed as he straddles over me, one hand still around my wrist, the other finding its way to my hair."
   "It makes me feel gooey inside, like a warm cookie."
+  
+  hide glitterballcuddle onlayer event
+  with dissolve
+  $ config.side_image_tag = "addison"
+  show lukas happy
 
   hide lukas
   with dissolve
