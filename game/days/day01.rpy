@@ -55,30 +55,93 @@ label day1:
       jump coloringbook
 
 label hands:
+  
+  $ config.side_image_tag = "alfa"
+  show drawing1 onlayer event
+  with dissolve
+  $ persistent.cg_drawing1=True
 
   "I don't often do figure drawing, and hands are the most frustrating to get right. My warm-up sketches look more like noodles for now. Fingers curl unnaturally or separate uncomfortably."
+  hide drawing1 onlayer event
+  with dissolve
+  show drawing3 onlayer event
+  with dissolve
+  
   "It's only practice, but my eyebrows scrunch together as I turn my eyes back and forth between my own hand and the paper."
+  
+  hide drawing3 onlayer event
+  with dissolve
+  show drawing5 onlayer event
+  with dissolve 
+  
   "It feels nice once I can produce something at least recognizable. But soon enough the breakfast bell rings and I have to put away my pencils and tend to my rumbling stomach."
-
+  hide drawing5 onlayer event
+  with dissolve
+  $ config.side_image_tag = "addison"
+  
   jump breakfastday1
 
 label coloringbook:
 
+  $ config.side_image_tag = "alfa"
+  show drawing1 onlayer event
+  with dissolve
+  $ persistent.cg_drawing1=True
+  
   "Dr. Kronauer has given me a few coloring books recently. I've always liked coloring books, but these new ones have shapes that are really small."
+  hide drawing1 onlayer event
+  with dissolve
+  show drawing2 onlayer event
+  with dissolve
+  
   "I really like coloring in details and being slow with my pencils."
+  hide drawing2 onlayer event
+  with dissolve
+  show drawing3 onlayer event
+  with dissolve
   "One book contains birds, another is all kinds of animals, but my favorite so far has been the 'Mandala' coloring book, which is full of swirling circles with lovely mirrored patterns."
+  hide drawing4 onlayer event
+  with dissolve
+  show drawing5 onlayer event 
+  with dissolve
+  
   "The abstract shapes are friendly and those circles always invite any color I choose."
   "Since it's morning and I don't have much time to spare, but I pull out the last mandala I was working on and fill in a few more spots with diferent kinds of purples and blues."
-
+  hide drawing5 onlayer event
+  with dissolve
+  $ config.side_image_tag = "addison"
+  
   jump breakfastday1
 
 label dream:
+  
+  $ config.side_image_tag = "alfa"
+  show drawing1 onlayer event
+  with dissolve
+  $ persistent.cg_drawing1=True
 
   "I had a strange dream last night. I usually don't remember much about them, but I do remember this one, even though I don't understand it."
+  hide drawing1 onlayer event
+  with dissolve
+  show drawing2 onlayer event
+  with dissolve
+  
   "It had something to do with going outside. Maybe I'm just really excited for the field trip we're having in a week or so."
+  hide drawing2 onlayer event
+  with dissolve
+  show drawing3 onlayer event
+  with dissolve
   "I color haphazardly on a blank page, a large swath of blue and another of green. Something red in the middle."
+  hide drawing3 onlayer event
+  with dissolve
+  show drawing4 onlayer event
+  with dissolve
+  
   "It doesn't make much sense, but it's just a warmup."
-
+  hide drawing4 onlayer event
+  with dissolve
+  $ config.side_image_tag = "addison"
+  
   jump breakfastday1
 
 label breakfastday1:
