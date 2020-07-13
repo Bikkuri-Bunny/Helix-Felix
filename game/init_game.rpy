@@ -67,15 +67,15 @@ image logo = "gui/logo.png"
 #badge
 image badge = "gui/button/paw.png" #badge for choice menu
 #cards
-image card1 = "images/cards/card1.png"
-image card2 = "images/cards/card2.png"
-image card3 = "images/cards/card3.png"
-image card4 = "images/cards/card4.png"
-image card5 = "images/cards/card5.png"
-image card6 = "images/cards/card6.png"
-image card7 = "images/cards/card7.png"
-image partone = "images/cards/partone.png"
-image parttwo = "images/cards/parttwo.png"
+image card1 = "images/cards/card1.webp"
+image card2 = "images/cards/card2.webp"
+image card3 = "images/cards/card3.webp"
+image card4 = "images/cards/card4.webp"
+image card5 = "images/cards/card5.webp"
+image card6 = "images/cards/card6.webp"
+image card7 = "images/cards/card7.webp"
+image partone = "images/cards/partone.webp"
+image parttwo = "images/cards/parttwo.webp"
 
 #backgrounds
 
