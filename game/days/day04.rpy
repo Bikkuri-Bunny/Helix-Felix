@@ -130,7 +130,7 @@ label art:
 
 label artyes:
 
-  a "Sure, it's in my room though. I'd have to go get it."
+  a thinking "Sure, it's in my room though. I'd have to go get it."
   s "I don't mind waiting."
   a surprised "!"
 
@@ -178,7 +178,7 @@ label artyes:
 
 label artno:
 
-  a "Dr. Moore, had you ever seen a Felix before?"
+  a thinking "Dr. Moore, had you ever seen a Felix before?"
   show steven thinking
   with dissolve
   s "What do you mean? Before I came here?"
