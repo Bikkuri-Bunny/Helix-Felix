@@ -80,7 +80,7 @@ label day10:
 
   hide image charliecrying onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
 
   "The other kittens are upset as well, but I have to stay with Charlie."
   "Not only is he hit the hardest by this, but his tears are also going to inspire the others to cry more."
@@ -195,7 +195,7 @@ label checkonsteven:
 
   hide image stevencrying2 onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
 
   scene bg hallway1
   show steven sad
