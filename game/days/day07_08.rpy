@@ -338,7 +338,7 @@ label continueoralday7:
 
   hide lukasoral1 onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show lukas confused
 
   a blush "..."
@@ -492,7 +492,6 @@ label sleepday7:
 
   hide lukassleeping onlayer event
   with dissolve
-  $ config.side_image_tag = None
   scene bg bedroomdark
   with dissolve
   pause (1)
@@ -511,6 +510,8 @@ label sleepday7:
    jump lukasgone
 
 label lukasnotgone:
+  
+  $ config.side_image_tag = "addison"
 
   a "Hmmm..."
 
@@ -676,7 +677,7 @@ label giftmaking:
 
   hide artsupplies onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show steven surprised
 
   a surprised "!"
@@ -732,7 +733,7 @@ label giftsteven:
 
   hide giftsteven onlayer event with dissolve
   hide screen show_gift_steven
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show steven happy
 
   s happy "Do you mind if I leave it here overnight so it dries completely?"
@@ -823,7 +824,7 @@ label giftlukas:
 
   hide lukasgift onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show lukas happy
 
 
@@ -936,7 +937,7 @@ label giftpumpkin:
   scene bg bedroomdark
   hide giftpumpkin onlayer event with fade
   hide screen show_gift_pumpkin
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
 label day8end:
 
   play music musicsleepy loop
