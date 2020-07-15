@@ -239,7 +239,7 @@ label hs_end:
 
   hide piggyback onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show steven happy at myleft
   show ainsley happy at myleft
 
@@ -451,6 +451,12 @@ label pumpkinshoot:
   "I crossed my legs and settled my head in my hands while I waited."
   "..."
   a confused "Huh?"
+  
+  show pumpkin1 onlayer event
+  with dissolve
+  $ config.side_image_tag = "alfa"
+  $ persistent.cg_pumpkin1=True
+  
   "When Pumpkin comes back out from behind the door though it's... surprising, to say the least."
   "He's naked, except for a collar and a leash."
   "I flinched. I hate leashes and collars. I hate anything that's too tight and makes it hard to move. But he only seems a little nervous. His tail is a little low behind him as he looks up at the man holding the other end of the leash."
@@ -507,10 +513,6 @@ label pumpkinshoot:
   p "Ah- Ahh!"
   o "Mmm... Good boy."
 
-  show pumpkin1 onlayer event
-  with dissolve
-  $ config.side_image_tag = "alfa"
-  $ persistent.cg_pumpkin1=True
 
   "The actual fucking didn't last very long."
   p "Ah, ah, ah! Ah!"
@@ -527,7 +529,7 @@ label pumpkinshoot:
 
   hide pumpkin1 onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
 
   "After that there was some kissing and cuddling. I tried to catch Pumpkin's gaze, but he wouldn't look at me. I held tight to my tail and waited even after Pumpkin disapeared back behind the dressing room door."
   a "..."
@@ -836,7 +838,7 @@ label continueoralday6:
 
   hide lukasblow2 onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show lukas blush
   show addison happy
 
