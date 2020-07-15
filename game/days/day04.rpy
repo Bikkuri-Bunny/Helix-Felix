@@ -314,7 +314,7 @@ label artno:
 
   hide lesson onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show steven happy
 
   "He shows me a few more things before sending me off so that he can get his own work done. I didn't realize how late it had gotten! So I scamper off to dinner."
@@ -453,6 +453,7 @@ label artno:
   show glitterballcuddle onlayer event
   with dissolve
   $ persistent.cg_sparkle1=True
+  $ config.side_image_tag = "alfa"
 
   "He takes my wrist, pulling my hand away from his neck while he leans in, stealing himself a kiss."
 
@@ -474,7 +475,7 @@ label artno:
   hide lukas
   with dissolve
 
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "alfa"
 
   show black onlayer event
   with dissolve
