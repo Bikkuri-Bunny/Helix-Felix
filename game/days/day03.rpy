@@ -97,7 +97,7 @@ label day3:
   p "They said they would feed me there."
   a "Oh..."
 
-  "I always have lunch with Dr. Kronauer though, he would be lonely and sad if I didn't show up today..."
+  "I always try to have lunch with Dr. Kronauer though, I can see him getting lonely and sad if I didn't show up today..."
   "Before I can answer though, the lines moved far enough that it's my turn to get my shot. I give Pumpkin a small smile before ducking through the door."
 
   a "Sorry, I'll be right back."
@@ -605,7 +605,7 @@ label followlukas:
 
   play music musiclukas loop
 
-  a sad "Dr. Kronauer is really... sensitive. He'll be sad if I don't come over."
+  a sad "Dr. Kronauer is really... sensitive. He'll be sad if I don't spend lunch with him."
   show pumpkin sad
   with dissolve
   p "Oh, okay. I'll see you later then."
@@ -903,7 +903,7 @@ label continueride:
 
   hide lukasride onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show lukas happy
 
 label skipride:
