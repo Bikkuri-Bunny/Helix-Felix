@@ -333,7 +333,7 @@ label saturdaysleep:
 
   scene bg hallway2
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show pumpkin happy
 
   "We wash and return our mugs, still chatting and giggling down the hallway."
@@ -429,7 +429,7 @@ label movethings:
 
   hide ss2asps onlayer event
   with dissolve
-  $ config.side_image_tag = None
+  $ config.side_image_tag = "addison"
   show pumpkin neutral
 
   a thinking "..."
