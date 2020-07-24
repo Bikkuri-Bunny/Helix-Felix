@@ -65,7 +65,7 @@ label day4:
 
   show steven happy
   with easeinleft
-
+#blink
   s "Oh, Addison! Good morning. What can I do for you?"
   a thinking "You wanted me here, sir. You said I could help you?"
   show steven neutral
@@ -109,7 +109,7 @@ label menuday4:
       with dissolve
       s "Art? So you draw?"
       a nod "I'm not good, but it's what I do in my free time."
-
+#blink
 label art:
     show steven smile
     with dissolve
@@ -166,7 +166,7 @@ label artyes:
   $ persistent.cg_showsteven=True
 
   s "Addison, these are wonderful. You did these yourself? Where did you learn all this?"
-  a "I didn't, I just looked at pictures and I tried to copy them..."
+  a sad "I didn't, I just looked at pictures and I tried to copy them..."
   s "You taught yourself all this? Addison, you must be very talented. These are fantastic! You obviously worked hard on these and it really shows. Thank you for showing me."
 
   "I can't stand this. He sets my drawings down on the desk and I try to change the subject as fast as I can."
@@ -181,15 +181,17 @@ label artno:
   a thinking "Dr. Moore, had you ever seen a Felix before?"
   show steven thinking
   with dissolve
+ #blink
   s "What do you mean? Before I came here?"
-  a nod "Yes, before you came here, had you ever seen one? When we first met, you just looked so... confused."
+  a confused "Yes, before you came here, had you ever seen one? When we first met, you just looked so... confused."
 
   "'Confused' isn't the right word, but it will work. I don't want to say 'mean' or 'scary' or anything like that."
 
   show steven sad
   with dissolve
+  #blink
   s "No, I hadn't. There are only maybe 10,000 of you. I had only seen Felixes in pictures until I came here for the first time."
-  a thinking "So that means we're really rare outside?"
+  a sad "So that means we're really rare outside?"
   show steven sigh
   with dissolve
   s "There are about 12 billion humans on Earth. That would be more than one million people for every single Felix."
@@ -202,7 +204,7 @@ label artno:
   s "A lot. Quite a lot. So yes, you're very rare outside of this building."
   a "Oh..."
   s "... Don't worry though. I didn't mean to make you uncomfortable."
-  a "No, I was just wondering."
+  a thinking "No, I was just wondering."
   show steven happy
   with dissolve
   s "Well, that's good."
@@ -240,6 +242,7 @@ label artno:
   a "How many is a million?"
   show lukas confused
   with dissolve
+  #blink
   l "Hm?"
   a "How many is a million? Dr. Moore said there's a million humans for every Felix."
   l "Really?"
@@ -321,6 +324,10 @@ label artno:
 
   scene bg cafeteria
   with dissolve
+  
+  "I eat quietly and think over what he taght me."
+  "I hope I'm going to usefull to him. I don't know if I really will be though..."
+  
   play audio bell
   pause (2)
   scene bg hallway1
@@ -357,7 +364,7 @@ label artno:
   with dissolve
 
   l "Probably. But I have some medicine I need you to try out first."
-
+#blink
   a sad "Medicine? The medicine you're working on? But I'm not in heat yet..."
   l "Come on Addy, I didn't say it was for 'that'."
   a "But--"
@@ -434,7 +441,7 @@ label artno:
 
   show lukas blush
   with dissolve
-
+#blink
   a happy "Right, like this."
 
   "I wait for a few seconds."
@@ -444,7 +451,7 @@ label artno:
 
   show lukas sad smile
   with dissolve
-
+#blink
   a "Yeah, or maybe I counted wrong?"
   show lukas happy
   with dissolve
@@ -484,14 +491,15 @@ label artno:
 
   l "I love you, Addy."
 
-  hide black onlayer event
-  with dissolve
   pause (2)
   scene bg bedroomdark
   with dissolve
   pause (1)
 
   cards open card5
+  
+  hide black onlayer event
+  with dissolve
 
   scene bg bedroomlight
   with fade
