@@ -29,7 +29,20 @@ label day2:
     calendar day 2
     play audio bell
     a pajamas happy "Mmmmm! Big stretch!"
-    a -pajamas happy "..."
+    a happy "..."
+    
+    show bg hallway1
+    with dissolve
+    show bg cafeteria
+    with dissolve
+    
+    "This morning is thankfully uneventfull. I get to eat my breakfast quietly and wake up slowly."
+    "I'm glad for it."
+    
+    show bg hallway1
+    with dissolve
+    show bg bedroomlight
+    with dissolve
 
     "This morning goes well, despite the kittens still being tired from the two consecutive days of adoption notices. Breakfast is uneventful and I'm particularly glad for it."
     "No one was adopted last night, I shouldn't be glad for it, but I actually am. I decided to take a break from the kittens and spend the morning in my room."
@@ -268,7 +281,7 @@ label continueday1:
     j "That sounds wonderful. Addy, we'll have to talk about some things privately. Will you excuse us?"
     a thinking "Oh, okay."
 
-    "That's it for me and the tour then."
+    "That's it for me and the tour then. I'll see myself out."
 
     hide jesse
     with easeoutright
@@ -436,7 +449,7 @@ label continueday2:
     p "Yeah... A little, I guess."
     a "Like you said, you'll do great. What's the test going to be about?"
     p "I think it's just pictures to make sure I'm pretty enough..."
-    a "Pumpkin, you're beautiful! Of course you're going to pass!"
+    a happy "Pumpkin, you're beautiful! Of course you're going to pass!"
 
     show pumpkin excited
     with dissolve
@@ -450,12 +463,11 @@ label continueday2:
     "He's always been loud and he thinks he wants to be the center of attention. But once he's there, he would get nervous and back down from being the leader. Usually that role got passed onto me instead."
     "I may be quiet, but I still like helping everyone out."
     "I lean back against him."
-
+    #blinked
     p "I think there's going to be kissing and stuff."
 
-    a thinking "In the test?"
+    a confused "In the test?"
     p "In the test and in the job. I think there's going to be kissing and sex and stuff."
-
 
     a thinking "Oh... how do you feel about that?"
     p "About sex?"
@@ -465,7 +477,6 @@ label continueday2:
     with dissolve
 
     p "I'm really excited!"
-
 
     a happy "Haha, well that's good I guess."
     p "Why wouldn't I be excited?"
@@ -526,10 +537,10 @@ label continueday2:
     with dissolve
 
     a pajamas sleepy "-sigh-"
-
+#blinked
     "I wanted to relax, but today was just as busy as the rest of the week has been."
     "After dinner, I go straight to bed. Tomorrow is Drug Day, when we get our weekly shots."
-    "Dr. Moore will be doing that now- I hope his shyness doesn't mean he'll have the shaky hands."
+    "Dr. Moore will be doing that now- I hope his shyness doesn't mean he'll have shaky hands."
     "But he's a medical doctor, so it shouldn't be too bad. When Dr. Kronauer was first learning how to give me shots that was the worst. He's doing a lot better now."
     "I curl into my blankets, happy and cozy."
 
