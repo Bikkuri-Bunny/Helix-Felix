@@ -62,19 +62,19 @@ label hands:
   $ persistent.cg_drawing1=True
 
   "I don't often do figure drawing, and hands are the most frustrating to get right. My warm-up sketches look more like noodles for now. Fingers curl unnaturally or separate uncomfortably."
+  show drawing3 onlayer event
   hide drawing1 onlayer event
   with dissolve
-  show drawing3 onlayer event
-  with dissolve
+
   
   "It's only practice, but my eyebrows scrunch together as I turn my eyes back and forth between my own hand and the paper."
-  
-  hide drawing3 onlayer event
-  with dissolve
+
   show drawing5 onlayer event
+  hide drawing3 onlayer event
   with dissolve 
   
   "It feels nice once I can produce something at least recognizable. But soon enough the breakfast bell rings and I have to put away my pencils and tend to my rumbling stomach."
+  
   hide drawing5 onlayer event
   with dissolve
   $ config.side_image_tag = "addison"
@@ -89,20 +89,20 @@ label coloringbook:
   $ persistent.cg_drawing1=True
   
   "Dr. Kronauer has given me a few coloring books recently. I've always liked coloring books, but these new ones have shapes that are really small."
-  hide drawing1 onlayer event
-  with dissolve
+
   show drawing2 onlayer event
+  hide drawing1 onlayer event
   with dissolve
   
   "I really like coloring in details and being slow with my pencils."
+
+  show drawing3 onlayer event
   hide drawing2 onlayer event
   with dissolve
-  show drawing3 onlayer event
-  with dissolve
   "One book contains birds, another is all kinds of animals, but my favorite so far has been the 'Mandala' coloring book, which is full of swirling circles with lovely mirrored patterns."
-  hide drawing4 onlayer event
-  with dissolve
+ 
   show drawing5 onlayer event 
+  hide drawing3 onlayer event
   with dissolve
   
   "The abstract shapes are friendly and those circles always invite any color I choose."
@@ -121,26 +121,26 @@ label dream:
   $ persistent.cg_drawing1=True
 
   "I had a strange dream last night. I usually don't remember much about them, but I do remember this one, even though I don't understand it."
-  hide drawing1 onlayer event
-  with dissolve
+
   show drawing2 onlayer event
+  hide drawing1 onlayer event
   with dissolve
   
   "It had something to do with going outside. Maybe I'm just really excited for the field trip we're having in a week or so."
+
+  show drawing3 onlayer event
   hide drawing2 onlayer event
   with dissolve
-  show drawing3 onlayer event
-  with dissolve
   "I color haphazardly on a blank page, a large swath of blue and another of green. Something red in the middle."
-  hide drawing3 onlayer event
-  with dissolve
+
   show drawing4 onlayer event
+  hide drawing3 onlayer event
   with dissolve
   
   "It doesn't make much sense, but it's just a warmup."
   hide drawing4 onlayer event
   with dissolve
-  $ config.side_image_tag = "addison"
+
   
   jump breakfastday1
 
@@ -153,6 +153,7 @@ label breakfastday1:
   pause (2)
   scene bg cafeteria
   with dissolve
+  $ config.side_image_tag = "addison"
 
   "The cafeteria is already bustling with kittens, the chatter of their voices and the delicious smell of maple mingling together. I bet that today will be just as sweet as these pancakes."
 
@@ -166,7 +167,7 @@ label breakfastday1:
   with easeoutright
 
   "Most of the kittens are bushy tailed and bright, having gotten a rest after yesterday's loss, and eagerly shoveling down the tasty breakfast. There's no way I wouldn't follow suit."
-  "Chatting idly with the kittens at my table and stuffing my face with some fluffy pancakes makes me a little slow to notice the tone of their chatters changing so suddenly."
+  "Chatting idly with the kittens at my table and stuffing my face with some fluffy pancakes makes me a little slow to notice the tone of their chatter changing so suddenly."
   "Eventually the air turns a little cold and I raise my head to look around. Someone else has been adopted. My heart squeezes."
 
   play music musictender loop
@@ -177,6 +178,8 @@ label breakfastday1:
   "But we never know who, and we never know when. It makes it hard for the kittens who have grown close over the years."
 
   a "Oh no..."
+  
+  "Once I get everyone together in the playroom I'll have to talk to them about it."
 
   scene bg hallway1
   with dissolve
@@ -347,7 +350,8 @@ label breakfastday1:
   show pumpkin thinking
   with easeinleft
 
-  "It's strange when I walk in today and see Pumpkin sitting at the back of the class."#Why?
+  "It's strange when I walk in today and see Pumpkin sitting at the back of the class."
+  "This class is for the kittens, he should be off doing something fun, shouldn't he?"
   "I don't say anything, but I wait until the lesson is over when and it's work time. Then I can go help out anyone who raises their hand."
   "I'm not very good at math, so I'm not as much help today as I am sometimes. But I'll always do my best."
 
@@ -355,6 +359,9 @@ label breakfastday1:
   with easeoutleft
   show charlie confused
   with easeinright
+  
+  c "Addy, can you help me with this?"
+  a "Hm?"
 
   hide charlie
   $ config.side_image_tag = "alfa"
