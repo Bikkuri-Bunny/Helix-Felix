@@ -62,13 +62,17 @@ label day3:
   with dissolve
 
   "After breakfast we all lined up in the hallway for our shots. I'm always at the end because I have to watch over everyone, as usual."
-  "I lean against the wall, letting my mind wander. However, when I think about Dr. Moore, the way he looked at me was weird. He is still pretty handsome though, so it isn't too hard to imagine him relaxing a little if he spent some time with me."
+  "I lean against the wall, letting my mind wander.
+  "Dr. Moore comes to mind. The way he looked at me whe he met me was.. weird."
+  "He is still pretty handsome though, so it isn't too hard to imagine him... relaxing a little if he spent some time with me."
+  "That would be really nice..."
   "A movement out of the corner of my eye and I stand upright again."
 
   show pumpkin thinking
   with easeinright
 
   a surprised "What are you doing, Pumpkin? You'll lose your place in line."
+  #blinked
   show pumpkin nervous
   with dissolve
   p "Haha, that's okay. Is it okay if I stand with you?"
@@ -249,7 +253,7 @@ label followpumpkin:
   with dissolve
 
   p "Okay!"
-
+#blinks
   hide pumpkin
   with dissolve
 
@@ -268,7 +272,7 @@ label followpumpkin:
 
   a "So where is it?"
   p "Mr. Jesse said to meet him over here."
-
+#addy blinked here
   show jesse neutral at myright
   with easeinright
 
@@ -326,6 +330,7 @@ label followpumpkin:
   o "I thought you might say that. Today we're going to just be doing some photography so you can get used to the makeup and clothes. How does that sound?"
   show pumpkin excited
   with dissolve
+#blinked
   p "Great!"
 
   hide jesse
@@ -357,7 +362,7 @@ label followpumpkin:
   p "I do!"
 
   "He twirls for me, showing off his new clothes and his strangly painted face."
-
+#blinked
   j "Okay, enough showing off-- let's go."
 
   hide pumpkin
@@ -384,7 +389,7 @@ label followpumpkin:
 
   hide pumpkin_model onlayer event
   with dissolve
-  $ config.side_image_tag = "addsion"
+  $ config.side_image_tag = "addison"
 
   show pumpkin excited
   with easeinleft
@@ -410,6 +415,7 @@ label followpumpkin:
   a thinking "Someone else?"
   show pumpkin nervous
   with dissolve
+ #blinked
   p "Yeah, someone pretending to be my Master."
   show pumpkin happy
   with dissolve
