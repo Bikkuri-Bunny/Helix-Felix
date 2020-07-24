@@ -43,10 +43,11 @@ label day5:
   play music musicneutral loop
 
   scene bg hallway1
-  show pumpkin happy
   with dissolve
   pause (2)
   scene bg cafeteria
+  show pumpkin happy
+  with dissolve
   p "Addy, come sit with me!"
   a laugh "Alright."
 
@@ -101,6 +102,7 @@ label day5:
   a thinking "Scared of you?"
   show steven sad_smile
   with dissolve
+  #blink
   s "I am new, after all."
   a "Hmm."
   s "Can you help me find her? I tried looking for her yesterday but I couldn't find her anywhere. I worry that she's hiding from me. If you were there, she may feel more safe."
@@ -125,6 +127,14 @@ label day5:
   show steven sad
   s "Ainsley? Are you in here?"
   hide steven with dissolve
+  
+   narrator_nvl """
+  CLICK AROUND TO TRY TO FIND AINSLEY
+  """
+
+  $ nvl_hide(dissolve)
+  nvl clear
+  
   #start game
   $ minigame_hs=Hide_seek(5)
   $ minigame_hs.InitGame("bg playroom2", 0.0, (0, 408), "hs1",(285,408),"hs2",(603,508),"hs3",(1166,616),"hs4",(1602,740),"hs5")
