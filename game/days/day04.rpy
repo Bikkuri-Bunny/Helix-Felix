@@ -474,8 +474,7 @@ label artno:
   "I return the kisses, letting myself relax into the bed as he straddles over me, one hand still around my wrist, the other finding its way to my hair."
   "It makes me feel gooey inside, like a warm cookie."
   
-  hide glitterballcuddle onlayer event
-  with dissolve
+
   $ config.side_image_tag = "addison"
   show lukas happy
 
@@ -485,6 +484,8 @@ label artno:
   $ config.side_image_tag = "alfa"
 
   show black onlayer event
+  with dissolve
+  hide glitterballcuddle onlayer event
   with dissolve
 
   "It makes my mind go all fuzzy."
