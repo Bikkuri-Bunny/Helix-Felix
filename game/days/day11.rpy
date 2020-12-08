@@ -207,6 +207,48 @@ label day11continue:
 #if p-points<X
 label nervousstuff:
 
+His eyes widened, and I could feel his heartbeat skip, blood heating up.
+Pumpkin.surprised: Huh? Uh- Um...
+His eyes glanced up to me, eyelashes long and low his strained to meet my gaze. I was just as confused.
+Pumpkin.blush: Um, okay.
+Addison: But-
+Director: Come on, just have fun, you two.
+I blushed as well. This was all so sudden, and I could tell that Pumpkin felt stiff in my arms as soon as the suggestion was made.
+Pumpkin: It's okay, let's just do it.
+Addison: But-
+He snuggled back into me, pressing his head beneath my chin and his back into my stomach.
+Pumpkin: Come on, d-don't argue.
+My fingers twitches as I realized what he meant.
+Addison.blush: Ah... okay...
+I was used to giving out hand-jobs... this shouldn't be much different. But the hot lights and the cameras clicking made me nervous, made me keep my eyes down and try to hide my face in Pumpkin's hair.
+My hand fumbled with his pants. When they were open and I freed Pumpkin's cock from his underwear, I tried not worry about how flaccid he still was. It was all for show, anyways. I just... had to make him feel good, like any other Staff Companion duty I had.
+Addison: Okay...
+I stroked him slowly, running my thumb over his flesh. He would be hard soon, regardless. I just had to touch him right.
+Pumpkin: Ah...
+I nuzzled my nose into his ear.
+Addison: You're so pretty.
+His breath hitched. His eye opened slightly to look back at me.
+Addison: Really. You're so beautiful. I'm so glad you're my friend.
+Pumpkin: Mh...
+I needed to make him comfortable in order for this to work... The cameras were still clicking away, and I could feel the sweat on the back of my neck from the hot lights.
+My free hand was already around Pumpkin, and I moved it gently to pet his chest as I stroked. He closed his eyes again.
+Pumpkin: Ah...
+I could feel his shoulders relaxing. That was good.
+Addison.smile: I've never done with with another Felix before... It's nice... You're pretty and it's lucky we get to spend time together. I like spending it with you.
+Pumpkin: Mh...
+He was hard now, his dick firm in my hand as I pumped. 
+Addison: Just a little more.
+Pumpkin: Addy...
+I nuzzled into him again. He was pressing further against me. I kissed his ear. I had seen the one time he had sex, but I wasn't sure if it was always like that for him. Were his fake Masters ever nice to him when they had sex? Did he get to cuddle and kiss them, relax and feel their warmth shared?
+Our jobs were so different...
+I hoped I could get him to feel happy with this.
+Addison: I know.
+I could feel him welling up, close to climax.
+With only a little whimper he came, eyes still pressed closed, arms shaking as his fingers pressed into mine. 
+Addison: There...
+
+jump to day11skip
+
 #if p-points>X
 label sillystuff:
 
